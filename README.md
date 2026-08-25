@@ -11,10 +11,11 @@ Two rooms, one site.
 
 A working dictionary of the terms, protocols, attacks and frameworks that come up on the
 job — from `zero-day` and `Kerberoasting` down to the everyday delivery vocabulary of
-`push`, `commit`, `sync` and `deploy`. Built for quick lookups, not long reading, and
-divided by term and by domain.
+`push`, `commit`, `sync` and `deploy`, down to the `GPU`, `VRAM` and `quantisation`
+underneath it all. Built for quick lookups, not long reading, and divided by term and by
+domain.
 
-**488 terms across 12 domains:**
+**542 terms across 13 domains:**
 
 | Domain | Terms |
 |---|---|
@@ -30,6 +31,7 @@ divided by term and by domain.
 | Governance, Risk & Compliance | 40 |
 | AI & Emerging Tech | 38 |
 | Dev & Delivery | 65 |
+| Compute & Hardware | 54 |
 
 Every definition is one or two sentences of plain English, written to answer the question
 you actually had when you looked the term up.
