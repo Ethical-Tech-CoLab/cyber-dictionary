@@ -10,9 +10,11 @@ Two rooms, one site.
 ## 1. The Dictionary
 
 A working dictionary of the terms, protocols, attacks and frameworks that come up on the
-job — built for quick lookups, not long reading. Divided by term and by domain.
+job — from `zero-day` and `Kerberoasting` down to the everyday delivery vocabulary of
+`push`, `commit`, `sync` and `deploy`. Built for quick lookups, not long reading, and
+divided by term and by domain.
 
-**423 terms across 11 domains:**
+**488 terms across 12 domains:**
 
 | Domain | Terms |
 |---|---|
@@ -27,6 +29,7 @@ job — built for quick lookups, not long reading. Divided by term and by domain
 | Defense & Operations | 38 |
 | Governance, Risk & Compliance | 40 |
 | AI & Emerging Tech | 38 |
+| Dev & Delivery | 65 |
 
 Every definition is one or two sentences of plain English, written to answer the question
 you actually had when you looked the term up.
