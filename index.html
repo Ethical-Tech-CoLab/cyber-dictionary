@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cyber Dictionary — Ethical Tech CoLab</title>
+<meta name="description" content="A working vocabulary of technology and cybersecurity, defined plainly — plus a library of open data sources and open-source technologies you can build with.">
+<link rel="icon" href="etc-icon.svg" type="image/svg+xml">
+<link rel="icon" href="etc-icon.png" sizes="256x256">
+<style>
+:root{
+  --bg:#120c1a; --surface:#1b1226; --card:#201630; --fg:#f3eefb;
+  --muted:rgba(233,228,244,.56); --border:rgba(139,92,246,.26);
+  --accent:#c8f04b; --accent-ink:#141414; --glow:#7b5cff;
+  --shelf:#2a1c3d; --shelf-edge:#160e21;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+[data-theme="light"]{
+  --bg:#f5f2f9; --surface:#fff; --card:#fff; --fg:#1a1020;
+  --muted:rgba(26,16,32,.62); --border:rgba(59,24,120,.18);
+  --accent:#5f6b00; --accent-ink:#fff; --glow:#6d28d9;
+  --shelf:#e4dcf3; --shelf-edge:#c9bce0;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--fg); font-family:var(--sans);
+  line-height:1.5; -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(900px 500px at 15% -10%, color-mix(in srgb, var(--glow) 22%, transparent), transparent 70%);
+  background-attachment:fixed;
+}
+a{color:var(--accent)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* ---- header ---- */
+header{border-bottom:1px solid var(--border);position:sticky;top:0;z-index:40;
+  background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(12px)}
+.bar{display:flex;align-items:center;gap:14px;padding:14px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--fg)}
+.brand img{width:26px;height:26px}
+.brand b{font-size:1rem;letter-spacing:-.01em}
+.brand span{color:var(--muted);font-size:.8rem;display:block;font-weight:400;letter-spacing:.02em}
+.spacer{flex:1}
+.tabs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:4px}
+.tabs button{font:inherit;font-size:.85rem;border:0;background:transparent;color:var(--muted);
+  padding:7px 16px;border-radius:999px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);font-weight:600}
+.icon-btn{border:1px solid var(--border);background:var(--surface);color:var(--muted);
+  border-radius:999px;width:36px;height:36px;cursor:pointer;font-size:.95rem}
+
+/* ---- intro ---- */
+.intro{padding:38px 0 22px}
+.intro h1{font-size:clamp(1.9rem,4.5vw,3rem);margin:0 0 10px;letter-spacing:-.03em;line-height:1.05}
+.intro p{margin:0;color:var(--muted);max-width:62ch;font-size:1.02rem}
+.intro .count{font-family:var(--mono);font-size:.78rem;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+
+/* ---- controls ---- */
+.controls{position:sticky;top:65px;z-index:30;padding:12px 0;
+  background:color-mix(in srgb, var(--bg) 92%, transparent);backdrop-filter:blur(12px)}
+.search{display:flex;align-items:center;gap:10px;background:var(--surface);
+  border:1px solid var(--border);border-radius:12px;padding:11px 14px}
+.search input{flex:1;font:inherit;font-size:1rem;background:transparent;border:0;color:var(--fg);outline:none}
+.search input::placeholder{color:var(--muted)}
+.search kbd{font-family:var(--mono);font-size:.7rem;color:var(--muted);border:1px solid var(--border);
+  border-radius:5px;padding:2px 6px}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
+.chip{font:inherit;font-size:.78rem;border:1px solid var(--border);background:transparent;color:var(--muted);
+  padding:5px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.chip:hover{color:var(--fg);border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+.meta{font-family:var(--mono);font-size:.74rem;color:var(--muted);margin:14px 0 0;letter-spacing:.04em}
+
+/* ---- dictionary ---- */
+.az{display:flex;flex-wrap:wrap;gap:3px;margin:16px 0 4px}
+.az a{font-family:var(--mono);font-size:.75rem;color:var(--muted);text-decoration:none;
+  padding:3px 7px;border-radius:5px}
+.az a:hover{background:var(--surface);color:var(--accent)}
+.az a.off{opacity:.25;pointer-events:none}
+.letter{font-family:var(--mono);font-size:.75rem;letter-spacing:.2em;color:var(--accent);
+  border-bottom:1px solid var(--border);padding:26px 0 6px;margin:0 0 14px;scroll-margin-top:150px}
+.terms{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px}
+.term{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:15px 17px}
+.term h3{margin:0;font-size:1rem;letter-spacing:-.01em}
+.term .abbr{display:block;font-family:var(--mono);font-size:.73rem;color:var(--muted);margin-top:3px}
+.term p{margin:9px 0 0;font-size:.9rem;color:color-mix(in srgb,var(--fg) 86%,transparent)}
+.tag{display:inline-block;font-family:var(--mono);font-size:.63rem;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:2px 9px;margin-top:11px;cursor:pointer}
+.tag:hover{color:var(--accent);border-color:var(--accent)}
+mark{background:color-mix(in srgb,var(--accent) 32%,transparent);color:inherit;border-radius:3px;padding:0 1px}
+
+/* ---- library ---- */
+.shelf{margin:0 0 34px}
+.shelf h2{font-size:1.15rem;margin:0 0 3px;letter-spacing:-.02em;scroll-margin-top:150px}
+.shelf .sub{font-family:var(--mono);font-size:.7rem;color:var(--muted);letter-spacing:.09em;text-transform:uppercase;margin:0 0 12px}
+.stack{display:flex;gap:5px;flex-wrap:wrap;align-items:flex-end;
+  background:linear-gradient(180deg,transparent 0%,transparent 82%,var(--shelf) 82%);
+  padding:0 10px 14px;border-bottom:5px solid var(--shelf-edge);border-radius:0 0 4px 4px}
+.spine{
+  position:relative;height:190px;min-width:34px;max-width:56px;flex:0 0 auto;cursor:pointer;
+  border:1px solid var(--border);border-radius:3px 3px 0 0;padding:12px 4px;
+  display:flex;align-items:flex-start;justify-content:center;
+  writing-mode:vertical-rl;text-orientation:mixed;
+  font-size:.72rem;font-weight:600;letter-spacing:.01em;line-height:1.15;
+  color:var(--fg);background:var(--card);overflow:hidden;
+  transition:transform .16s ease, box-shadow .16s ease;
+  box-shadow:inset -3px 0 0 rgba(0,0,0,.18);
+}
+.spine::after{content:"";position:absolute;inset:auto 0 0 0;height:12px;
+  background:color-mix(in srgb,var(--accent) 60%,transparent)}
+.spine:hover,.spine:focus-visible{transform:translateY(-12px);outline:none;
+  box-shadow:0 10px 24px rgba(0,0,0,.35), inset -3px 0 0 rgba(0,0,0,.18)}
+.spine[aria-expanded="true"]{transform:translateY(-18px);border-color:var(--accent)}
+.stack.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;
+  background:none;border:0;padding:0}
+.stack.cards .spine{writing-mode:horizontal-tb;height:auto;max-width:none;min-width:0;
+  border-radius:12px;padding:14px 16px;align-items:flex-start;justify-content:flex-start;
+  text-align:left;font-size:.95rem;box-shadow:none;flex-direction:column}
+.stack.cards .spine::after{inset:0 auto 0 0;width:4px;height:auto}
+.stack.cards .spine .blurb{display:block;font-weight:400;font-size:.86rem;color:var(--muted);margin-top:6px}
+.spine .blurb{display:none}
+
+/* ---- detail sheet ---- */
+.sheet{position:fixed;inset:auto 0 0 0;z-index:60;display:none}
+.sheet.open{display:block}
+.sheet .scrim{position:fixed;inset:0;background:rgba(0,0,0,.55)}
+.sheet .panel{position:relative;max-width:660px;margin:0 auto;background:var(--surface);
+  border:1px solid var(--border);border-bottom:0;border-radius:16px 16px 0 0;padding:24px 26px 30px;
+  max-height:82vh;overflow:auto;box-shadow:0 -20px 60px rgba(0,0,0,.5)}
+.sheet h3{margin:0;font-size:1.3rem;letter-spacing:-.02em}
+.sheet .org{font-family:var(--mono);font-size:.75rem;color:var(--muted);margin:5px 0 16px}
+.sheet dt{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent);margin-top:15px}
+.sheet dd{margin:5px 0 0;font-size:.94rem}
+.sheet .go{display:inline-block;margin-top:20px;background:var(--accent);color:var(--accent-ink);
+  font-weight:600;font-size:.88rem;text-decoration:none;padding:9px 18px;border-radius:9px}
+.sheet .close{position:absolute;top:16px;right:18px;border:1px solid var(--border);background:transparent;
+  color:var(--muted);border-radius:8px;width:30px;height:30px;cursor:pointer;font-size:1rem}
+
+.empty{color:var(--muted);padding:50px 0;text-align:center;font-size:.95rem}
+footer{border-top:1px solid var(--border);margin-top:60px;padding:26px 0 50px;color:var(--muted);font-size:.83rem}
+footer a{color:var(--accent)}
+.hidden{display:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:600px){
+  .stack{background:none;border:0;padding:0;display:grid;grid-template-columns:1fr;gap:10px}
+  .stack .spine{writing-mode:horizontal-tb;height:auto;max-width:none;border-radius:12px;
+    padding:14px 16px;flex-direction:column;align-items:flex-start;box-shadow:none}
+  .stack .spine::after{inset:0 auto 0 0;width:4px;height:auto}
+  .stack .spine .blurb{display:block;font-weight:400;font-size:.86rem;color:var(--muted);margin-top:6px}
+  .controls{position:static}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#">
+      <img src="etc-icon.svg" alt="">
+      <b>Cyber Dictionary<span>Ethical Tech CoLab</span></b>
+    </a>
+    <div class="spacer"></div>
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tab-dict" aria-selected="true" aria-controls="view-dict">Dictionary</button>
+      <button role="tab" id="tab-lib" aria-selected="false" aria-controls="view-lib">Library</button>
+    </div>
+    <button class="icon-btn" id="theme" title="Switch theme" aria-label="Switch theme">◐</button>
+  </div>
+</header>
+
+<main>
+<section id="view-dict" role="tabpanel" aria-labelledby="tab-dict">
+  <div class="wrap intro">
+    <p class="count" id="dict-count"></p>
+    <h1>Technology and cybersecurity, defined plainly.</h1>
+    <p>A working dictionary of the terms, protocols, attacks and frameworks that come up on the job — built for quick lookups, not long reading. Divided by term and by domain.</p>
+  </div>
+  <div class="controls"><div class="wrap">
+    <div class="search">
+      <span aria-hidden="true">⌕</span>
+      <input id="q" type="search" placeholder="Search terms and definitions…" autocomplete="off" aria-label="Search terms">
+      <kbd>/</kbd>
+    </div>
+    <div class="chips" id="domains"></div>
+  </div></div>
+  <div class="wrap">
+    <nav class="az" id="az" aria-label="Jump to letter"></nav>
+    <p class="meta" id="dict-meta"></p>
+    <div id="dict-results"></div>
+  </div>
+</section>
+
+<section id="view-lib" role="tabpanel" aria-labelledby="tab-lib" class="hidden">
+  <div class="wrap intro">
+    <p class="count" id="lib-count"></p>
+    <h1>The library.</h1>
+    <p>Walk the shelves. Instead of books you will find open data sources, open-source technologies and the communities behind them — satellite imagery, street maps, climate records, conflict data, threat feeds — each with a note on how to get at the API and start building.</p>
+  </div>
+  <div class="controls"><div class="wrap">
+    <div class="search">
+      <span aria-hidden="true">⌕</span>
+      <input id="lq" type="search" placeholder="Search sources, technologies, communities…" autocomplete="off" aria-label="Search the library">
+      <kbd>/</kbd>
+    </div>
+    <div class="chips" id="shelves"></div>
+  </div></div>
+  <div class="wrap">
+    <p class="meta" id="lib-meta"></p>
+    <div id="lib-results"></div>
+  </div>
+</section>
+</main>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+  <div class="scrim" data-close></div>
+  <div class="panel">
+    <button class="close" data-close aria-label="Close">✕</button>
+    <h3 id="sheet-title"></h3>
+    <p class="org" id="sheet-org"></p>
+    <dl>
+      <dt>What it is</dt><dd id="sheet-what"></dd>
+      <dt>How to connect</dt><dd id="sheet-how"></dd>
+      <dt>Access</dt><dd id="sheet-cost"></dd>
+    </dl>
+    <a class="go" id="sheet-go" href="#" target="_blank" rel="noopener">Open source site ↗</a>
+  </div>
+</div>
+
+<footer><div class="wrap">
+  <p>Built and maintained by <a href="https://github.com/Ethical-Tech-CoLab">Ethical Tech CoLab</a>. Definitions and source notes are written in-house; corrections and additions are welcome by pull request.</p>
+  <p>Text released under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code under the MIT licence. Every entry in the library links to its own project — check each one's licence before you ship.</p>
+</div></footer>
+
+<script src="terms.js"></script>
+<script src="library.js"></script>
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]})};
+  var norm=function(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')};
+
+  /* theme */
+  var t=$('#theme');
+  try{ if(localStorage.getItem('cd-theme')) document.documentElement.dataset.theme=localStorage.getItem('cd-theme'); }catch(e){}
+  t.onclick=function(){
+    var next=document.documentElement.dataset.theme==='dark'?'light':'dark';
+    document.documentElement.dataset.theme=next;
+    try{localStorage.setItem('cd-theme',next)}catch(e){}
+  };
+
+  /* tabs */
+  function show(which){
+    var d=which==='dict';
+    $('#tab-dict').setAttribute('aria-selected',d);
+    $('#tab-lib').setAttribute('aria-selected',!d);
+    $('#view-dict').classList.toggle('hidden',!d);
+    $('#view-lib').classList.toggle('hidden',d);
+    if(location.hash.slice(1)!==which) history.replaceState(null,'','#'+which);
+  }
+  $('#tab-dict').onclick=function(){show('dict')};
+  $('#tab-lib').onclick=function(){show('lib')};
+
+  /* ------- dictionary ------- */
+  var TERMS=window.TERMS.slice().sort(function(a,b){return a.t.localeCompare(b.t,'en',{sensitivity:'base'})});
+  var LETTERS='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  var dq='', dd=null;
+  $('#dict-count').textContent=TERMS.length+' terms · '+window.DOMAINS.length+' domains';
+
+  window.DOMAINS.forEach(function(d){
+    var b=document.createElement('button');
+    b.className='chip'; b.textContent=d; b.setAttribute('aria-pressed','false');
+    b.onclick=function(){ dd=(dd===d?null:d); paintChips('#domains',dd); renderDict(); };
+    $('#domains').appendChild(b);
+  });
+  function paintChips(sel,active){
+    document.querySelectorAll(sel+' .chip').forEach(function(c){
+      c.setAttribute('aria-pressed', c.textContent===active?'true':'false');
+    });
+  }
+  function hl(s,q){
+    if(!q) return esc(s);
+    var i=norm(s).indexOf(norm(q));
+    if(i<0) return esc(s);
+    return esc(s.slice(0,i))+'<mark>'+esc(s.slice(i,i+q.length))+'</mark>'+esc(s.slice(i+q.length));
+  }
+  function renderDict(){
+    var q=norm(dq.trim());
+    var list=TERMS.filter(function(x){
+      if(dd&&x.d!==dd) return false;
+      if(!q) return true;
+      return norm(x.t).indexOf(q)>=0||norm(x.a||'').indexOf(q)>=0||norm(x.def).indexOf(q)>=0;
+    });
+    $('#dict-meta').textContent=list.length+' of '+TERMS.length+' terms'+(dd?' · '+dd:'')+(dq?' · matching “'+dq+'”':'');
+    var groups={}, present={};
+    list.forEach(function(x){
+      var L=x.t[0].toUpperCase(); if(!/[A-Z]/.test(L)) L='#';
+      (groups[L]=groups[L]||[]).push(x); present[L]=1;
+    });
+    $('#az').innerHTML=LETTERS.map(function(L){
+      return '<a href="#L-'+L+'" class="'+(present[L]?'':'off')+'">'+L+'</a>';
+    }).join('');
+    var keys=Object.keys(groups).sort();
+    $('#dict-results').innerHTML = list.length? keys.map(function(L){
+      return '<h2 class="letter" id="L-'+L+'">'+L+'</h2><div class="terms">'+groups[L].map(function(x){
+        return '<article class="term"><h3>'+hl(x.t,dq)+'</h3>'
+          +(x.a?'<span class="abbr">'+esc(x.a)+'</span>':'')
+          +'<p>'+hl(x.def,dq)+'</p>'
+          +'<span class="tag" data-domain="'+esc(x.d)+'">'+esc(x.d)+'</span></article>';
+      }).join('')+'</div>';
+    }).join('') : '<p class="empty">Nothing matches that. Try a shorter word, or clear the domain filter.</p>';
+  }
+  $('#q').addEventListener('input',function(e){dq=e.target.value;renderDict()});
+  $('#dict-results').addEventListener('click',function(e){
+    var tg=e.target.closest('.tag'); if(!tg) return;
+    dd=tg.dataset.domain; paintChips('#domains',dd); renderDict();
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  /* ------- library ------- */
+  var SOURCES=window.SOURCES, lq='', ls=null;
+  $('#lib-count').textContent=SOURCES.length+' open sources · '+window.SHELVES.length+' shelves';
+  window.SHELVES.forEach(function(s){
+    var b=document.createElement('button');
+    b.className='chip'; b.textContent=s; b.setAttribute('aria-pressed','false');
+    b.onclick=function(){ ls=(ls===s?null:s); paintChips('#shelves',ls); renderLib(); };
+    $('#shelves').appendChild(b);
+  });
+  function renderLib(){
+    var q=norm(lq.trim());
+    var list=SOURCES.filter(function(x){
+      if(ls&&x.s!==ls) return false;
+      if(!q) return true;
+      return norm(x.n+' '+x.o+' '+x.w+' '+x.h+' '+x.s).indexOf(q)>=0;
+    });
+    $('#lib-meta').textContent=list.length+' of '+SOURCES.length+' sources'+(ls?' · '+ls:'')+(lq?' · matching “'+lq+'”':'');
+    var browsing = !q;
+    var html=window.SHELVES.filter(function(s){return !ls||s===ls}).map(function(s){
+      var items=list.filter(function(x){return x.s===s});
+      if(!items.length) return '';
+      return '<section class="shelf"><h2>'+esc(s)+'</h2><p class="sub">'+items.length+' '+(items.length===1?'source':'sources')+'</p>'
+        +'<div class="stack'+(browsing?'':' cards')+'">'+items.map(function(x){
+          var i=SOURCES.indexOf(x);
+          return '<button class="spine" data-i="'+i+'" aria-expanded="false" title="'+esc(x.n)+' — '+esc(x.o)+'">'
+            +esc(x.n)+'<span class="blurb">'+esc(x.w)+'</span></button>';
+        }).join('')+'</div></section>';
+    }).join('');
+    $('#lib-results').innerHTML = list.length? html : '<p class="empty">No source matches that. Try “satellite”, “climate”, “boundaries”, “vulnerability”…</p>';
+  }
+  $('#lq').addEventListener('input',function(e){lq=e.target.value;renderLib()});
+
+  /* detail sheet */
+  var sheet=$('#sheet'), lastFocus=null;
+  function openSheet(x,btn){
+    lastFocus=btn;
+    if(btn){document.querySelectorAll('.spine[aria-expanded="true"]').forEach(function(b){b.setAttribute('aria-expanded','false')});btn.setAttribute('aria-expanded','true');}
+    $('#sheet-title').textContent=x.n;
+    $('#sheet-org').textContent=x.o+' · '+x.s;
+    $('#sheet-what').textContent=x.w;
+    $('#sheet-how').textContent=x.h;
+    $('#sheet-cost').textContent=x.c;
+    $('#sheet-go').href=x.u;
+    $('#sheet-go').textContent=x.u.replace(/^https?:\/\//,'').replace(/\/$/,'')+' ↗';
+    sheet.classList.add('open');
+    $('#sheet .close').focus();
+  }
+  function closeSheet(){
+    sheet.classList.remove('open');
+    document.querySelectorAll('.spine[aria-expanded="true"]').forEach(function(b){b.setAttribute('aria-expanded','false')});
+    if(lastFocus) lastFocus.focus();
+  }
+  $('#lib-results').addEventListener('click',function(e){
+    var sp=e.target.closest('.spine'); if(!sp) return;
+    openSheet(SOURCES[+sp.dataset.i],sp);
+  });
+  sheet.addEventListener('click',function(e){ if(e.target.hasAttribute('data-close')) closeSheet(); });
+
+  /* keys */
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&sheet.classList.contains('open')){closeSheet();return}
+    if(e.key==='/'&&!/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)){
+      e.preventDefault();
+      ($('#tab-lib').getAttribute('aria-selected')==='true'?$('#lq'):$('#q')).focus();
+    }
+  });
+
+  show(location.hash.slice(1)==='lib'?'lib':'dict');
+  renderDict(); renderLib();
+})();
+</script>
+</body>
+</html>
