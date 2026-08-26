@@ -110,97 +110,111 @@ body.nav-off .controls{transform:translateY(calc(-100% - 70px))}
 .tag:hover{border-color:var(--sc,var(--accent))}
 mark{background:color-mix(in srgb,var(--accent) 32%,transparent);color:inherit;border-radius:3px;padding:0 1px}
 
-/* ---- library: an actual bookcase ----
-   Each shelf is a wooden case with a dark recess behind it; the sources stand
-   in it as books of their own height and width, so a shelf reads as a shelf at
-   a glance rather than as a row of equal buttons. */
-.shelf{margin:0 0 40px}
-.shelf h2{font-size:1.28rem;margin:0 0 3px;letter-spacing:-.02em;scroll-margin-top:150px;
-  border-left:5px solid var(--sc,var(--accent));padding-left:11px}
-.shelf .sub{font-family:var(--mono);font-size:.72rem;color:var(--sc,var(--muted));padding-left:16px;
-  letter-spacing:.09em;text-transform:uppercase;margin:0 0 12px}
+/* ---- library: one bookcase, a box for every category ----
+   The reference is a real cabinet: a wooden frame divided into cubbies, each
+   holding its own books. One case, boxes side by side, using the whole width
+   of the display rather than a column of separate shelves. */
+#view-lib .wrap{max-width:1720px}
 
-/* the case: wood frame with a dark recess behind the books */
+.bookcase{
+  --wood:#8a5a2e; --wood-lit:#b98449; --wood-dark:#54331a; --recess:#0f0a14; --slot:284px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(470px,1fr));
+  gap:14px;padding:14px;border-radius:10px;
+  background:
+    linear-gradient(150deg,var(--wood-lit),var(--wood) 45%,var(--wood-dark)),
+    var(--wood);
+  border:18px solid transparent;
+  border-image:linear-gradient(160deg,var(--wood-lit),var(--wood) 40%,var(--wood-dark)) 1;
+  box-shadow:0 24px 60px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.22);
+}
+
+/* one cubby = one category */
+.cubby{
+  position:relative;background:var(--recess);border-radius:3px;overflow:hidden;
+  box-shadow:
+    inset 0 16px 30px rgba(0,0,0,.75),
+    inset 0 -8px 20px rgba(0,0,0,.6),
+    inset 0 0 0 1px rgba(0,0,0,.6),
+    0 1px 0 rgba(255,255,255,.14);
+}
+.cubby h3{
+  margin:0;padding:11px 14px 9px;font-size:.82rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--sc,var(--accent));
+  background:linear-gradient(180deg, rgba(0,0,0,.6), transparent);
+  scroll-margin-top:140px;
+}
+.cubby h3 span{float:right;font-family:var(--mono);font-weight:400;color:rgba(255,255,255,.45);letter-spacing:.04em}
+
+/* the books stand in rows; every row gets its own board */
 .stack{
-  --wood:#8a5a2e; --wood-lit:#b07c44; --wood-dark:#5c3a1c; --recess:#140e18; --slot:300px;
-  display:flex;flex-wrap:wrap;gap:0;align-items:flex-end;
-  padding:0;border-radius:8px;
+  display:flex;flex-wrap:wrap;gap:0;align-items:flex-end;padding:0;
   background:
     repeating-linear-gradient(180deg,
-      transparent 0 285px,
-      var(--wood-lit) 285px 288px,
-      var(--wood) 288px 296px,
-      var(--wood-dark) 296px var(--slot)),
-    linear-gradient(180deg, rgba(0,0,0,.45) 0 18px, transparent 18px),
-    var(--recess);
-  background-origin:content-box, padding-box, padding-box;
-  background-repeat:repeat-y, no-repeat, no-repeat;
-  border:14px solid transparent;
-  border-image:linear-gradient(160deg,var(--wood-lit),var(--wood) 42%,var(--wood-dark)) 1;
-  box-shadow:
-    inset 0 20px 36px rgba(0,0,0,.55),
-    inset 0 -6px 18px rgba(0,0,0,.4),
-    0 14px 34px rgba(0,0,0,.34);
+      transparent 0 268px,
+      var(--wood-lit) 268px 271px,
+      var(--wood) 271px 279px,
+      var(--wood-dark) 279px var(--slot));
+  background-repeat:repeat-y;
 }
-
-/* Every source occupies a slot of the same height, so each wrapped row lines up
-   and can carry its own shelf board; the book inside the slot is what varies. */
 .spine{
   position:relative;flex:0 0 auto;cursor:pointer;background:none;border:0;padding:0;
-  width:var(--w,58px);height:var(--slot);
-  display:flex;align-items:flex-end;justify-content:center;
-  font:inherit;color:inherit;
+  width:var(--w,64px);height:var(--slot);
+  display:flex;align-items:flex-end;justify-content:center;font:inherit;color:inherit;
 }
-/* the shadow each row of books casts back onto the board */
-.spine::after{content:"";position:absolute;left:0;right:0;bottom:13px;height:10px;
-  background:radial-gradient(60% 100% at 50% 100%, rgba(0,0,0,.55), transparent 70%)}
+.spine::after{content:"";position:absolute;left:0;right:0;bottom:14px;height:11px;
+  background:radial-gradient(60% 100% at 50% 100%, rgba(0,0,0,.6), transparent 70%)}
 
-/* the book itself */
 .spine .book{
-  position:relative;z-index:1;display:flex;align-items:flex-start;justify-content:center;
-  width:100%;height:var(--h,250px);margin-bottom:15px;
-  border-radius:2px 4px 0 0;padding:14px 5px 18px;
+  position:relative;z-index:1;display:flex;align-items:center;justify-content:center;
+  width:100%;height:var(--h,240px);margin-bottom:16px;
+  border-radius:2px 4px 0 0;padding:16px 4px;
   writing-mode:vertical-rl;text-orientation:mixed;
-  font-size:.86rem;font-weight:600;letter-spacing:.01em;line-height:1.2;
-  color:#fdfbff;text-shadow:0 1px 2px rgba(0,0,0,.55);
+  font-size:var(--fs,1rem);font-weight:700;letter-spacing:.005em;line-height:1.15;
+  color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.75);
+  text-align:center;
   transform:rotate(var(--tilt,0deg));transform-origin:bottom center;
   background:
-    linear-gradient(90deg, rgba(255,255,255,.22) 0 3px, transparent 3px),
-    linear-gradient(90deg, transparent calc(100% - 5px), rgba(0,0,0,.45) calc(100% - 5px)),
+    linear-gradient(90deg, rgba(255,255,255,.24) 0 3px, transparent 3px),
+    linear-gradient(90deg, transparent calc(100% - 6px), rgba(0,0,0,.45) calc(100% - 6px)),
     linear-gradient(165deg,
-      color-mix(in srgb,var(--sc,var(--accent)) 76%, #ffffff),
+      color-mix(in srgb,var(--sc,var(--accent)) 72%, #ffffff),
       var(--sc,var(--accent)) 45%,
-      color-mix(in srgb,var(--sc,var(--accent)) 72%, #000000));
+      color-mix(in srgb,var(--sc,var(--accent)) 68%, #000000));
   overflow:hidden;
   transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
-  box-shadow:2px 0 7px rgba(0,0,0,.5), inset 0 0 0 1px rgba(0,0,0,.2);
+  box-shadow:2px 0 8px rgba(0,0,0,.55), inset 0 0 0 1px rgba(0,0,0,.22);
 }
 /* gilt bands, the way a hardback is tooled */
-.spine .book::before{content:"";position:absolute;left:5px;right:5px;top:10px;height:3px;
-  background:rgba(255,255,255,.55);box-shadow:0 44px 0 rgba(255,255,255,.3)}
-.spine .book::after{content:"";position:absolute;left:5px;right:5px;bottom:9px;height:4px;
-  background:rgba(255,255,255,.42)}
+.spine .book::before{content:"";position:absolute;left:5px;right:5px;top:11px;height:3px;
+  background:rgba(255,255,255,.6)}
+.spine .book::after{content:"";position:absolute;left:5px;right:5px;bottom:11px;height:3px;
+  background:rgba(255,255,255,.5)}
 .spine:hover .book,.spine:focus-visible .book{
-  transform:rotate(var(--tilt,0deg)) translateY(-18px);filter:brightness(1.12);
-  box-shadow:0 18px 32px rgba(0,0,0,.6), inset 0 0 0 1px rgba(255,255,255,.28)}
+  transform:rotate(var(--tilt,0deg)) translateY(-18px);filter:brightness(1.14);
+  box-shadow:0 18px 34px rgba(0,0,0,.65), inset 0 0 0 1px rgba(255,255,255,.3)}
 .spine:focus-visible{outline:none}
 .spine[aria-expanded="true"] .book{
   transform:rotate(var(--tilt,0deg)) translateY(-26px);filter:brightness(1.2)}
 
 /* search results drop the furniture and go back to plain cards */
-.stack.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;
+.bookcase.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;
   background:none;border:0;border-image:none;padding:0;box-shadow:none}
-.stack.cards .spine{width:auto;height:auto;display:block}
-.stack.cards .spine::after{display:none}
-.stack.cards .spine .book{writing-mode:horizontal-tb;height:auto;width:auto;margin:0;transform:none;
+.bookcase.cards .cubby{background:none;box-shadow:none;overflow:visible;grid-column:1/-1}
+.bookcase.cards .cubby h3{background:none;padding:22px 0 10px}
+.bookcase.cards .stack{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:12px;background:none;align-items:stretch}
+.bookcase.cards .spine .book{height:100%}
+.bookcase.cards .spine{width:auto;height:auto;display:block}
+.bookcase.cards .spine::after{display:none}
+.bookcase.cards .spine .book{writing-mode:horizontal-tb;height:auto;width:auto;margin:0;transform:none;
   border:1px solid var(--border);border-left:5px solid var(--sc,var(--accent));
   border-radius:12px;padding:16px 18px;align-items:flex-start;justify-content:flex-start;
-  text-align:left;font-size:1.02rem;box-shadow:none;flex-direction:column;
+  text-align:left;font-size:1.02rem;font-weight:600;box-shadow:none;flex-direction:column;
   background:var(--card);color:var(--fg);text-shadow:none;transition:border-color .16s ease}
-.stack.cards .spine .book::before,.stack.cards .spine .book::after{display:none}
-.stack.cards .spine:hover .book{transform:none;filter:none;border-color:var(--sc,var(--accent));
+.bookcase.cards .spine .book::before,.bookcase.cards .spine .book::after{display:none}
+.bookcase.cards .spine:hover .book{transform:none;filter:none;border-color:var(--sc,var(--accent));
   box-shadow:0 8px 20px rgba(0,0,0,.22)}
-.stack.cards .spine .blurb{display:block;font-weight:400;font-size:.92rem;line-height:1.5;color:var(--muted);margin-top:7px}
+.bookcase.cards .blurb{display:block;font-weight:400;font-size:.92rem;line-height:1.5;color:var(--muted);margin-top:7px}
 .spine .blurb{display:none}
 
 /* ---- detail sheet ---- */
@@ -227,16 +241,18 @@ footer a{color:var(--accent)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 .letter,.shelf h2{scroll-margin-top:24px}
 @media (max-width:600px){
-  .stack{background:none;border:0;border-image:none;padding:0;box-shadow:none;
-    display:grid;grid-template-columns:1fr;gap:10px}
+  .bookcase{display:block;background:none;border:0;border-image:none;padding:0;box-shadow:none}
+  .bookcase .cubby{background:none;box-shadow:none;overflow:visible}
+  .bookcase .cubby h3{background:none;padding:22px 0 10px}
+  .stack{display:grid;grid-template-columns:1fr;gap:10px;background:none}
   .stack .spine{width:auto;height:auto;display:block}
   .stack .spine::after{display:none}
   .stack .spine .book{writing-mode:horizontal-tb;height:auto;width:auto;margin:0;transform:none;
     border:1px solid var(--border);border-left:5px solid var(--sc,var(--accent));border-radius:12px;
     padding:16px 18px;flex-direction:column;align-items:flex-start;box-shadow:none;font-size:1.02rem;
-    background:var(--card);color:var(--fg);text-shadow:none}
+    font-weight:600;background:var(--card);color:var(--fg);text-shadow:none}
   .stack .spine .book::before,.stack .spine .book::after{display:none}
-  .stack .spine .blurb{display:block;font-weight:400;font-size:.92rem;line-height:1.5;color:var(--muted);margin-top:7px}
+  .stack .blurb{display:block;font-weight:400;font-size:.92rem;line-height:1.5;color:var(--muted);margin-top:7px}
   .controls{position:static}
 }
 </style>
@@ -284,7 +300,7 @@ footer a{color:var(--accent)}
   <div class="wrap intro">
     <p class="count" id="lib-count"></p>
     <h1>The library.</h1>
-    <p>Walk the shelves. Instead of books you will find open data sources, open-source technologies and the communities behind them — satellite imagery, street maps, climate records, conflict data, threat feeds — each with a note on how to get at the API and start building.</p>
+    <p>Walk the shelves. Instead of books you will find open data sources, open-source technologies and the communities behind them — satellite imagery, street maps, climate records, conflict data, threat feeds — each with a note on how to get at the API and start building. The thicker the book, the fuller its entry.</p>
   </div>
   <div class="controls"><div class="wrap">
     <div class="search">
@@ -359,6 +375,7 @@ button.addEventListener("click", async () => {
 <script>
 (function(){
   var $=function(s){return document.querySelector(s)};
+  var slug=function(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')};
   var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]})};
   var norm=function(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')};
 
@@ -389,12 +406,20 @@ button.addEventListener("click", async () => {
   }
   function bookStyle(x){
     var h=hash(x.n), base=shelfColour(x.s);
-    /* the title is set vertically, so a long name needs a taller book */
-    var height=Math.min(272,Math.max(190,52+x.n.length*10)+(h%5)*7);
-    var width=46+(h>>3)%30;
+    /* A book is as thick as the entry is substantial: the fuller the write-up —
+       what it is, how to connect, what it costs — the fatter the spine, so a
+       shelf shows at a glance which sources we have covered properly. Entries
+       run from about 170 to 340 characters. */
+    var body=(x.w+' '+x.h+' '+x.c).length;
+    var width=Math.round(Math.min(100,Math.max(42,42+(body-170)/170*58)));
+    /* The title is set vertically, so the book must be tall enough to print it
+       at a readable size; long names get a taller spine. */
+    var height=Math.min(248,Math.max(176,44+x.n.length*11)+(h%4)*8);
     var lean=((h>>9)%11===0)?(((h>>11)%2)?1.6:-1.6):0;
     var tone=base.charAt(0)==='#'?shade(base,(((h>>13)%7)-2)/18):base;
-    return '--h:'+height+'px;--w:'+width+'px;--tilt:'+lean+'deg;--sc:'+tone;
+    /* a long title on a thin spine needs to give a little on size */
+    var fs=(x.n.length>24&&width<64)?'.86rem':(x.n.length>34?'.92rem':'1rem');
+    return '--h:'+height+'px;--w:'+width+'px;--tilt:'+lean+'deg;--sc:'+tone+';--fs:'+fs;
   }
 
   /* theme */
@@ -493,17 +518,21 @@ button.addEventListener("click", async () => {
       return norm(x.n+' '+x.o+' '+x.w+' '+x.h+' '+x.s).indexOf(q)>=0;
     });
     $('#lib-meta').textContent=list.length+' of '+SOURCES.length+' sources'+(ls?' · '+ls:'')+(lq?' · matching “'+lq+'”':'');
+    /* Browsing shows the cabinet: one box per category, side by side.
+       Searching shows plain cards, because that is reading, not browsing. */
     var browsing = !q;
-    var html=window.SHELVES.filter(function(s){return !ls||s===ls}).map(function(s){
+    var boxes=window.SHELVES.filter(function(s){return !ls||s===ls}).map(function(s){
       var items=list.filter(function(x){return x.s===s});
       if(!items.length) return '';
-      return '<section class="shelf" style="--sc:'+shelfColour(s)+'"><h2>'+esc(s)+'</h2><p class="sub">'+items.length+' '+(items.length===1?'source':'sources')+'</p>'
-        +'<div class="stack'+(browsing?'':' cards')+'">'+items.map(function(x){
+      return '<section class="cubby" style="--sc:'+shelfColour(s)+'">'
+        +'<h3 id="S-'+slug(s)+'">'+esc(s)+'<span>'+items.length+'</span></h3>'
+        +'<div class="stack">'+items.map(function(x){
           var i=SOURCES.indexOf(x);
           return '<button class="spine" data-i="'+i+'" style="'+bookStyle(x)+'" aria-expanded="false" title="'+esc(x.n)+' — '+esc(x.o)+'">'
             +'<span class="book">'+esc(x.n)+'<span class="blurb">'+esc(x.w)+'</span></span></button>';
         }).join('')+'</div></section>';
     }).join('');
+    var html='<div class="bookcase'+(browsing?'':' cards')+'">'+boxes+'</div>';
     $('#lib-results').innerHTML = list.length? html : '<p class="empty">No source matches that. Try “satellite”, “climate”, “boundaries”, “vulnerability”…</p>';
   }
   $('#lq').addEventListener('input',function(e){lq=e.target.value;renderLib()});
