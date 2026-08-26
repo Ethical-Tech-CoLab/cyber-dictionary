@@ -118,8 +118,10 @@ mark{background:color-mix(in srgb,var(--accent) 32%,transparent);color:inherit;b
 
 .bookcase{
   --wood:#8a5a2e; --wood-lit:#b98449; --wood-dark:#54331a; --recess:#0f0a14; --slot:284px;
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(470px,1fr));
-  gap:14px;padding:14px;border-radius:10px;
+  /* Boxes are packed by height rather than laid out on a grid: a category with
+     five sources gets a short box instead of being stretched to match a
+     neighbour with fifteen. The books themselves keep their own size. */
+  columns:470px;column-gap:14px;padding:14px;border-radius:10px;
   background:
     linear-gradient(150deg,var(--wood-lit),var(--wood) 45%,var(--wood-dark)),
     var(--wood);
@@ -131,6 +133,7 @@ mark{background:color-mix(in srgb,var(--accent) 32%,transparent);color:inherit;b
 /* one cubby = one category */
 .cubby{
   position:relative;background:var(--recess);border-radius:3px;overflow:hidden;
+  break-inside:avoid;margin:0 0 14px;
   box-shadow:
     inset 0 16px 30px rgba(0,0,0,.75),
     inset 0 -8px 20px rgba(0,0,0,.6),
@@ -197,9 +200,9 @@ mark{background:color-mix(in srgb,var(--accent) 32%,transparent);color:inherit;b
   transform:rotate(var(--tilt,0deg)) translateY(-26px);filter:brightness(1.2)}
 
 /* search results drop the furniture and go back to plain cards */
-.bookcase.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;
+.bookcase.cards{display:block;columns:auto;
   background:none;border:0;border-image:none;padding:0;box-shadow:none}
-.bookcase.cards .cubby{background:none;box-shadow:none;overflow:visible;grid-column:1/-1}
+.bookcase.cards .cubby{background:none;box-shadow:none;overflow:visible;margin:0}
 .bookcase.cards .cubby h3{background:none;padding:22px 0 10px}
 .bookcase.cards .stack{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
   gap:12px;background:none;align-items:stretch}
@@ -241,7 +244,7 @@ footer a{color:var(--accent)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 .letter,.shelf h2{scroll-margin-top:24px}
 @media (max-width:600px){
-  .bookcase{display:block;background:none;border:0;border-image:none;padding:0;box-shadow:none}
+  .bookcase{display:block;columns:auto;background:none;border:0;border-image:none;padding:0;box-shadow:none}
   .bookcase .cubby{background:none;box-shadow:none;overflow:visible}
   .bookcase .cubby h3{background:none;padding:22px 0 10px}
   .stack{display:grid;grid-template-columns:1fr;gap:10px;background:none}
