@@ -118,9 +118,8 @@ mark{background:color-mix(in srgb,var(--accent) 32%,transparent);color:inherit;b
 
 .bookcase{
   --wood:#8a5a2e; --wood-lit:#b98449; --wood-dark:#54331a; --recess:#0f0a14; --slot:284px;
-  /* Boxes are packed by height rather than laid on a grid, so a category with
-     four sources gets a short box and nothing is left standing empty. */
-  columns:470px;column-gap:14px;padding:14px;border-radius:10px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(470px,1fr));
+  gap:14px;padding:14px;border-radius:10px;
   background:
     linear-gradient(150deg,var(--wood-lit),var(--wood) 45%,var(--wood-dark)),
     var(--wood);
@@ -132,7 +131,6 @@ mark{background:color-mix(in srgb,var(--accent) 32%,transparent);color:inherit;b
 /* one cubby = one category */
 .cubby{
   position:relative;background:var(--recess);border-radius:3px;overflow:hidden;
-  break-inside:avoid;margin:0 0 14px;
   box-shadow:
     inset 0 16px 30px rgba(0,0,0,.75),
     inset 0 -8px 20px rgba(0,0,0,.6),
@@ -147,19 +145,19 @@ mark{background:color-mix(in srgb,var(--accent) 32%,transparent);color:inherit;b
 }
 .cubby h3 span{float:right;font-family:var(--mono);font-weight:400;color:rgba(255,255,255,.45);letter-spacing:.04em}
 
-/* The books stand in rows, each on its own board. Rows are balanced in script
-   once the box has been measured, so a category never ends on a shelf holding
-   one book with the rest of the plank bare. */
-.stack{display:block;padding:0}
-.stack .row{display:flex;flex-wrap:nowrap;align-items:flex-end;height:var(--slot);
-  background:linear-gradient(180deg,
-    var(--wood-lit) 0 3px, var(--wood) 3px 11px, var(--wood-dark) 11px 16px)
-    left bottom/100% 16px no-repeat}
+/* the books stand in rows; every row gets its own board */
+.stack{
+  display:flex;flex-wrap:wrap;gap:0;align-items:flex-end;padding:0;
+  background:
+    repeating-linear-gradient(180deg,
+      transparent 0 268px,
+      var(--wood-lit) 268px 271px,
+      var(--wood) 271px 279px,
+      var(--wood-dark) 279px var(--slot));
+  background-repeat:repeat-y;
+}
 .spine{
-  position:relative;cursor:pointer;background:none;border:0;padding:0;
-  /* thickness sets the basis and the share of any slack, so a row always fills
-     the shelf while the fatter entries stay visibly fatter */
-  flex:var(--g,1) 0 var(--w,64px);max-width:calc(var(--w,64px) * 1.75);
+  position:relative;flex:0 0 auto;cursor:pointer;background:none;border:0;padding:0;
   width:var(--w,64px);height:var(--slot);
   display:flex;align-items:flex-end;justify-content:center;font:inherit;color:inherit;
 }
@@ -199,15 +197,14 @@ mark{background:color-mix(in srgb,var(--accent) 32%,transparent);color:inherit;b
   transform:rotate(var(--tilt,0deg)) translateY(-26px);filter:brightness(1.2)}
 
 /* search results drop the furniture and go back to plain cards */
-.bookcase.cards{display:block;columns:auto;
+.bookcase.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;
   background:none;border:0;border-image:none;padding:0;box-shadow:none}
-.bookcase.cards .cubby{background:none;box-shadow:none;overflow:visible;margin:0}
+.bookcase.cards .cubby{background:none;box-shadow:none;overflow:visible;grid-column:1/-1}
 .bookcase.cards .cubby h3{background:none;padding:22px 0 10px}
-.bookcase.cards .row{display:contents}
 .bookcase.cards .stack{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
   gap:12px;background:none;align-items:stretch}
 .bookcase.cards .spine .book{height:100%}
-.bookcase.cards .spine{width:auto;max-width:none;height:auto;display:block;flex:none}
+.bookcase.cards .spine{width:auto;height:auto;display:block}
 .bookcase.cards .spine::after{display:none}
 .bookcase.cards .spine .book{writing-mode:horizontal-tb;height:auto;width:auto;margin:0;transform:none;
   border:1px solid var(--border);border-left:5px solid var(--sc,var(--accent));
@@ -244,12 +241,11 @@ footer a{color:var(--accent)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 .letter,.shelf h2{scroll-margin-top:24px}
 @media (max-width:600px){
-  .bookcase{display:block;columns:auto;background:none;border:0;border-image:none;padding:0;box-shadow:none}
+  .bookcase{display:block;background:none;border:0;border-image:none;padding:0;box-shadow:none}
   .bookcase .cubby{background:none;box-shadow:none;overflow:visible}
   .bookcase .cubby h3{background:none;padding:22px 0 10px}
-  .stack .row{display:contents}
   .stack{display:grid;grid-template-columns:1fr;gap:10px;background:none}
-  .stack .spine{width:auto;max-width:none;height:auto;display:block;flex:none}
+  .stack .spine{width:auto;height:auto;display:block}
   .stack .spine::after{display:none}
   .stack .spine .book{writing-mode:horizontal-tb;height:auto;width:auto;margin:0;transform:none;
     border:1px solid var(--border);border-left:5px solid var(--sc,var(--accent));border-radius:12px;
@@ -423,8 +419,7 @@ button.addEventListener("click", async () => {
     var tone=base.charAt(0)==='#'?shade(base,(((h>>13)%7)-2)/18):base;
     /* a long title on a thin spine needs to give a little on size */
     var fs=(x.n.length>24&&width<64)?'.86rem':(x.n.length>34?'.92rem':'1rem');
-    return '--h:'+height+'px;--w:'+width+'px;--g:'+(width/58).toFixed(2)
-      +';--tilt:'+lean+'deg;--sc:'+tone+';--fs:'+fs;
+    return '--h:'+height+'px;--w:'+width+'px;--tilt:'+lean+'deg;--sc:'+tone+';--fs:'+fs;
   }
 
   /* theme */
@@ -444,7 +439,6 @@ button.addEventListener("click", async () => {
     $('#view-dict').classList.toggle('hidden',!d);
     $('#view-lib').classList.toggle('hidden',d);
     if(location.hash.slice(1)!==which) history.replaceState(null,'','#'+which);
-    if(!d) requestAnimationFrame(function(){ if(window.__balance) window.__balance(); });
   }
   $('#tab-dict').onclick=function(){show('dict')};
   $('#tab-lib').onclick=function(){show('lib')};
@@ -540,37 +534,8 @@ button.addEventListener("click", async () => {
     }).join('');
     var html='<div class="bookcase'+(browsing?'':' cards')+'">'+boxes+'</div>';
     $('#lib-results').innerHTML = list.length? html : '<p class="empty">No source matches that. Try “satellite”, “climate”, “boundaries”, “vulnerability”…</p>';
-    if(browsing) requestAnimationFrame(balance);
   }
   $('#lq').addEventListener('input',function(e){lq=e.target.value;renderLib()});
-
-  /* Flexbox wraps greedily, which leaves the last shelf of a box nearly empty.
-     Once the boxes have a measured width we know how many shelves a category
-     needs, and can spread its books evenly over them instead. */
-  function balance(){
-    document.querySelectorAll('#lib-results .stack').forEach(function(stack){
-      var W=stack.clientWidth;
-      if(!W) return;
-      var books=[].slice.call(stack.querySelectorAll('.spine'));
-      if(!books.length) return;
-      var widths=books.map(function(b){return parseFloat(b.style.getPropertyValue('--w'))||64});
-      var total=widths.reduce(function(a,b){return a+b},0);
-      var rows=Math.max(1,Math.ceil(total/W)), target=total/rows;
-      var frag=document.createDocumentFragment(), row=null, run=0, used=0;
-      books.forEach(function(b,i){
-        var w=widths[i], last=(used===rows);
-        if(!row || (run+w>W) || (!last && used<rows && run+w/2>target)){
-          row=document.createElement('div'); row.className='row';
-          frag.appendChild(row); run=0; used++;
-        }
-        row.appendChild(b); run+=w;
-      });
-      stack.innerHTML=''; stack.appendChild(frag);
-    });
-  }
-  window.__balance=balance;
-  var rt;
-  window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(balance,120)});
 
   /* detail sheet */
   var sheet=$('#sheet'), lastFocus=null;
