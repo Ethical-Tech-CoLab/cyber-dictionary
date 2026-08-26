@@ -55,6 +55,24 @@ Each entry records:
   whether you need a key and what the gotchas are
 - **Access** — free, free tier, non-commercial, or paid
 
+## 3. The printed edition
+
+The same collection set as a book: the dictionary in two justified columns running A to Z,
+the library as catalogue cards walked shelf by shelf. **Read as book** in the header opens
+a page-turning reader over it, and the PDF is at
+[`book/cyber-dictionary.pdf`](book/cyber-dictionary.pdf).
+
+The pages are typeset from `terms.js` and `library.js` — the same two files the search box
+reads — so the printed and searchable editions cannot drift apart in wording. The typesetting
+itself lives in the CoLab website repo at `src/app/print/cyber-dictionary/`, which pulls this
+repo's data with `scripts/sync-cyber-dictionary.mjs` and prints the PDF with
+`npm run render:books cyber-dictionary`. After a substantial round of new entries, re-run
+those two there and copy the result back into `book/`.
+
+The reader is [read-as-book](https://github.com/Ethical-Tech-CoLab/read-as-book) and its
+`page-flip` dependency, both vendored under `vendor/` rather than pulled from a CDN so the
+site stays buildless and needs no network beyond its own origin.
+
 ## Editing
 
 No build step, no dependencies, no framework. Three files do the work:
@@ -69,7 +87,9 @@ to `window.DOMAINS` / `window.SHELVES` first — entries whose category is not l
 will not render.
 
 Open `index.html` in a browser to check your change. It works from `file://` — the data is
-loaded as plain scripts rather than fetched, precisely so it does.
+loaded as plain scripts rather than fetched, precisely so it does. The one exception is the
+book reader, which is an ES module: it needs the page served over HTTP, so use the server
+command below if you are testing that.
 
 ```bash
 git clone https://github.com/Ethical-Tech-CoLab/cyber-dictionary.git

@@ -7,6 +7,7 @@
 <meta name="description" content="A working vocabulary of technology and cybersecurity, defined plainly — plus a library of open data sources and open-source technologies you can build with.">
 <link rel="icon" href="etc-icon.svg" type="image/svg+xml">
 <link rel="icon" href="etc-icon.png" sizes="256x256">
+<link rel="stylesheet" href="vendor/read-as-book/styles.css">
 <style>
 :root{
   --bg:#120c1a; --surface:#1b1226; --card:#201630; --fg:#f3eefb;
@@ -46,6 +47,17 @@ header{border-bottom:1px solid var(--border);position:sticky;top:0;z-index:40;
 .tabs button{font:inherit;font-size:.85rem;border:0;background:transparent;color:var(--muted);
   padding:7px 16px;border-radius:999px;cursor:pointer}
 .tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);font-weight:600}
+.book-btn{border:1px solid var(--border);background:var(--surface);color:var(--fg);
+  font:inherit;font-size:.85rem;border-radius:999px;padding:7px 14px;cursor:pointer;white-space:nowrap}
+.book-btn:hover{border-color:var(--accent);color:var(--accent)}
+/* The viewer ships a dark reader; recolour it to the dictionary's palette so
+   the book does not look borrowed from another site. */
+.rab-overlay{
+  --rab-backdrop:color-mix(in srgb, var(--bg) 82%, #000);
+  --rab-fg:var(--fg); --rab-fg-muted:var(--muted);
+  --rab-border:var(--border); --rab-border-hover:var(--accent);
+  --rab-font:var(--sans);
+}
 .icon-btn{border:1px solid var(--border);background:var(--surface);color:var(--muted);
   border-radius:999px;width:36px;height:36px;cursor:pointer;font-size:.95rem}
 
@@ -164,6 +176,7 @@ footer a{color:var(--accent)}
       <button role="tab" id="tab-dict" aria-selected="true" aria-controls="view-dict">Dictionary</button>
       <button role="tab" id="tab-lib" aria-selected="false" aria-controls="view-lib">Library</button>
     </div>
+    <button class="book-btn" id="read-book" title="Read the whole dictionary as a book">Read as book 📖</button>
     <button class="icon-btn" id="theme" title="Switch theme" aria-label="Switch theme">◐</button>
   </div>
 </header>
@@ -230,6 +243,39 @@ footer a{color:var(--accent)}
   <p>Built and maintained by <a href="https://github.com/Ethical-Tech-CoLab">Ethical Tech CoLab</a>. Definitions and source notes are written in-house; corrections and additions are welcome by pull request.</p>
   <p>Text released under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code under the MIT licence. Every entry in the library links to its own project — check each one's licence before you ship.</p>
 </div></footer>
+
+<!-- The page-turn reader over the printed edition. Both the viewer and its
+     page-flip dependency are vendored under vendor/ rather than pulled from a
+     CDN, so the site stays buildless and keeps working with no network beyond
+     this origin. -->
+<script type="importmap">
+{"imports":{"page-flip":"./vendor/page-flip/page-flip.module.js"}}
+</script>
+<script type="module">
+import { openBookViewer, loadBookManifest } from "./vendor/read-as-book/index.js";
+
+const button = document.getElementById("read-book");
+let book = null; // the manifest, fetched once on first open
+
+button.addEventListener("click", async () => {
+  button.disabled = true;
+  try {
+    book ??= await loadBookManifest("book/pages/manifest.json");
+    openBookViewer({
+      pages: book.pages,
+      aspect: book.aspect,
+      title: "The Cyber Dictionary and Library",
+      pdfUrl: "book/cyber-dictionary.pdf",
+    });
+  } catch (err) {
+    // Nothing to fall back to but the PDF, which is the point of the book anyway.
+    console.error(err);
+    window.open("book/cyber-dictionary.pdf", "_blank", "noopener");
+  } finally {
+    button.disabled = false;
+  }
+});
+</script>
 
 <script src="terms.js"></script>
 <script src="library.js"></script>
