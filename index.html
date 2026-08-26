@@ -36,6 +36,8 @@ a{color:var(--accent)}
 
 /* ---- header ---- */
 header{border-bottom:1px solid var(--border);position:sticky;top:0;z-index:40;
+  transition:transform .22s ease;will-change:transform}
+body.nav-off header{transform:translateY(-100%)}
   background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(12px)}
 .bar{display:flex;align-items:center;gap:14px;padding:14px 0;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--fg)}
@@ -69,6 +71,9 @@ header{border-bottom:1px solid var(--border);position:sticky;top:0;z-index:40;
 
 /* ---- controls ---- */
 .controls{position:sticky;top:65px;z-index:30;padding:12px 0;
+  transition:transform .22s ease;will-change:transform}
+body.nav-off .controls{transform:translateY(calc(-100% - 70px))}
+.controls{
   background:color-mix(in srgb, var(--bg) 92%, transparent);backdrop-filter:blur(12px)}
 .search{display:flex;align-items:center;gap:10px;background:var(--surface);
   border:1px solid var(--border);border-radius:12px;padding:11px 14px}
@@ -79,8 +84,9 @@ header{border-bottom:1px solid var(--border);position:sticky;top:0;z-index:40;
 .chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
 .chip{font:inherit;font-size:.78rem;border:1px solid var(--border);background:transparent;color:var(--muted);
   padding:5px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
-.chip:hover{color:var(--fg);border-color:var(--accent)}
-.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+.chip{border-left:4px solid var(--sc,var(--border))}
+.chip:hover{color:var(--fg);border-color:var(--sc,var(--accent))}
+.chip[aria-pressed="true"]{background:var(--sc,var(--accent));color:#100c18;border-color:var(--sc,var(--accent));font-weight:600}
 .meta{font-family:var(--mono);font-size:.74rem;color:var(--muted);margin:14px 0 0;letter-spacing:.04em}
 
 /* ---- dictionary ---- */
@@ -92,44 +98,51 @@ header{border-bottom:1px solid var(--border);position:sticky;top:0;z-index:40;
 .letter{font-family:var(--mono);font-size:.75rem;letter-spacing:.2em;color:var(--accent);
   border-bottom:1px solid var(--border);padding:26px 0 6px;margin:0 0 14px;scroll-margin-top:150px}
 .terms{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px}
-.term{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:15px 17px}
+.term{background:var(--card);border:1px solid var(--border);border-left:5px solid var(--sc,var(--accent));
+  border-radius:12px;padding:15px 17px}
 .term h3{margin:0;font-size:1rem;letter-spacing:-.01em}
 .term .abbr{display:block;font-family:var(--mono);font-size:.73rem;color:var(--muted);margin-top:3px}
-.term p{margin:9px 0 0;font-size:.9rem;color:color-mix(in srgb,var(--fg) 86%,transparent)}
+.term p{margin:9px 0 0;font-size:.95rem;line-height:1.55;color:color-mix(in srgb,var(--fg) 90%,transparent)}
 .tag{display:inline-block;font-family:var(--mono);font-size:.63rem;letter-spacing:.09em;text-transform:uppercase;
-  color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:2px 9px;margin-top:11px;cursor:pointer}
-.tag:hover{color:var(--accent);border-color:var(--accent)}
+  color:var(--sc,var(--muted));border:1px solid color-mix(in srgb,var(--sc,var(--border)) 50%,transparent);
+  background:color-mix(in srgb,var(--sc,var(--accent)) 12%,transparent);
+  border-radius:999px;padding:3px 10px;margin-top:11px;cursor:pointer}
+.tag:hover{border-color:var(--sc,var(--accent))}
 mark{background:color-mix(in srgb,var(--accent) 32%,transparent);color:inherit;border-radius:3px;padding:0 1px}
 
 /* ---- library ---- */
 .shelf{margin:0 0 34px}
-.shelf h2{font-size:1.15rem;margin:0 0 3px;letter-spacing:-.02em;scroll-margin-top:150px}
-.shelf .sub{font-family:var(--mono);font-size:.7rem;color:var(--muted);letter-spacing:.09em;text-transform:uppercase;margin:0 0 12px}
-.stack{display:flex;gap:5px;flex-wrap:wrap;align-items:flex-end;
+.shelf h2{font-size:1.28rem;margin:0 0 3px;letter-spacing:-.02em;scroll-margin-top:150px;
+  border-left:5px solid var(--sc,var(--accent));padding-left:11px}
+.shelf .sub,.shelf h2{margin-left:0}
+.shelf .sub{font-family:var(--mono);font-size:.72rem;color:var(--sc,var(--muted));padding-left:16px;letter-spacing:.09em;text-transform:uppercase;margin:0 0 12px}
+.stack{display:flex;gap:7px;flex-wrap:wrap;align-items:flex-end;
   background:linear-gradient(180deg,transparent 0%,transparent 82%,var(--shelf) 82%);
   padding:0 10px 14px;border-bottom:5px solid var(--shelf-edge);border-radius:0 0 4px 4px}
 .spine{
-  position:relative;height:190px;min-width:34px;max-width:56px;flex:0 0 auto;cursor:pointer;
-  border:1px solid var(--border);border-radius:3px 3px 0 0;padding:12px 4px;
+  position:relative;height:270px;min-width:50px;max-width:82px;flex:0 0 auto;cursor:pointer;
+  border:1px solid color-mix(in srgb,var(--sc,var(--accent)) 45%,var(--border));
+  border-radius:3px 3px 0 0;padding:16px 6px;
   display:flex;align-items:flex-start;justify-content:center;
   writing-mode:vertical-rl;text-orientation:mixed;
-  font-size:.72rem;font-weight:600;letter-spacing:.01em;line-height:1.15;
-  color:var(--fg);background:var(--card);overflow:hidden;
+  font-size:.9rem;font-weight:600;letter-spacing:.01em;line-height:1.25;
+  color:var(--fg);background:color-mix(in srgb,var(--sc,var(--accent)) 22%,var(--card));
+  overflow:hidden;
   transition:transform .16s ease, box-shadow .16s ease;
   box-shadow:inset -3px 0 0 rgba(0,0,0,.18);
 }
-.spine::after{content:"";position:absolute;inset:auto 0 0 0;height:12px;
-  background:color-mix(in srgb,var(--accent) 60%,transparent)}
+.spine::after{content:"";position:absolute;inset:auto 0 0 0;height:14px;
+  background:var(--sc,var(--accent))}
 .spine:hover,.spine:focus-visible{transform:translateY(-12px);outline:none;
   box-shadow:0 10px 24px rgba(0,0,0,.35), inset -3px 0 0 rgba(0,0,0,.18)}
 .spine[aria-expanded="true"]{transform:translateY(-18px);border-color:var(--accent)}
 .stack.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;
   background:none;border:0;padding:0}
 .stack.cards .spine{writing-mode:horizontal-tb;height:auto;max-width:none;min-width:0;
-  border-radius:12px;padding:14px 16px;align-items:flex-start;justify-content:flex-start;
-  text-align:left;font-size:.95rem;box-shadow:none;flex-direction:column}
-.stack.cards .spine::after{inset:0 auto 0 0;width:4px;height:auto}
-.stack.cards .spine .blurb{display:block;font-weight:400;font-size:.86rem;color:var(--muted);margin-top:6px}
+  border-radius:12px;padding:16px 18px;align-items:flex-start;justify-content:flex-start;
+  text-align:left;font-size:1.02rem;box-shadow:none;flex-direction:column}
+.stack.cards .spine::after{inset:0 auto 0 0;width:5px;height:auto}
+.stack.cards .spine .blurb{display:block;font-weight:400;font-size:.92rem;line-height:1.5;color:var(--muted);margin-top:7px}
 .spine .blurb{display:none}
 
 /* ---- detail sheet ---- */
@@ -154,12 +167,13 @@ footer{border-top:1px solid var(--border);margin-top:60px;padding:26px 0 50px;co
 footer a{color:var(--accent)}
 .hidden{display:none}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.letter,.shelf h2{scroll-margin-top:24px}
 @media (max-width:600px){
   .stack{background:none;border:0;padding:0;display:grid;grid-template-columns:1fr;gap:10px}
   .stack .spine{writing-mode:horizontal-tb;height:auto;max-width:none;border-radius:12px;
-    padding:14px 16px;flex-direction:column;align-items:flex-start;box-shadow:none}
-  .stack .spine::after{inset:0 auto 0 0;width:4px;height:auto}
-  .stack .spine .blurb{display:block;font-weight:400;font-size:.86rem;color:var(--muted);margin-top:6px}
+    padding:16px 18px;flex-direction:column;align-items:flex-start;box-shadow:none;font-size:1.02rem}
+  .stack .spine::after{inset:0 auto 0 0;width:5px;height:auto}
+  .stack .spine .blurb{display:block;font-weight:400;font-size:.92rem;line-height:1.5;color:var(--muted);margin-top:7px}
   .controls{position:static}
 }
 </style>
@@ -285,6 +299,17 @@ button.addEventListener("click", async () => {
   var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]})};
   var norm=function(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')};
 
+  /* One colour per category, so a domain or a shelf is recognisable at a glance
+     before you have read its name. Chosen to stay legible on both themes. */
+  var PALETTE=['#7dd3fc','#a78bfa','#f472b6','#fbbf24','#34d399','#22d3ee',
+               '#fb7185','#c8f04b','#fb923c','#60a5fa','#e879f9','#4ade80','#facc15'];
+  function colourOf(list,name){
+    var i=list.indexOf(name);
+    return i<0?'var(--accent)':PALETTE[i%PALETTE.length];
+  }
+  var domColour=function(d){return colourOf(window.DOMAINS,d)};
+  var shelfColour=function(s){return colourOf(window.SHELVES,s)};
+
   /* theme */
   var t=$('#theme');
   try{ if(localStorage.getItem('cd-theme')) document.documentElement.dataset.theme=localStorage.getItem('cd-theme'); }catch(e){}
@@ -315,6 +340,7 @@ button.addEventListener("click", async () => {
   window.DOMAINS.forEach(function(d){
     var b=document.createElement('button');
     b.className='chip'; b.textContent=d; b.setAttribute('aria-pressed','false');
+    b.style.setProperty('--sc',domColour(d));
     b.onclick=function(){ dd=(dd===d?null:d); paintChips('#domains',dd); renderDict(); };
     $('#domains').appendChild(b);
   });
@@ -348,7 +374,7 @@ button.addEventListener("click", async () => {
     var keys=Object.keys(groups).sort();
     $('#dict-results').innerHTML = list.length? keys.map(function(L){
       return '<h2 class="letter" id="L-'+L+'">'+L+'</h2><div class="terms">'+groups[L].map(function(x){
-        return '<article class="term"><h3>'+hl(x.t,dq)+'</h3>'
+        return '<article class="term" style="--sc:'+domColour(x.d)+'"><h3>'+hl(x.t,dq)+'</h3>'
           +(x.a?'<span class="abbr">'+esc(x.a)+'</span>':'')
           +'<p>'+hl(x.def,dq)+'</p>'
           +'<span class="tag" data-domain="'+esc(x.d)+'">'+esc(x.d)+'</span></article>';
@@ -368,6 +394,7 @@ button.addEventListener("click", async () => {
   window.SHELVES.forEach(function(s){
     var b=document.createElement('button');
     b.className='chip'; b.textContent=s; b.setAttribute('aria-pressed','false');
+    b.style.setProperty('--sc',shelfColour(s));
     b.onclick=function(){ ls=(ls===s?null:s); paintChips('#shelves',ls); renderLib(); };
     $('#shelves').appendChild(b);
   });
@@ -383,7 +410,7 @@ button.addEventListener("click", async () => {
     var html=window.SHELVES.filter(function(s){return !ls||s===ls}).map(function(s){
       var items=list.filter(function(x){return x.s===s});
       if(!items.length) return '';
-      return '<section class="shelf"><h2>'+esc(s)+'</h2><p class="sub">'+items.length+' '+(items.length===1?'source':'sources')+'</p>'
+      return '<section class="shelf" style="--sc:'+shelfColour(s)+'"><h2>'+esc(s)+'</h2><p class="sub">'+items.length+' '+(items.length===1?'source':'sources')+'</p>'
         +'<div class="stack'+(browsing?'':' cards')+'">'+items.map(function(x){
           var i=SOURCES.indexOf(x);
           return '<button class="spine" data-i="'+i+'" aria-expanded="false" title="'+esc(x.n)+' — '+esc(x.o)+'">'
@@ -399,6 +426,7 @@ button.addEventListener("click", async () => {
   function openSheet(x,btn){
     lastFocus=btn;
     if(btn){document.querySelectorAll('.spine[aria-expanded="true"]').forEach(function(b){b.setAttribute('aria-expanded','false')});btn.setAttribute('aria-expanded','true');}
+    $('#sheet .panel').style.setProperty('--sc',shelfColour(x.s));
     $('#sheet-title').textContent=x.n;
     $('#sheet-org').textContent=x.o+' · '+x.s;
     $('#sheet-what').textContent=x.w;
@@ -427,6 +455,25 @@ button.addEventListener("click", async () => {
       e.preventDefault();
       ($('#tab-lib').getAttribute('aria-selected')==='true'?$('#lq'):$('#q')).focus();
     }
+  });
+
+  /* The header and the search bar step out of the way while you are reading
+     downward, and come back the moment you scroll up or reach the top. */
+  var lastY=window.scrollY, ticking=false;
+  function onScroll(){
+    var y=Math.max(0,window.scrollY);
+    if(Math.abs(y-lastY)>6){
+      document.body.classList.toggle('nav-off', y>lastY && y>160);
+      lastY=y;
+    }
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){
+    if(!ticking){ ticking=true; requestAnimationFrame(onScroll); }
+  },{passive:true});
+  /* Typing in a search field or opening the sheet always brings the bar back. */
+  ['#q','#lq'].forEach(function(sel){
+    $(sel).addEventListener('focus',function(){document.body.classList.remove('nav-off')});
   });
 
   show(location.hash.slice(1)==='lib'?'lib':'dict');
