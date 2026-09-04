@@ -16,14 +16,14 @@ underneath it all — and out to the agencies that investigate when it goes wron
 classification and personal-data categories that decide who may see what. Built for quick lookups, not long reading, and divided by term and by
 domain.
 
-**1,014 terms across 15 domains:**
+**1,020 terms across 15 domains:**
 
 | Domain | Terms |
 |---|---|
-| Networking & Protocols | 189 |
+| Networking & Protocols | 192 |
 | Cryptography | 70 |
 | Identity & Access | 75 |
-| Attacks & Exploitation | 68 |
+| Attacks & Exploitation | 71 |
 | Malware & Threat Actors | 56 |
 | Application Security | 41 |
 | Cloud & Infrastructure | 38 |
