@@ -114,7 +114,14 @@ mark{background:color-mix(in srgb,var(--accent) 32%,transparent);color:inherit;b
    The reference is a real cabinet: a wooden frame divided into cubbies, each
    holding its own books. One case, boxes side by side, using the whole width
    of the display rather than a column of separate shelves. */
-#view-lib .wrap{max-width:1720px}
+#view-lib .wrap, #view-dict.shelf .wrap{max-width:1720px}
+
+/* On the shelf the dictionary has nothing to filter yet: no letter rail, and
+   the domain chips would only duplicate the books standing in front of you. */
+#view-dict.shelf #az, #view-dict.shelf .chips{display:none}
+.back{font:inherit;font-size:.82rem;border:1px solid var(--border);background:var(--surface);
+  color:var(--fg);border-radius:999px;padding:6px 14px;cursor:pointer;margin:14px 0 0}
+.back:hover{border-color:var(--accent);color:var(--accent)}
 
 .bookcase{
   --wood:#8a5a2e; --wood-lit:#b98449; --wood-dark:#54331a; --recess:#0f0a14; --slot:284px;
@@ -293,6 +300,7 @@ footer a{color:var(--accent)}
     <div class="chips" id="domains"></div>
   </div></div>
   <div class="wrap">
+    <button class="back hidden" id="dict-back">← All domains</button>
     <nav class="az" id="az" aria-label="Jump to letter"></nav>
     <p class="meta" id="dict-meta"></p>
     <div id="dict-results"></div>
@@ -407,6 +415,30 @@ button.addEventListener("click", async () => {
     var mix=function(c){return Math.round(c+(t-c)*p)};
     return '#'+((1<<24)+(mix(r)<<16)+(mix(g)<<8)+mix(b)).toString(16).slice(1);
   }
+  /* The dictionary shelf: the thirteen domains grouped into cubbies, the way
+     the library groups its sources. A cubby is a part of the job — the wire,
+     the adversary, the software you write, the machines it runs on, the way
+     it is run and governed — and each domain in it stands as its own book. */
+  var DICT_CASE=[
+    ['The wire and who is on it', ['Networking & Protocols','Cryptography','Identity & Access']],
+    ['The adversary',             ['Attacks & Exploitation','Malware & Threat Actors']],
+    ['The software you write',    ['Application Security','Dev & Delivery']],
+    ['The machines it runs on',   ['Cloud & Infrastructure','Endpoints & Systems','Compute & Hardware']],
+    ['Running it and answering for it', ['Defense & Operations','Governance, Risk & Compliance','AI & Emerging Tech']]
+  ];
+
+  /* A domain's spine is as thick as the domain is big, and as tall as its name
+     needs to be printed vertically — the same rules the library books follow. */
+  function domainStyle(d,count){
+    var h=hash(d), base=domColour(d);
+    var width=Math.round(Math.min(104,Math.max(46,46+(count-30)/40*58)));
+    var height=Math.min(248,Math.max(180,40+d.length*7)+(h%4)*8);
+    var lean=((h>>9)%9===0)?(((h>>11)%2)?1.6:-1.6):0;
+    var tone=shade(base,(((h>>13)%7)-2)/18);
+    var fs=(d.length>26?'.82rem':(d.length>18?'.9rem':'1rem'));
+    return '--h:'+height+'px;--w:'+width+'px;--tilt:'+lean+'deg;--sc:'+tone+';--fs:'+fs;
+  }
+
   function bookStyle(x){
     var h=hash(x.n), base=shelfColour(x.s);
     /* A book is as thick as the entry is substantial: the fuller the write-up —
@@ -470,7 +502,31 @@ button.addEventListener("click", async () => {
     if(i<0) return esc(s);
     return esc(s.slice(0,i))+'<mark>'+esc(s.slice(i,i+q.length))+'</mark>'+esc(s.slice(i+q.length));
   }
+  function renderShelf(){
+    var counts={};
+    TERMS.forEach(function(x){counts[x.d]=(counts[x.d]||0)+1});
+    $('#dict-meta').textContent=TERMS.length+' terms · '+window.DOMAINS.length+' domains · pull a book to search inside it';
+    $('#dict-results').innerHTML='<div class="bookcase">'+DICT_CASE.map(function(g){
+      var books=g[1].filter(function(d){return counts[d]});
+      if(!books.length) return '';
+      var n=books.reduce(function(a,d){return a+counts[d]},0);
+      return '<section class="cubby" style="--sc:'+domColour(books[0])+'">'
+        +'<h3>'+esc(g[0])+'<span>'+n+'</span></h3><div class="stack">'
+        +books.map(function(d){
+          return '<button class="spine" data-domain="'+esc(d)+'" style="'+domainStyle(d,counts[d])+'" '
+            +'title="'+esc(d)+' — '+counts[d]+' terms">'
+            +'<span class="book">'+esc(d)+'<span class="blurb">'+counts[d]+' terms</span></span></button>';
+        }).join('')+'</div></section>';
+    }).join('')+'</div>';
+  }
+
   function renderDict(){
+    /* Nothing chosen and nothing typed: you are standing in front of the case. */
+    var shelf = !dd && !dq.trim();
+    $('#view-dict').classList.toggle('shelf',shelf);
+    $('#dict-back').classList.toggle('hidden',shelf);
+    $('#q').placeholder = dd? 'Search within '+dd+'…' : 'Search terms and definitions…';
+    if(shelf){ $('#az').innerHTML=''; renderShelf(); return; }
     var q=norm(dq.trim());
     var list=TERMS.filter(function(x){
       if(dd&&x.d!==dd) return false;
@@ -498,10 +554,19 @@ button.addEventListener("click", async () => {
   }
   $('#q').addEventListener('input',function(e){dq=e.target.value;renderDict()});
   $('#dict-results').addEventListener('click',function(e){
-    var tg=e.target.closest('.tag'); if(!tg) return;
-    dd=tg.dataset.domain; paintChips('#domains',dd); renderDict();
+    var sp=e.target.closest('.spine[data-domain]');
+    var tg=e.target.closest('.tag');
+    var d=sp?sp.dataset.domain:(tg?tg.dataset.domain:null);
+    if(!d) return;
+    dd=d; paintChips('#domains',dd); renderDict();
     window.scrollTo({top:0,behavior:'smooth'});
+    if(sp) $('#q').focus();
   });
+  /* Back to the case: drop the domain and whatever was typed inside it. */
+  $('#dict-back').onclick=function(){
+    dd=null; dq=''; $('#q').value=''; paintChips('#domains',null); renderDict();
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
 
   /* ------- library ------- */
   var SOURCES=window.SOURCES, lq='', ls=null;
