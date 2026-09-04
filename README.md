@@ -65,29 +65,34 @@ Each entry records:
   whether you need a key and what the gotchas are
 - **Access** — free, free tier, non-commercial, or paid
 
-## 3. The printed edition
+## 3. The printed editions
 
-The same collection set as a book: the dictionary in two justified columns running A to Z,
-the library as catalogue cards walked shelf by shelf. **Read as book** in the header opens
-a page-turning reader over it, and the PDF is at
-[`book/cyber-dictionary.pdf`](book/cyber-dictionary.pdf).
+Two volumes, because a dictionary and a catalogue are read differently — one is scanned
+A to Z, the other browsed shelf by shelf.
 
-The pages are typeset from `terms.js` and `library.js` — the same two files the search box
-reads — so the printed and searchable editions cannot drift apart in wording. The typesetting
-itself lives in the CoLab website repo at `src/app/print/cyber-dictionary/`, which pulls this
-repo's data with `scripts/sync-cyber-dictionary.mjs` and prints the PDF with
-`npm run render:books cyber-dictionary`. After a substantial round of new entries, re-run
-those two there and copy the result back into `book/`.
+| | | |
+|---|---|---|
+| **Volume I** | *The Cyber Dictionary* | 1,020 terms, A–Z in two justified columns · [PDF](book/dictionary/cyber-dictionary.pdf) |
+| **Volume II** | *The Database Library* | 105 sources, by shelf, with how to connect · [PDF](book/library/database-library.pdf) |
 
-The reader is [read-as-book](https://github.com/Ethical-Tech-CoLab/read-as-book) and its
-`page-flip` dependency, both vendored under `vendor/` rather than pulled from a CDN so the
-site stays buildless and needs no network beyond its own origin.
+Both are readable in the browser as page-turn books — the two buttons in the header —
+and downloadable as A5 PDFs.
+
+Neither is written by hand. Both are generated from the same `terms.js` and `library.js`
+the site itself loads, so the book can never drift from the website:
+
+```sh
+python3 tools/build_book.py
+```
+
+It prints each volume through headless Chrome, then renders the pages to WebP for the
+in-browser reader. Needs Google Chrome, PyMuPDF and Pillow. Re-run it after adding terms.
 
 ## Editing
 
 No build step, no dependencies, no framework. Three files do the work:
 
-- `terms.js` — the dictionary. `{t: term, a: abbreviation, d: domain, def: definition}`
+- `terms.js` — the dictionary. `{t: term, a: abbreviation, d: domain, def: definition, s: synonyms}`
 - `library.js` — the library. `{n: name, o: organisation, u: url, s: shelf, w: what it is,
   h: how to connect, c: cost}`
 - `index.html` — the whole interface, inline

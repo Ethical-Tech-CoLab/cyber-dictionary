@@ -284,7 +284,8 @@ footer a{color:var(--accent)}
       <button role="tab" id="tab-dict" aria-selected="true" aria-controls="view-dict">Dictionary</button>
       <button role="tab" id="tab-lib" aria-selected="false" aria-controls="view-lib">Database Library</button>
     </div>
-    <button class="book-btn" id="read-book" title="Read the whole dictionary as a book">Read as book 📖</button>
+    <button class="book-btn" data-book="dictionary" title="Read the whole dictionary as a printed book">Read vol. I 📖</button>
+    <button class="book-btn" data-book="library" title="Read the whole database library as a printed book">Read vol. II 📗</button>
     <button class="icon-btn" id="theme" title="Switch theme" aria-label="Switch theme">◐</button>
   </div>
 </header>
@@ -363,26 +364,45 @@ footer a{color:var(--accent)}
 <script type="module">
 import { openBookViewer, loadBookManifest } from "./vendor/read-as-book/index.js";
 
-const button = document.getElementById("read-book");
-let book = null; // the manifest, fetched once on first open
+/* Two volumes, because a dictionary and a catalogue are read differently.
+   Each manifest is fetched the first time that volume is opened, and kept. */
+const VOLUMES = {
+  dictionary: {
+    dir: "book/dictionary",
+    pdf: "cyber-dictionary.pdf",
+    title: "The Cyber Dictionary — Volume I",
+  },
+  library: {
+    dir: "book/library",
+    pdf: "database-library.pdf",
+    title: "The Database Library — Volume II",
+  },
+};
+const loaded = {};
 
-button.addEventListener("click", async () => {
-  button.disabled = true;
-  try {
-    book ??= await loadBookManifest("book/pages/manifest.json");
-    openBookViewer({
-      pages: book.pages,
-      aspect: book.aspect,
-      title: "The Cyber Dictionary and Database Library",
-      pdfUrl: "book/cyber-dictionary.pdf",
-    });
-  } catch (err) {
-    // Nothing to fall back to but the PDF, which is the point of the book anyway.
-    console.error(err);
-    window.open("book/cyber-dictionary.pdf", "_blank", "noopener");
-  } finally {
-    button.disabled = false;
-  }
+document.querySelectorAll("[data-book]").forEach((button) => {
+  button.addEventListener("click", async () => {
+    const key = button.dataset.book, vol = VOLUMES[key];
+    button.disabled = true;
+    try {
+      loaded[key] ??= await loadBookManifest(`${vol.dir}/pages/manifest.json`);
+      const book = loaded[key];
+      openBookViewer({
+        /* loadBookManifest already resolves each page against the manifest's
+           own directory, so these are ready to use as they are. */
+        pages: book.pages,
+        aspect: book.aspect,
+        title: vol.title,
+        pdfUrl: `${vol.dir}/${vol.pdf}`,
+      });
+    } catch (err) {
+      // Nothing to fall back to but the PDF, which is the point of the book anyway.
+      console.error(err);
+      window.open(`${vol.dir}/${vol.pdf}`, "_blank", "noopener");
+    } finally {
+      button.disabled = false;
+    }
+  });
 });
 </script>
 
