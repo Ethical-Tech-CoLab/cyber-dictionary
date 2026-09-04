@@ -524,6 +524,31 @@ button.addEventListener("click", async () => {
     }).join('')+'</div>';
   }
 
+  /* Ranking. A plain substring search is useless for a short query: "tor" is
+     inside history, vector, actor, factor and storage, so the term you wanted
+     lands somewhere in the middle of a hundred alphabetised cards. Matches are
+     scored instead — the title beats the alias beats the definition, a whole
+     word beats a fragment, and the start of a word beats the middle of one. */
+  function wordRe(q){
+    return new RegExp('(^|[^a-z0-9])'+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'i');
+  }
+  function score(x,q){
+    var t=norm(x.t), a=norm(x.a||''), d=norm(x.def), w=wordRe(q), best=0;
+    if(t===q)            best=1000;                     /* the term itself */
+    else if(a===q)       best=900;                      /* its alias */
+    if(t.indexOf(q)===0) best=Math.max(best,800);       /* title starts with it */
+    if(a.indexOf(q)===0) best=Math.max(best,700);       /* alias starts with it */
+    if(w.test(t))        best=Math.max(best,600);       /* whole word in title */
+    if(w.test(a))        best=Math.max(best,500);       /* whole word in alias */
+    if(t.indexOf(q)>=0)  best=Math.max(best,300);       /* buried in title */
+    if(a.indexOf(q)>=0)  best=Math.max(best,250);
+    if(w.test(d))        best=Math.max(best,150);       /* whole word in the definition */
+    if(d.indexOf(q)>=0)  best=Math.max(best,40);        /* buried in the definition */
+    /* Among equals, the shorter title is the more likely answer: for "tor"
+       that is Tor itself, not Tor circuit. */
+    return best? best + Math.max(0,40-x.t.length)/100 : 0;
+  }
+
   function renderDict(){
     /* Nothing chosen and nothing typed: you are standing in front of the case. */
     var shelf = !dd && !dq.trim();
@@ -532,12 +557,51 @@ button.addEventListener("click", async () => {
     $('#q').placeholder = dd? 'Search within '+dd+'…' : 'Search terms and definitions…';
     if(shelf){ $('#az').innerHTML=''; renderShelf(); return; }
     var q=norm(dq.trim());
-    var list=TERMS.filter(function(x){
-      if(dd&&x.d!==dd) return false;
-      if(!q) return true;
-      return norm(x.t).indexOf(q)>=0||norm(x.a||'').indexOf(q)>=0||norm(x.def).indexOf(q)>=0;
-    });
-    $('#dict-meta').textContent=list.length+' of '+TERMS.length+' terms'+(dd?' · '+dd:'')+(dq?' · matching “'+dq+'”':'');
+    var pool=TERMS.filter(function(x){ return !dd||x.d===dd; });
+
+    function card(x){
+      return '<article class="term" style="--sc:'+domColour(x.d)+'"><h3>'+hl(x.t,dq)+'</h3>'
+        +(x.a?'<span class="abbr">'+hl(x.a,dq)+'</span>':'')
+        +'<p>'+hl(x.def,dq)+'</p>'
+        +'<span class="tag" data-domain="'+esc(x.d)+'">'+esc(x.d)+'</span></article>';
+    }
+
+    /* ---- searching: best answers first, alphabet put away ---- */
+    if(q){
+      var hits=[];
+      pool.forEach(function(x){ var sc=score(x,q); if(sc) hits.push([sc,x]); });
+      hits.sort(function(a,b){
+        return b[0]-a[0] || a[1].t.localeCompare(b[1].t,'en',{sensitivity:'base'});
+      });
+      $('#az').innerHTML='';
+      if(!hits.length){
+        $('#dict-meta').textContent='No match for “'+dq+'”'+(dd?' in '+dd:'');
+        $('#dict-results').innerHTML='<p class="empty">Nothing matches that. Try a shorter word'
+          +(dd?'. <button class="back" id="widen">Search every domain instead</button>':'.')+'</p>';
+        return;
+      }
+      /* The strong matches — the term itself, its alias, a whole word in the
+         title — are shown apart from the merely mentioned. */
+      var strong=hits.filter(function(h){return h[0]>=500}),
+          rest  =hits.filter(function(h){return h[0]<500});
+      $('#dict-meta').textContent=hits.length+' match'+(hits.length===1?'':'es')+' for “'+dq+'”'
+        +(dd?' in '+dd:'')+' · best first';
+      var html='';
+      if(strong.length){
+        html+=(rest.length?'<h2 class="letter">Best matches</h2>':'')
+          +'<div class="terms">'+strong.map(function(h){return card(h[1])}).join('')+'</div>';
+      }
+      if(rest.length){
+        html+='<h2 class="letter">Also mentions “'+esc(dq)+'”</h2>'
+          +'<div class="terms">'+rest.map(function(h){return card(h[1])}).join('')+'</div>';
+      }
+      $('#dict-results').innerHTML=html;
+      return;
+    }
+
+    /* ---- browsing a domain: the A–Z list, as before ---- */
+    var list=pool;
+    $('#dict-meta').textContent=list.length+' of '+TERMS.length+' terms'+(dd?' · '+dd:'');
     var groups={}, present={};
     list.forEach(function(x){
       var L=x.t[0].toUpperCase(); if(!/[A-Z]/.test(L)) L='#';
@@ -547,16 +611,18 @@ button.addEventListener("click", async () => {
       return '<a href="#L-'+L+'" class="'+(present[L]?'':'off')+'">'+L+'</a>';
     }).join('');
     var keys=Object.keys(groups).sort();
-    $('#dict-results').innerHTML = list.length? keys.map(function(L){
-      return '<h2 class="letter" id="L-'+L+'">'+L+'</h2><div class="terms">'+groups[L].map(function(x){
-        return '<article class="term" style="--sc:'+domColour(x.d)+'"><h3>'+hl(x.t,dq)+'</h3>'
-          +(x.a?'<span class="abbr">'+esc(x.a)+'</span>':'')
-          +'<p>'+hl(x.def,dq)+'</p>'
-          +'<span class="tag" data-domain="'+esc(x.d)+'">'+esc(x.d)+'</span></article>';
-      }).join('')+'</div>';
-    }).join('') : '<p class="empty">Nothing matches that. Try a shorter word, or clear the domain filter.</p>';
+    $('#dict-results').innerHTML = keys.map(function(L){
+      return '<h2 class="letter" id="L-'+L+'">'+L+'</h2><div class="terms">'
+        +groups[L].map(card).join('')+'</div>';
+    }).join('');
   }
   $('#q').addEventListener('input',function(e){dq=e.target.value;renderDict()});
+  /* A search from inside a domain that finds nothing there should not be a dead
+     end: this widens it to the whole dictionary without losing what was typed. */
+  $('#dict-results').addEventListener('click',function(e){
+    if(!e.target.closest('#widen')) return;
+    dd=null; paintChips('#domains',null); renderDict();
+  });
   $('#dict-results').addEventListener('click',function(e){
     var sp=e.target.closest('.spine[data-domain]');
     var tg=e.target.closest('.tag');
