@@ -37,7 +37,9 @@ domain.
 | Classification & Personal Data | 28 |
 
 Every definition is one or two sentences of plain English, written to answer the question
-you actually had when you looked the term up. Coverage of the classical vocabulary was
+you actually had when you looked the term up. Terms that go by more than one name carry
+their synonyms — *MitM*, *2FA*, *pentest*, *rDNS*, *K8s*, *laptop farm* — which are searched
+and shown, so you find the entry using the words you already use. Coverage of the classical vocabulary was
 checked against the SANS Institute's *Glossary of Security Terms*; the wording here is our
 own throughout.
 

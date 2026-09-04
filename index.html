@@ -103,6 +103,9 @@ body.nav-off .controls{transform:translateY(calc(-100% - 70px))}
 .term h3{margin:0;font-size:1rem;letter-spacing:-.01em}
 .term .abbr{display:block;font-family:var(--mono);font-size:.73rem;color:var(--muted);margin-top:3px}
 .term p{margin:9px 0 0;font-size:.95rem;line-height:1.55;color:color-mix(in srgb,var(--fg) 90%,transparent)}
+.term .syn{margin:9px 0 0;font-size:.82rem;line-height:1.45;color:var(--muted)}
+.term .syn span{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--sc,var(--accent));margin-right:6px}
 .tag{display:inline-block;font-family:var(--mono);font-size:.63rem;letter-spacing:.09em;text-transform:uppercase;
   color:var(--sc,var(--muted));border:1px solid color-mix(in srgb,var(--sc,var(--border)) 50%,transparent);
   background:color-mix(in srgb,var(--sc,var(--accent)) 12%,transparent);
@@ -533,15 +536,23 @@ button.addEventListener("click", async () => {
     return new RegExp('(^|[^a-z0-9])'+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'i');
   }
   function score(x,q){
-    var t=norm(x.t), a=norm(x.a||''), d=norm(x.def), w=wordRe(q), best=0;
+    var t=norm(x.t), a=norm(x.a||''), y=norm(x.s||''), d=norm(x.def), w=wordRe(q), best=0;
+    /* Synonyms are what people actually type. Someone looking for the
+       adversary-in-the-middle attack types "MitM"; someone after Tor types
+       "onion router". An exact synonym is treated as nearly the term itself. */
+    var syns=y?y.split(/\s*,\s*/):[];
     if(t===q)            best=1000;                     /* the term itself */
     else if(a===q)       best=900;                      /* its alias */
+    else if(syns.indexOf(q)>=0) best=880;               /* one of its synonyms, exactly */
     if(t.indexOf(q)===0) best=Math.max(best,800);       /* title starts with it */
     if(a.indexOf(q)===0) best=Math.max(best,700);       /* alias starts with it */
     if(w.test(t))        best=Math.max(best,600);       /* whole word in title */
+    if(syns.some(function(v){return v.indexOf(q)===0})) best=Math.max(best,560);
     if(w.test(a))        best=Math.max(best,500);       /* whole word in alias */
+    if(w.test(y))        best=Math.max(best,480);       /* whole word among the synonyms */
     if(t.indexOf(q)>=0)  best=Math.max(best,300);       /* buried in title */
     if(a.indexOf(q)>=0)  best=Math.max(best,250);
+    if(y.indexOf(q)>=0)  best=Math.max(best,200);
     if(w.test(d))        best=Math.max(best,150);       /* whole word in the definition */
     if(d.indexOf(q)>=0)  best=Math.max(best,40);        /* buried in the definition */
     /* Among equals, the shorter title is the more likely answer: for "tor"
@@ -563,6 +574,7 @@ button.addEventListener("click", async () => {
       return '<article class="term" style="--sc:'+domColour(x.d)+'"><h3>'+hl(x.t,dq)+'</h3>'
         +(x.a?'<span class="abbr">'+hl(x.a,dq)+'</span>':'')
         +'<p>'+hl(x.def,dq)+'</p>'
+        +(x.s?'<p class="syn"><span>also called</span> '+hl(x.s,dq)+'</p>':'')
         +'<span class="tag" data-domain="'+esc(x.d)+'">'+esc(x.d)+'</span></article>';
     }
 
