@@ -36,7 +36,7 @@ domain.
 Every definition is one or two sentences of plain English, written to answer the question
 you actually had when you looked the term up.
 
-## 2. The Library
+## 2. The Database Library
 
 The feeling of walking into a library — except instead of books you find **open data
 sources, open-source technologies and the communities behind them**, ready to wire into a
@@ -107,7 +107,7 @@ Corrections and additions are welcome by pull request. Two rules:
 
 1. **Define it plainly.** If a definition needs another definition to make sense, rewrite it.
    Say what the term means and, where it earns its place, why it matters in practice.
-2. **Library entries must be verifiable.** Link the real project, and describe the access
+2. **Database library entries must be verifiable.** Link the real project, and describe the access
    route specifically enough that someone could follow it — name the API, the client
    library, the key requirement.
 

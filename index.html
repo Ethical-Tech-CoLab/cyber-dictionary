@@ -119,9 +119,11 @@ mark{background:color-mix(in srgb,var(--accent) 32%,transparent);color:inherit;b
 /* On the shelf the dictionary has nothing to filter yet: no letter rail, and
    the domain chips would only duplicate the books standing in front of you. */
 #view-dict.shelf #az, #view-dict.shelf .chips{display:none}
-.back{font:inherit;font-size:.82rem;border:1px solid var(--border);background:var(--surface);
-  color:var(--fg);border-radius:999px;padding:6px 14px;cursor:pointer;margin:14px 0 0}
-.back:hover{border-color:var(--accent);color:var(--accent)}
+.back{font:inherit;font-size:.82rem;font-weight:600;border:1px solid var(--accent);
+  background:var(--accent);color:var(--accent-ink);border-radius:999px;padding:7px 16px;
+  cursor:pointer;margin:0 0 10px;display:inline-block}
+.back:hover{filter:brightness(1.08)}
+.back.hidden{display:none}
 
 .bookcase{
   --wood:#8a5a2e; --wood-lit:#b98449; --wood-dark:#54331a; --recess:#0f0a14; --slot:284px;
@@ -277,7 +279,7 @@ footer a{color:var(--accent)}
     <div class="spacer"></div>
     <div class="tabs" role="tablist">
       <button role="tab" id="tab-dict" aria-selected="true" aria-controls="view-dict">Dictionary</button>
-      <button role="tab" id="tab-lib" aria-selected="false" aria-controls="view-lib">Library</button>
+      <button role="tab" id="tab-lib" aria-selected="false" aria-controls="view-lib">Database Library</button>
     </div>
     <button class="book-btn" id="read-book" title="Read the whole dictionary as a book">Read as book 📖</button>
     <button class="icon-btn" id="theme" title="Switch theme" aria-label="Switch theme">◐</button>
@@ -292,6 +294,7 @@ footer a{color:var(--accent)}
     <p>A working dictionary of the terms, protocols, attacks and frameworks that come up on the job — from <em>zero-day</em> and <em>Kerberoasting</em> to <em>push</em>, <em>commit</em> and <em>deploy</em>, down to the <em>GPU</em>, <em>VRAM</em> and <em>quantisation</em> underneath. Built for quick lookups, not long reading, and divided by term and by domain.</p>
   </div>
   <div class="controls"><div class="wrap">
+    <button class="back hidden" id="dict-back">← Back to the shelves</button>
     <div class="search">
       <span aria-hidden="true">⌕</span>
       <input id="q" type="search" placeholder="Search terms and definitions…" autocomplete="off" aria-label="Search terms">
@@ -300,7 +303,6 @@ footer a{color:var(--accent)}
     <div class="chips" id="domains"></div>
   </div></div>
   <div class="wrap">
-    <button class="back hidden" id="dict-back">← All domains</button>
     <nav class="az" id="az" aria-label="Jump to letter"></nav>
     <p class="meta" id="dict-meta"></p>
     <div id="dict-results"></div>
@@ -310,7 +312,7 @@ footer a{color:var(--accent)}
 <section id="view-lib" role="tabpanel" aria-labelledby="tab-lib" class="hidden">
   <div class="wrap intro">
     <p class="count" id="lib-count"></p>
-    <h1>The library.</h1>
+    <h1>The database library.</h1>
     <p>Walk the shelves. Instead of books you will find open data sources, open-source technologies and the communities behind them — satellite imagery, street maps, climate records, conflict data, threat feeds — each with a note on how to get at the API and start building. The thicker the book, the fuller its entry.</p>
   </div>
   <div class="controls"><div class="wrap">
@@ -368,7 +370,7 @@ button.addEventListener("click", async () => {
     openBookViewer({
       pages: book.pages,
       aspect: book.aspect,
-      title: "The Cyber Dictionary and Library",
+      title: "The Cyber Dictionary and Database Library",
       pdfUrl: "book/cyber-dictionary.pdf",
     });
   } catch (err) {
