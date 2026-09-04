@@ -16,11 +16,11 @@ underneath it all — and out to the agencies that investigate when it goes wron
 classification and personal-data categories that decide who may see what. Built for quick lookups, not long reading, and divided by term and by
 domain.
 
-**1,003 terms across 15 domains:**
+**1,014 terms across 15 domains:**
 
 | Domain | Terms |
 |---|---|
-| Networking & Protocols | 186 |
+| Networking & Protocols | 189 |
 | Cryptography | 70 |
 | Identity & Access | 75 |
 | Attacks & Exploitation | 68 |
@@ -33,7 +33,7 @@ domain.
 | AI & Emerging Tech | 38 |
 | Dev & Delivery | 65 |
 | Compute & Hardware | 54 |
-| Intelligence & Investigations | 62 |
+| Intelligence & Investigations | 70 |
 | Classification & Personal Data | 28 |
 
 Every definition is one or two sentences of plain English, written to answer the question
