@@ -535,8 +535,43 @@ button.addEventListener("click", async () => {
   function wordRe(q){
     return new RegExp('(^|[^a-z0-9])'+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'i');
   }
-  function score(x,q){
-    var t=norm(x.t), a=norm(x.a||''), y=norm(x.s||''), d=norm(x.def), w=wordRe(q), best=0;
+  /* Squashing throws away spaces, hyphens and punctuation, so "MI 5", "MI-5"
+     and "MI5" are the same query, and "att&ck" finds MITRE ATT&CK. */
+  function squash(s){ return norm(s).replace(/[^a-z0-9]+/g,''); }
+
+  /* Edit distance, capped: we only care whether a word is within a typo or two,
+     so the moment every cell in a row exceeds the cap we can stop. */
+  function editDistance(a,b,cap){
+    if(Math.abs(a.length-b.length)>cap) return cap+1;
+    var prev=[], cur=[], i, j;
+    for(j=0;j<=b.length;j++) prev[j]=j;
+    for(i=1;i<=a.length;i++){
+      cur[0]=i; var rowMin=i;
+      for(j=1;j<=b.length;j++){
+        cur[j]=Math.min(prev[j]+1, cur[j-1]+1, prev[j-1]+(a.charAt(i-1)===b.charAt(j-1)?0:1));
+        if(cur[j]<rowMin) rowMin=cur[j];
+      }
+      if(rowMin>cap) return cap+1;
+      prev=cur.slice();
+    }
+    return prev[b.length];
+  }
+  /* The initials of a multi-word name, so "dip" reaches Data in Processing and
+     "mfa" would reach Multi-Factor Authentication even had nobody written the
+     acronym down. Joining words are skipped, the way real acronyms skip them. */
+  var STOP={of:1,the:1,and:1,'for':1,'in':1,to:1,a:1,an:1,on:1,or:1,vs:1,at:1,by:1,'with':1};
+  function initials(name){
+    var words=norm(name).split(/[^a-z0-9]+/).filter(function(w){return w&&!STOP[w]});
+    return words.length>1? words.map(function(w){return w.charAt(0)}).join('') : '';
+  }
+
+  /* How wrong a query is allowed to be: one slip in a short word, two in a
+     long one. Below four characters everything is within one edit of
+     everything else, so no forgiveness there. */
+  function tolerance(n){ return n<4?0:(n<=6?1:2); }
+  function score(x,q,sq){
+    var t=norm(x.t), a=norm(x.a||''), y=norm(x.s||''), d=norm(x.def),
+        dom=norm(x.d), w=wordRe(q), best=0;
     /* Synonyms are what people actually type. Someone looking for the
        adversary-in-the-middle attack types "MitM"; someone after Tor types
        "onion router". An exact synonym is treated as nearly the term itself. */
@@ -554,7 +589,60 @@ button.addEventListener("click", async () => {
     if(a.indexOf(q)>=0)  best=Math.max(best,250);
     if(y.indexOf(q)>=0)  best=Math.max(best,200);
     if(w.test(d))        best=Math.max(best,150);       /* whole word in the definition */
+    if(dom===q)          best=Math.max(best,120);       /* the name of its domain */
+    else if(w.test(dom)) best=Math.max(best,90);
     if(d.indexOf(q)>=0)  best=Math.max(best,40);        /* buried in the definition */
+
+    /* Spacing and punctuation do not count: "MI 5" and "MI-5" find MI5. */
+    if(sq && sq.length>1){
+      var st=squash(x.t), sa=squash(x.a||''), sy=squash(x.s||'');
+      if(st===sq)              best=Math.max(best,990);
+      else if(sa===sq)         best=Math.max(best,890);
+      else if(sy.indexOf(sq)>=0 && syns.some(function(v){return squash(v)===sq})) best=Math.max(best,870);
+      if(st.indexOf(sq)===0)   best=Math.max(best,780);
+      if(sa.indexOf(sq)===0)   best=Math.max(best,690);
+      if(syns.some(function(v){return squash(v).indexOf(sq)===0})) best=Math.max(best,670);
+      if(st.indexOf(sq)>=0)    best=Math.max(best,290);
+      if(sa.indexOf(sq)>=0 || sy.indexOf(sq)>=0) best=Math.max(best,240);
+
+      /* Acronyms nobody has written down: the initials of the name itself. */
+      if(sq.length>=2 && sq.length<=6){
+        var it=initials(x.t), ia=x.a?initials(x.a):'';
+        if(it===sq || ia===sq) best=Math.max(best,640);
+        else if((it&&it.indexOf(sq)===0)||(ia&&ia.indexOf(sq)===0)) best=Math.max(best,280);
+      }
+    }
+
+    /* Last resort: allow the query to be misspelled. Only worth trying when
+       nothing matched outright, and only against the names — being close to a
+       word buried in a definition means nothing. */
+    if(!best && sq && sq.length>=4){
+      var cap=tolerance(sq.length), names=[squash(x.t)];
+      if(x.a) names.push(squash(x.a));
+      for(var k=0;k<syns.length;k++) names.push(squash(syns[k]));
+      names.push(squash(x.d));
+      /* Each individual word too, so a typo in one word of a long name still
+         lands: "attck" against the ATT&CK in MITRE ATT&CK. */
+      (x.t+' '+(x.a||'')+' '+(x.s||'')).split(/[^A-Za-z0-9]+/).forEach(function(word){
+        if(word.length>2) names.push(norm(word));
+      });
+      var bestD=cap+1;
+      for(var m=0;m<names.length;m++){
+        if(!names[m]) continue;
+        var dist=editDistance(sq,names[m],cap);
+        if(dist<bestD) bestD=dist;
+        /* Also forgive a typo inside a longer name: "kerberoasing" against
+           "kerberoasting" is one edit, but "sandwrm" against "sandwormbook"
+           needs the comparison done on the leading stretch. */
+        if(dist>cap && names[m].length>sq.length){
+          var head=editDistance(sq,names[m].slice(0,sq.length+cap),cap);
+          if(head<bestD) bestD=head;
+        }
+        if(bestD===0) break;
+      }
+      if(bestD<=cap) best=460-bestD*20;    /* the "close matches" band */
+    }
+
     /* Among equals, the shorter title is the more likely answer: for "tor"
        that is Tor itself, not Tor circuit. */
     return best? best + Math.max(0,40-x.t.length)/100 : 0;
@@ -580,8 +668,8 @@ button.addEventListener("click", async () => {
 
     /* ---- searching: best answers first, alphabet put away ---- */
     if(q){
-      var hits=[];
-      pool.forEach(function(x){ var sc=score(x,q); if(sc) hits.push([sc,x]); });
+      var sq=squash(dq), hits=[];
+      pool.forEach(function(x){ var sc=score(x,q,sq); if(sc) hits.push([sc,x]); });
       hits.sort(function(a,b){
         return b[0]-a[0] || a[1].t.localeCompare(b[1].t,'en',{sensitivity:'base'});
       });
@@ -595,13 +683,18 @@ button.addEventListener("click", async () => {
       /* The strong matches — the term itself, its alias, a whole word in the
          title — are shown apart from the merely mentioned. */
       var strong=hits.filter(function(h){return h[0]>=500}),
-          rest  =hits.filter(function(h){return h[0]<500});
+          close =hits.filter(function(h){return h[0]>=400&&h[0]<500}),
+          rest  =hits.filter(function(h){return h[0]<400});
       $('#dict-meta').textContent=hits.length+' match'+(hits.length===1?'':'es')+' for “'+dq+'”'
         +(dd?' in '+dd:'')+' · best first';
-      var html='';
+      var html='', banded=(strong.length?1:0)+(close.length?1:0)+(rest.length?1:0);
       if(strong.length){
-        html+=(rest.length?'<h2 class="letter">Best matches</h2>':'')
+        html+=(banded>1?'<h2 class="letter">Best matches</h2>':'')
           +'<div class="terms">'+strong.map(function(h){return card(h[1])}).join('')+'</div>';
+      }
+      if(close.length){
+        html+='<h2 class="letter">'+(strong.length?'Or did you mean':'Did you mean')+'</h2>'
+          +'<div class="terms">'+close.map(function(h){return card(h[1])}).join('')+'</div>';
       }
       if(rest.length){
         html+='<h2 class="letter">Also mentions “'+esc(dq)+'”</h2>'
