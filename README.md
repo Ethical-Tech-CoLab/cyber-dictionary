@@ -12,29 +12,34 @@ Two rooms, one site.
 A working dictionary of the terms, protocols, attacks and frameworks that come up on the
 job — from `zero-day` and `Kerberoasting` down to the everyday delivery vocabulary of
 `push`, `commit`, `sync` and `deploy`, down to the `GPU`, `VRAM` and `quantisation`
-underneath it all. Built for quick lookups, not long reading, and divided by term and by
+underneath it all — and out to the agencies that investigate when it goes wrong, and the
+classification and personal-data categories that decide who may see what. Built for quick lookups, not long reading, and divided by term and by
 domain.
 
-**542 terms across 13 domains:**
+**1,003 terms across 15 domains:**
 
 | Domain | Terms |
 |---|---|
-| Networking & Protocols | 39 |
-| Cryptography | 38 |
-| Identity & Access | 38 |
-| Attacks & Exploitation | 38 |
-| Malware & Threat Actors | 38 |
-| Application Security | 40 |
+| Networking & Protocols | 186 |
+| Cryptography | 70 |
+| Identity & Access | 75 |
+| Attacks & Exploitation | 68 |
+| Malware & Threat Actors | 56 |
+| Application Security | 41 |
 | Cloud & Infrastructure | 38 |
-| Endpoints & Systems | 38 |
-| Defense & Operations | 38 |
-| Governance, Risk & Compliance | 40 |
+| Endpoints & Systems | 77 |
+| Defense & Operations | 71 |
+| Governance, Risk & Compliance | 74 |
 | AI & Emerging Tech | 38 |
 | Dev & Delivery | 65 |
 | Compute & Hardware | 54 |
+| Intelligence & Investigations | 62 |
+| Classification & Personal Data | 28 |
 
 Every definition is one or two sentences of plain English, written to answer the question
-you actually had when you looked the term up.
+you actually had when you looked the term up. Coverage of the classical vocabulary was
+checked against the SANS Institute's *Glossary of Security Terms*; the wording here is our
+own throughout.
 
 ## 2. The Database Library
 

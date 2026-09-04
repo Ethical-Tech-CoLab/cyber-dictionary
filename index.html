@@ -395,7 +395,8 @@ button.addEventListener("click", async () => {
   /* One colour per category, so a domain or a shelf is recognisable at a glance
      before you have read its name. Chosen to stay legible on both themes. */
   var PALETTE=['#7dd3fc','#a78bfa','#f472b6','#fbbf24','#34d399','#22d3ee',
-               '#fb7185','#c8f04b','#fb923c','#60a5fa','#e879f9','#4ade80','#facc15'];
+               '#fb7185','#c8f04b','#fb923c','#60a5fa','#e879f9','#4ade80','#facc15',
+               '#2dd4bf','#f0abfc'];
   function colourOf(list,name){
     var i=list.indexOf(name);
     return i<0?'var(--accent)':PALETTE[i%PALETTE.length];
@@ -426,7 +427,8 @@ button.addEventListener("click", async () => {
     ['The adversary',             ['Attacks & Exploitation','Malware & Threat Actors']],
     ['The software you write',    ['Application Security','Dev & Delivery']],
     ['The machines it runs on',   ['Cloud & Infrastructure','Endpoints & Systems','Compute & Hardware']],
-    ['Running it and answering for it', ['Defense & Operations','Governance, Risk & Compliance','AI & Emerging Tech']]
+    ['Running it and answering for it', ['Defense & Operations','Governance, Risk & Compliance','AI & Emerging Tech']],
+    ['Who investigates, and what they may see', ['Intelligence & Investigations','Classification & Personal Data']]
   ];
 
   /* A domain's spine is as thick as the domain is big, and as tall as its name
