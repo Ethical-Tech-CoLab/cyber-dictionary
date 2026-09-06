@@ -120,6 +120,184 @@ window.CASES = [
   ]
  },
  {
+  "id": "target",
+  "title": "Target",
+  "year": "2013",
+  "where": "United States",
+  "actor": "Criminal group using the BlackPOS point-of-sale malware",
+  "sector": "Retail",
+  "kind": "Payment card breach",
+  "cost": "40m card numbers and 70m customer records; about $292m gross, and the chief executive's job",
+  "terms": [
+   "Third-party risk",
+   "Network segmentation",
+   "Payment card data",
+   "PCI DSS",
+   "Alert fatigue",
+   "Supply chain attack",
+   "Exfiltration",
+   "Least privilege",
+   "Breach notification"
+  ],
+  "sources": [
+   {
+    "title": "US Senate Commerce Committee — a kill chain analysis of the 2013 Target data breach",
+    "url": "https://www.commerce.senate.gov/services/files/24d3c229-4f2f-405d-b8db-a3a67f183883"
+   },
+   {
+    "title": "FTC — Target data breach settlement with state attorneys general",
+    "url": "https://www.ftc.gov/business-guidance/blog/2017/05/lessons-target-data-breach-settlement"
+   }
+  ],
+  "sections": [
+   {
+    "heading": "What happened",
+    "paragraphs": [
+     "Over the American Thanksgiving shopping weekend of 2013, malware sat on Target's checkout tills reading card numbers out of memory as customers paid. Forty million cards were taken, along with names and addresses for another seventy million people. The chief executive and the chief information officer both left, and the case became the reference for board-level accountability over a breach."
+    ]
+   },
+   {
+    "heading": "How it worked",
+    "paragraphs": [
+     "The way in was a heating and ventilation contractor. The firm had credentials to Target's vendor portal for billing and project management, and its own security was what you would expect of a small mechanical services company. Those credentials got the attackers a foothold on Target's corporate network.",
+     "The network then did the rest of the work for them. Nothing meaningful separated the corporate environment from the payment environment, so a supplier login for invoicing eventually reached the tills. On the tills, BlackPOS scraped card data out of memory in the brief moment it is decrypted for processing, staged it on an internal server, and pushed it out to an external address."
+    ]
+   },
+   {
+    "heading": "How it was found",
+    "paragraphs": [
+     "Target's own tooling saw it. A newly installed detection product raised alerts on the exfiltration, and a security team in Bangalore escalated them to Minneapolis. Nobody acted. The breach was eventually confirmed after the US Department of Justice contacted Target, having seen the cards for sale on carding forums.",
+     "The uncomfortable part of this case is that the technology worked and the process did not."
+    ]
+   },
+   {
+    "heading": "What changed",
+    "paragraphs": [
+     "It accelerated the United States' shift to chip cards, which removes the value of the data this attack stole. For everyone else it made three arguments that are now standard: suppliers inherit your risk and must be scoped and segmented accordingly, a payment environment must be genuinely separated rather than nominally so, and an alert nobody acts on is not a detection."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "sony-pictures",
+  "title": "Sony Pictures",
+  "year": "2014",
+  "where": "Culver City, California",
+  "actor": "Guardians of Peace — attributed by the FBI to North Korea",
+  "sector": "Film and entertainment",
+  "kind": "Destructive attack and coercive leak",
+  "cost": "Around $35m in IT remediation; unreleased films, salaries and private mail published",
+  "terms": [
+   "Wiper",
+   "Exfiltration",
+   "Double extortion",
+   "Attribution",
+   "Hacktivist",
+   "Insider threat",
+   "Data classification",
+   "Business continuity",
+   "Cyber warfare"
+  ],
+  "sources": [
+   {
+    "title": "FBI — update on Sony Pictures Entertainment investigation",
+    "url": "https://www.fbi.gov/news/press-releases/update-on-sony-investigation"
+   },
+   {
+    "title": "US Department of Justice — complaint against a North Korean programmer",
+    "url": "https://www.justice.gov/opa/press-release/file/1092091/dl"
+   }
+  ],
+  "sections": [
+   {
+    "heading": "What happened",
+    "paragraphs": [
+     "In November 2014 Sony Pictures employees arrived to find skulls on their screens and their computers wiped. Thousands of machines were destroyed. Over the following weeks the attackers published what they had taken first: unreleased films, executive salaries, medical records, and years of internal email, in instalments timed for maximum press attention.",
+     "The demand, when it came, was that Sony withdraw *The Interview*, a comedy about the assassination of Kim Jong-un. After threats against cinemas, Sony pulled the theatrical release, then reversed and released it online."
+    ]
+   },
+   {
+    "heading": "How it worked",
+    "paragraphs": [
+     "Technically the destruction was straightforward: credentials were harvested, the network was traversed, and a wiper overwrote the master boot records of every machine it reached. Sony's network was flat, its recovery capability was limited, and the malware ran with administrative rights.",
+     "The novel part was the strategy. Destruction alone would have been a costly outage. What made this coercive was publishing — the slow release of embarrassing material kept the story alive for a month, and turned a company's private communications into a lever."
+    ]
+   },
+   {
+    "heading": "How it was found",
+    "paragraphs": [
+     "Impossible to miss. Attribution was the contested part, and unusually the FBI stated it publicly within weeks: code overlaps with malware previously used against South Korean targets, reused infrastructure, and North Korean addresses appearing in the operation. Sceptics argued the evidence shown was thin, and the case became an early public argument about how much a government must disclose to make an attribution credible."
+    ]
+   },
+   {
+    "heading": "What changed",
+    "paragraphs": [
+     "It established the pattern now standard in ransomware — steal first, destroy second, publish as leverage — years before double extortion had a name. It also raised a question companies had not asked: not what happens if our data is stolen, but what happens if all of it is published, including the mail nobody wrote for an audience."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ashley-madison",
+  "title": "Ashley Madison",
+  "year": "2015",
+  "where": "Toronto, and 30m users worldwide",
+  "actor": "The Impact Team",
+  "sector": "Online dating",
+  "kind": "Extortion breach and full public dump",
+  "cost": "About $11.2m in US settlements; the company restructured; deaths linked to the exposure",
+  "terms": [
+   "Exfiltration",
+   "Sensitive PII",
+   "Personally identifiable information",
+   "Data minimisation",
+   "Retention schedule",
+   "bcrypt",
+   "Hash function",
+   "Password cracking",
+   "Breach notification",
+   "Privacy by design"
+  ],
+  "sources": [
+   {
+    "title": "Office of the Privacy Commissioner of Canada and Australian Privacy Commissioner — joint investigation report",
+    "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2016/pipeda-2016-005/"
+   },
+   {
+    "title": "FTC — Ashley Madison settlement",
+    "url": "https://www.ftc.gov/legal-library/browse/cases-proceedings/152-3284-ashley-madison"
+   }
+  ],
+  "sections": [
+   {
+    "heading": "What happened",
+    "paragraphs": [
+     "In July 2015 a group calling itself the Impact Team told Avid Life Media to shut down Ashley Madison, a site for arranging affairs, or they would publish everything. The company did not. In August the attackers released the full customer database — names, addresses, payment records, sexual preferences, and the messages — for anyone to download.",
+     "The consequences were not measured in fraud losses. Users were blackmailed, outed and divorced, and several deaths were linked to the exposure. It remains the clearest demonstration that a breach's harm depends on what the data is, not how much of it there is."
+    ]
+   },
+   {
+    "heading": "How it worked",
+    "paragraphs": [
+     "The intrusion itself was never fully explained publicly. What the regulators established was what surrounded it: no documented security policy, no risk management framework, weak authentication for administrative access, and a shared credential regime that made the network easy to move through once entered.",
+     "Two decisions made it far worse. Passwords were stored with bcrypt — genuinely good — but a legacy token in the same database used weak hashing, so most of them fell anyway. And the company charged users for a \"full delete\" while retaining their payment records, which is the detail that turned a breach into a regulatory finding and a class action."
+    ]
+   },
+   {
+    "heading": "How it was found",
+    "paragraphs": [
+     "The attackers announced it themselves. The investigation that mattered was the regulators': Canada's Privacy Commissioner and Australia's, jointly, examined not the intrusion but the company's handling of data it had promised to protect and delete. Their report is still one of the more readable statements of what \"appropriate safeguards\" is supposed to mean."
+    ]
+   },
+   {
+    "heading": "What changed",
+    "paragraphs": [
+     "It made data minimisation and retention concrete rather than theoretical. Holding data you no longer need is not neutral storage cost; it is retained liability that will be published in full one day. It also broke the assumption that a breach's severity scales with record count: thirty million rows here did more human damage than hundreds of millions of card numbers elsewhere, because of what the rows said."
+    ]
+   }
+  ]
+ },
+ {
   "id": "mirai",
   "title": "Mirai",
   "year": "2016",
@@ -173,6 +351,67 @@ window.CASES = [
     "heading": "What changed",
     "paragraphs": [
      "It put device security into law. California's SB-327 and the UK's Product Security and Telecommunications Infrastructure Act both ban universal default passwords on consumer connected devices, and both trace directly to Mirai. It also made a structural point the industry had been avoiding: the security of the internet depends on equipment whose owners have no way to patch it and no reason to care, and whose manufacturers had no obligation to either."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "bangladesh-bank",
+  "title": "The Bangladesh Bank heist",
+  "year": "2016",
+  "where": "Dhaka, New York, Manila",
+  "actor": "Lazarus Group — North Korea",
+  "sector": "Central banking, international payments",
+  "kind": "Payment fraud",
+  "cost": "$81m stolen; $851m more attempted and stopped by a spelling mistake",
+  "terms": [
+   "SWIFT",
+   "Payment fraud",
+   "Malware",
+   "Persistence",
+   "Lazarus Group",
+   "Money mule",
+   "Cash-out",
+   "Segregation of duties",
+   "Audit trail",
+   "Insider threat"
+  ],
+  "sources": [
+   {
+    "title": "US Department of Justice — complaint against Park Jin Hyok",
+    "url": "https://www.justice.gov/opa/press-release/file/1092091/dl"
+   },
+   {
+    "title": "SWIFT — customer security programme, established after the 2016 attacks",
+    "url": "https://www.swift.com/myswift/customer-security-programme-csp"
+   }
+  ],
+  "sections": [
+   {
+    "heading": "What happened",
+    "paragraphs": [
+     "Over a weekend in February 2016, thirty-five payment instructions went out from Bangladesh Bank's account at the Federal Reserve Bank of New York, asking for nearly $1bn to be moved to accounts in the Philippines and Sri Lanka. Five succeeded. Eighty-one million dollars went into Manila casinos and largely vanished.",
+     "The rest were stopped because one instruction spelled the recipient \"Shalika Fandation\" instead of Foundation, which prompted a routine query, which prompted a look at the others."
+    ]
+   },
+   {
+    "heading": "How it worked",
+    "paragraphs": [
+     "The attackers were inside the bank's network for weeks first, quietly learning how its payments actually worked. They then used legitimate SWIFT credentials to submit genuine, correctly formatted instructions. Nothing about the messages was malformed; from New York's side, the customer had asked.",
+     "The sophistication was in hiding the evidence. Custom malware interfered with the bank's SWIFT software so the confirmations would not appear, and manipulated the printer that produced the paper audit trail — the copies staff would have read on Monday morning. The timing exploited the weekend gap between Bangladeshi, American and Philippine banking calendars, buying days before anyone could reconcile."
+    ]
+   },
+   {
+    "heading": "How it was found",
+    "paragraphs": [
+     "By the typing error, then by reconciliation. Once queried, the bank discovered its own records were being suppressed. Recovery of the money largely failed: it moved through casinos, which at the time sat outside Philippine anti-money-laundering rules.",
+     "Attribution to North Korea came from code shared with earlier Lazarus operations, and the 2018 US complaint against Park Jin Hyok laid out the same infrastructure connecting this, Sony and WannaCry."
+    ]
+   },
+   {
+    "heading": "What changed",
+    "paragraphs": [
+     "It ended the assumption that the interbank messaging network was safe because its members were. SWIFT's Customer Security Programme, with mandatory controls and annual attestation, exists because of this attack. It also demonstrated a category of fraud where nothing is technically forged — the credentials, the format and the authorisation are all real, and the attack is against the process rather than the protocol."
     ]
    }
   ]
@@ -646,6 +885,303 @@ window.CASES = [
     "heading": "What changed",
     "paragraphs": [
      "It made software bills of materials a requirement rather than an aspiration, and gave composition analysis tooling its business case. The US Cyber Safety Review Board's report concluded that Log4Shell would be exploited for a decade and framed the deeper issue: critical infrastructure resting on unfunded volunteer maintenance. Open source funding initiatives that exist today were argued for on the back of this event."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "hse-ireland",
+  "title": "The Irish health service",
+  "year": "2021",
+  "where": "Ireland, nationally",
+  "actor": "Conti — a Russian-speaking ransomware operation",
+  "sector": "Public healthcare",
+  "kind": "Ransomware",
+  "cost": "Over €100m in response and recovery; months of disruption to cancer and diagnostic services",
+  "terms": [
+   "Ransomware",
+   "Phishing",
+   "Lateral movement",
+   "Dwell time",
+   "Business continuity",
+   "Disaster recovery",
+   "Endpoint",
+   "Legacy system",
+   "Critical infrastructure",
+   "Double extortion"
+  ],
+  "sources": [
+   {
+    "title": "PwC — independent post-incident review for the Irish Health Service Executive",
+    "url": "https://www.hse.ie/eng/services/publications/conti-cyber-attack-on-the-hse-full-report.pdf"
+   },
+   {
+    "title": "Ireland's National Cyber Security Centre",
+    "url": "https://www.ncsc.gov.ie/"
+   }
+  ],
+  "sections": [
+   {
+    "heading": "What happened",
+    "paragraphs": [
+     "On 14 May 2021 ransomware encrypted the systems of Ireland's Health Service Executive, the body that runs the country's public hospitals. Radiology, laboratories, maternity records and cancer treatment scheduling went down together. Staff reverted to paper for months. Chemotherapy and radiotherapy appointments were delayed. The HSE did not pay."
+    ]
+   },
+   {
+    "heading": "How it worked",
+    "paragraphs": [
+     "The entry was a malicious Excel attachment opened on a single workstation on 18 March — eight weeks before the encryption. From there the attackers spent two months moving through the network, gaining domain administrator rights, and reaching six other hospital networks along the way.",
+     "The published review is unusually frank about why nobody stopped them. Alerts fired repeatedly and were not investigated. Antivirus detections were treated as resolved when a file was quarantined, not as evidence of an actor. Much of the estate ran unsupported Windows. There was no single security operations function with authority over the whole health service, and no reliable inventory of what it consisted of."
+    ]
+   },
+   {
+    "heading": "How it was found",
+    "paragraphs": [
+     "When it encrypted. The eight-week dwell time is the finding: this was not a fast, quiet operation, and every stage generated signals in tools the organisation already owned.",
+     "The recovery is worth the same attention. Conti provided a decryption key without payment — most likely to reduce the political heat — but it was slow and partial, and rebuilding still took months. The HSE also obtained a High Court injunction against publication of the stolen patient data."
+    ]
+   },
+   {
+    "heading": "What changed",
+    "paragraphs": [
+     "It is the case that forces health systems to reckon with cyber risk as clinical risk, not administrative risk. The review's recommendations — a proper security function, executive ownership, an accurate asset inventory, tested recovery, retirement of unsupported systems — became the template other national health bodies were measured against. It also showed that not paying is survivable, and expensive."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "costa-rica",
+  "title": "Conti against Costa Rica",
+  "year": "2022",
+  "where": "Costa Rica, nationally",
+  "actor": "Conti, then Hive",
+  "sector": "National government — finance, customs, health, payroll",
+  "kind": "Ransomware against a state",
+  "cost": "Estimates around $30m a day at the peak; a national emergency declared",
+  "terms": [
+   "Ransomware",
+   "Ransomware-as-a-service",
+   "Double extortion",
+   "Critical infrastructure",
+   "Cyber warfare",
+   "Attribution",
+   "Business continuity",
+   "Threat actor",
+   "Initial access broker"
+  ],
+  "sources": [
+   {
+    "title": "US Department of State — Rewards for Justice offer on Conti",
+    "url": "https://rewardsforjustice.net/rewards/conti/"
+   },
+   {
+    "title": "CISA — Conti ransomware advisory",
+    "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-265a"
+   }
+  ],
+  "sections": [
+   {
+    "heading": "What happened",
+    "paragraphs": [
+     "In April 2022 Conti encrypted the Costa Rican Ministry of Finance, then spread across government. Customs stopped, so trade backed up at the borders. Tax collection stopped. Public sector payroll stopped. In May the newly inaugurated president declared a national state of emergency over a cyber attack — the first time any country had done so.",
+     "Conti demanded $10m, then $20m, and publicly called for the government to be overthrown. Weeks later Hive ransomware hit the country's health service."
+    ]
+   },
+   {
+    "heading": "How it worked",
+    "paragraphs": [
+     "The intrusion itself was ordinary: stolen credentials and a foothold in one ministry, then lateral movement across a government estate with little separation between departments and no central security operations capability. Nothing about the technique was novel.",
+     "The significance is structural. Conti was a ransomware-as-a-service business with an affiliate model, revenue, and internal management — and it took on a sovereign state as a commercial target. The public rhetoric about overthrowing the government also served a purpose: Conti was, at that moment, badly damaged by the leak of its own internal chats after declaring support for Russia's invasion of Ukraine, and the Costa Rica operation was partly cover for winding the brand down and dispersing into successor groups."
+    ]
+   },
+   {
+    "heading": "How it was found",
+    "paragraphs": [
+     "Immediately, and publicly — the point was visibility. The interesting investigation was into Conti itself: the leaked chat logs gave researchers and governments an unprecedented view of a ransomware business from the inside, including salaries, hiring, and management complaints."
+    ]
+   },
+   {
+    "heading": "What changed",
+    "paragraphs": [
+     "It moved ransomware from an economic crime to a question of national resilience. A criminal group, with no state direction, disrupted a country's government for months. It also sharpened the deterrence problem: nobody could be extradited, sanctions bit only lightly, and the brand simply dissolved and reformed. Rewards for Justice put up $10m for information on Conti's leadership, which is what a state does when its usual instruments do not reach."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "british-library",
+  "title": "The British Library",
+  "year": "2023",
+  "where": "London",
+  "actor": "Rhysida — a ransomware-as-a-service operation",
+  "sector": "National library, cultural heritage",
+  "kind": "Ransomware and data leak",
+  "cost": "Around £6–7m in rebuilding; core services degraded for well over a year",
+  "terms": [
+   "Ransomware",
+   "Multi-factor authentication",
+   "Legacy system",
+   "Terminal server",
+   "Exfiltration",
+   "Double extortion",
+   "Business continuity",
+   "Disaster recovery",
+   "Technical debt",
+   "Personally identifiable information"
+  ],
+  "sources": [
+   {
+    "title": "British Library — Learning Lessons from the Cyber-Attack (2024)",
+    "url": "https://www.bl.uk/home/british-library-cyber-incident-review-8-march-2024.pdf"
+   },
+   {
+    "title": "UK National Cyber Security Centre — ransomware guidance",
+    "url": "https://www.ncsc.gov.uk/ransomware/home"
+   }
+  ],
+  "sections": [
+   {
+    "heading": "What happened",
+    "paragraphs": [
+     "In October 2023 Rhysida encrypted the British Library's systems and stole around 600GB of data, including staff personal information. The Library refused to pay. The data was auctioned, then dumped. The catalogue — the record of a national collection built over centuries — was unavailable for months, and full service restoration ran years, not weeks."
+    ]
+   },
+   {
+    "heading": "How it worked",
+    "paragraphs": [
+     "The attackers entered through a terminal services server, installed for supplier and partner access, that did not require multi-factor authentication. Once in, they escalated to domain administrator, spent days copying data out, and then encrypted and destroyed servers on their way out — including some of the infrastructure needed to rebuild.",
+     "What made recovery so long was not the encryption but the estate. The Library ran a large amount of ageing, deeply interdependent, in some cases unsupported software, much of it customised over decades. Restoring it as it was would have meant restoring the vulnerabilities. Rebuilding meant a modernisation programme nobody had budgeted for, executed under emergency conditions."
+    ]
+   },
+   {
+    "heading": "How it was found",
+    "paragraphs": [
+     "The attack announced itself. What distinguishes this case is what the institution did next: it published a detailed, self-critical review naming its own failures — the missing multi-factor authentication, the historic underinvestment, the absence of a full network diagram, the reliance on legacy systems — and released it for other organisations to learn from."
+    ]
+   },
+   {
+    "heading": "What changed",
+    "paragraphs": [
+     "The published review is the artefact. Very few victims describe their own shortcomings in public with that specificity, and it has become required reading in the cultural and public sectors. Its central lesson is about technical debt: the incident was ordinary, and the consequences were extraordinary because of what had been deferred for twenty years. The recovery cost is not what the attack did — it is what the estate made unavoidable."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "jaguar-land-rover",
+  "title": "Jaguar Land Rover",
+  "year": "2025",
+  "where": "United Kingdom, and its global supply chain",
+  "actor": "Claimed by a group associated with the Scattered Spider and Lapsus$ ecosystem",
+  "sector": "Automotive manufacturing",
+  "kind": "Attack causing a production shutdown",
+  "cost": "Reported as the costliest cyber attack on the UK to date; production halted for weeks and a £1.5bn government loan guarantee arranged",
+  "terms": [
+   "Ransomware",
+   "Social engineering",
+   "OT / ICS",
+   "Business continuity",
+   "Supply chain attack",
+   "Third-party risk",
+   "Critical infrastructure",
+   "Just-in-time manufacturing",
+   "Enterprise risk management"
+  ],
+  "sources": [
+   {
+    "title": "UK National Cyber Security Centre",
+    "url": "https://www.ncsc.gov.uk/"
+   },
+   {
+    "title": "UK Government — support for Jaguar Land Rover's supply chain",
+    "url": "https://www.gov.uk/government/organisations/department-for-business-and-trade"
+   }
+  ],
+  "sections": [
+   {
+    "heading": "What happened",
+    "paragraphs": [
+     "In autumn 2025 Jaguar Land Rover stopped building cars. The company shut down its systems in response to a cyber attack, and its factories in the UK, Slovakia, Brazil, India and China went quiet for weeks. Production restarted only gradually.",
+     "The damage did not stay inside JLR. Its suppliers — many of them small, most of them dependent on a just-in-time schedule and on being paid for what they deliver — had no orders and no payments. The UK government eventually underwrote a £1.5bn loan guarantee to keep that supply chain solvent, an unprecedented intervention in response to a cyber incident."
+    ]
+   },
+   {
+    "heading": "How it worked",
+    "paragraphs": [
+     "The company has said comparatively little publicly. What is clear is the shape of the harm: the systems that stopped were the ones that schedule production, track parts and pay suppliers, and modern manufacturing cannot run for long without them. The IT systems were the plant, in the sense that mattered.",
+     "The attack sits in the same ecosystem as the 2025 retail attacks — young, English-speaking, social-engineering-led groups who buy or talk their way into identity systems rather than exploiting software."
+    ]
+   },
+   {
+    "heading": "How it was found",
+    "paragraphs": [
+     "Through the shutdown, which JLR initiated itself as containment. The economically interesting question is not detection but dependency: how long a manufacturer can operate without its systems, and who bears the loss while it cannot."
+    ]
+   },
+   {
+    "heading": "What changed",
+    "paragraphs": [
+     "It made cyber risk a matter of industrial policy. A government guaranteeing loans to suppliers because a private company's IT was compromised is a new category of consequence, and it forces two questions into the open: whether the largest firms in a supply chain owe resilience obligations to the small ones beneath them, and whether just-in-time manufacturing, optimised for cost, has left no slack for this kind of failure."
+    ]
+   }
+  ]
+ },
+ {
+  "id": "marks-and-spencer",
+  "title": "Marks & Spencer",
+  "year": "2025",
+  "where": "United Kingdom",
+  "actor": "Scattered Spider, deploying DragonForce ransomware",
+  "sector": "Retail",
+  "kind": "Social engineering into ransomware",
+  "cost": "Around £300m of operating profit; online ordering suspended for roughly six weeks",
+  "terms": [
+   "Social engineering",
+   "Vishing",
+   "Help desk fraud",
+   "Third-party risk",
+   "Multi-factor authentication",
+   "Ransomware",
+   "Account takeover",
+   "Privileged access management",
+   "Business continuity",
+   "Identity lifecycle"
+  ],
+  "sources": [
+   {
+    "title": "UK National Cyber Security Centre — advice following the 2025 retail attacks",
+    "url": "https://www.ncsc.gov.uk/news/incidents-impacting-retailers-recommendations-from-the-ncsc"
+   },
+   {
+    "title": "Marks & Spencer plc — regulatory announcements and results statements",
+    "url": "https://corporate.marksandspencer.com/investors"
+   }
+  ],
+  "sections": [
+   {
+    "heading": "What happened",
+    "paragraphs": [
+     "Over the Easter weekend of 2025, Marks & Spencer's systems were disrupted. Contactless payment and click-and-collect failed first; then online ordering was suspended entirely and stayed off for about six weeks, through what is normally a strong trading period. Empty shelves appeared in stores as logistics systems went down. The company put the hit to operating profit at roughly £300m before insurance and mitigation.",
+     "Co-op and Harrods were attacked in the same period, by the same crew."
+    ]
+   },
+   {
+    "heading": "How it worked",
+    "paragraphs": [
+     "Not through a vulnerability. Scattered Spider is an English-speaking, largely young, social-engineering group whose speciality is the help desk: call IT support, impersonate an employee convincingly enough — using details harvested from LinkedIn, breaches and public records — and have a password reset or a multi-factor device re-enrolled. Reporting indicated the initial compromise came via a third party providing IT support services.",
+     "From that account they escalated, moved to the identity infrastructure, and eventually deployed DragonForce ransomware. The technical stage was the last stage."
+    ]
+   },
+   {
+    "heading": "How it was found",
+    "paragraphs": [
+     "Customers found it, at the tills. The point of interest is the target: the group attacks the identity recovery process, which exists precisely to help people who have lost access, and which is therefore designed to be accommodating. Every control that protects an account can be undone by the process for restoring it."
+    ]
+   },
+   {
+    "heading": "What changed",
+    "paragraphs": [
+     "It moved help desk verification from a service-quality question to a security control. The NCSC's guidance after the retail attacks focused on exactly that: how support staff verify identity before resetting a factor, whether privileged accounts can be reset by phone at all, and how third-party support providers are held to the same standard. It also demonstrated at scale that the modern perimeter is a person answering a phone."
     ]
    }
   ]

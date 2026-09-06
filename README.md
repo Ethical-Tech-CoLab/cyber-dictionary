@@ -16,25 +16,25 @@ underneath it all — and out to the agencies that investigate when it goes wron
 classification and personal-data categories that decide who may see what. Built for quick lookups, not long reading, and divided by term and by
 domain.
 
-**1,142 terms across 15 domains:**
+**1,170 terms across 15 domains:**
 
 | Domain | Terms |
 |---|---|
-| Networking & Protocols | 204 |
-| Cryptography | 80 |
+| Networking & Protocols | 205 |
+| Cryptography | 81 |
 | Identity & Access | 89 |
-| Attacks & Exploitation | 109 |
-| Malware & Threat Actors | 59 |
+| Attacks & Exploitation | 112 |
+| Malware & Threat Actors | 61 |
 | Application Security | 62 |
 | Cloud & Infrastructure | 42 |
-| Endpoints & Systems | 84 |
+| Endpoints & Systems | 85 |
 | Defense & Operations | 78 |
-| Governance, Risk & Compliance | 74 |
+| Governance, Risk & Compliance | 77 |
 | AI & Emerging Tech | 38 |
 | Dev & Delivery | 65 |
 | Compute & Hardware | 54 |
-| Intelligence & Investigations | 76 |
-| Classification & Personal Data | 28 |
+| Intelligence & Investigations | 92 |
+| Classification & Personal Data | 29 |
 
 Every definition is one or two sentences of plain English, written to answer the question
 you actually had when you looked the term up. Terms that go by more than one name carry
@@ -67,9 +67,11 @@ Each entry records:
 
 ## 3. The case studies
 
-Eleven documented incidents — Stuxnet, Silk Road, Mirai, Equifax, WannaCry, NotPetya,
-SolarWinds, the 2020 Twitter takeover, Colonial Pipeline, Log4Shell, and the North Korean
-IT worker schemes — each written to the same four headings: what happened, how it worked,
+Twenty documented incidents, 2010 to 2025 — Stuxnet, Silk Road, Target, Sony Pictures,
+Ashley Madison, Mirai, the Bangladesh Bank heist, Equifax, NotPetya, WannaCry, SolarWinds,
+the 2020 Twitter takeover, Colonial Pipeline, Log4Shell, the Irish health service, Conti
+against Costa Rica, the British Library, Jaguar Land Rover, Marks & Spencer, and the North
+Korean IT worker schemes — each written to the same four headings: what happened, how it worked,
 how it was found, and what changed. The third is usually the most interesting.
 
 Every case cites public primary sources, and cross-references the dictionary terms it turns
@@ -90,7 +92,7 @@ A to Z, the other browsed shelf by shelf.
 
 | | | |
 |---|---|---|
-| **Volume I** | *The Cyber Dictionary* | 1,142 terms, A–Z in two justified columns · [PDF](book/dictionary/cyber-dictionary.pdf) |
+| **Volume I** | *The Cyber Dictionary* | 1,170 terms, A–Z in two justified columns · [PDF](book/dictionary/cyber-dictionary.pdf) |
 | **Volume II** | *The Database Library* | 105 sources, by shelf, with how to connect · [PDF](book/library/database-library.pdf) |
 
 Both are readable in the browser as page-turn books — the two buttons in the header —
