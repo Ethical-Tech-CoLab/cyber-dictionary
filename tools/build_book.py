@@ -57,7 +57,10 @@ def esc(s):
 # ---------- the shared look of both volumes ----------
 
 CSS = """
-@page { size: A5; margin: 14mm 13mm 16mm; }
+/* The running foot is stamped into the PDF afterwards rather than set here:
+   Chrome's print-to-pdf implements neither @page margin boxes nor page
+   counters, so the space is reserved in the margin and filled later. */
+@page { size: A5; margin: 14mm 13mm 17mm; }
 @page:first { margin: 0; }
 * { box-sizing: border-box; }
 html, body { margin:0; padding:0; }
@@ -262,6 +265,44 @@ def to_pdf(html, pdf_path):
     shutil.rmtree(tmp, ignore_errors=True)
 
 
+def stamp_folios(pdf_path, running_head):
+    """Number the pages, and say which volume you are holding.
+
+    The cover is page one but carries nothing; numbering starts on the page
+    after it, so the printed number matches what a reader would count. The
+    number sits centre, the volume name outside it, alternating left and right
+    the way a bound book does — verso and recto.
+    """
+    import fitz
+    doc = fitz.open(pdf_path)
+    total = doc.page_count - 1                      # the cover is not numbered
+    for i, page in enumerate(doc):
+        if i == 0:
+            continue
+        number, w, h = i, page.rect.width, page.rect.height
+        y = h - 26
+        grey = (0.48, 0.45, 0.53)
+
+        # Centre: where you are, and how far there is to go.
+        folio = "%d of %d" % (number, total)
+        fw = fitz.get_text_length(folio, fontname="helv", fontsize=7.5)
+        page.insert_text((w / 2 - fw / 2, y), folio,
+                         fontname="helv", fontsize=7.5, color=grey)
+
+        # Outer edge: which volume you are holding. Verso left, recto right,
+        # the way a bound book alternates.
+        tw = fitz.get_text_length(running_head, fontname="helv", fontsize=6.5)
+        x = 37 if number % 2 == 0 else w - 37 - tw
+        page.insert_text((x, y), running_head,
+                         fontname="helv", fontsize=6.5, color=grey)
+    doc.saveIncr() if doc.can_save_incrementally() else doc.save(
+        pdf_path + ".tmp")
+    doc.close()
+    if os.path.exists(pdf_path + ".tmp"):
+        shutil.move(pdf_path + ".tmp", pdf_path)
+    return total
+
+
 def to_pages(pdf_path, pages_dir, width=1100):
     import fitz
     from PIL import Image
@@ -285,9 +326,10 @@ def to_pages(pdf_path, pages_dir, width=1100):
     return len(names)
 
 
-def build(name, html, count, folder, pdf_name, unit):
+def build(name, html, count, folder, pdf_name, unit, running_head):
     pdf = os.path.join(ROOT, "book", folder, pdf_name)
     to_pdf(html, pdf)
+    stamp_folios(pdf, running_head)
     n = to_pages(pdf, os.path.join(ROOT, "book", folder, "pages"))
     size = os.path.getsize(pdf) / 1024
     print("  %-22s %5d %-8s %3d pages  %6.0f KB" % (name, count, unit, n, size))
@@ -298,7 +340,9 @@ if __name__ == "__main__":
         sys.exit("Google Chrome not found at %s" % CHROME)
     print("Building the printed editions:")
     html, n = build_dictionary()
-    build("Volume I  Dictionary", html, n, "dictionary", "cyber-dictionary.pdf", "terms")
+    build("Volume I  Dictionary", html, n, "dictionary", "cyber-dictionary.pdf",
+          "terms", "The Cyber Dictionary")
     html, n = build_library()
-    build("Volume II Library", html, n, "library", "database-library.pdf", "sources")
+    build("Volume II Library", html, n, "library", "database-library.pdf",
+          "sources", "The Database Library")
     print("Done.")

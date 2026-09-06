@@ -16,24 +16,24 @@ underneath it all — and out to the agencies that investigate when it goes wron
 classification and personal-data categories that decide who may see what. Built for quick lookups, not long reading, and divided by term and by
 domain.
 
-**1,020 terms across 15 domains:**
+**1,142 terms across 15 domains:**
 
 | Domain | Terms |
 |---|---|
-| Networking & Protocols | 192 |
-| Cryptography | 70 |
-| Identity & Access | 75 |
-| Attacks & Exploitation | 71 |
-| Malware & Threat Actors | 56 |
-| Application Security | 41 |
-| Cloud & Infrastructure | 38 |
-| Endpoints & Systems | 77 |
-| Defense & Operations | 71 |
+| Networking & Protocols | 204 |
+| Cryptography | 80 |
+| Identity & Access | 89 |
+| Attacks & Exploitation | 109 |
+| Malware & Threat Actors | 59 |
+| Application Security | 62 |
+| Cloud & Infrastructure | 42 |
+| Endpoints & Systems | 84 |
+| Defense & Operations | 78 |
 | Governance, Risk & Compliance | 74 |
 | AI & Emerging Tech | 38 |
 | Dev & Delivery | 65 |
 | Compute & Hardware | 54 |
-| Intelligence & Investigations | 70 |
+| Intelligence & Investigations | 76 |
 | Classification & Personal Data | 28 |
 
 Every definition is one or two sentences of plain English, written to answer the question
@@ -65,14 +65,32 @@ Each entry records:
   whether you need a key and what the gotchas are
 - **Access** — free, free tier, non-commercial, or paid
 
-## 3. The printed editions
+## 3. The case studies
+
+Eleven documented incidents — Stuxnet, Silk Road, Mirai, Equifax, WannaCry, NotPetya,
+SolarWinds, the 2020 Twitter takeover, Colonial Pipeline, Log4Shell, and the North Korean
+IT worker schemes — each written to the same four headings: what happened, how it worked,
+how it was found, and what changed. The third is usually the most interesting.
+
+Every case cites public primary sources, and cross-references the dictionary terms it turns
+on. Those cross-references are checked at build time: `tools/build_cases.py` refuses to
+build if a case points at a term nobody has written, which is how several terms came to
+exist.
+
+The markdown in [`cases/`](cases/) is the source of truth; `cases.js` is generated from it.
+
+```sh
+python3 tools/build_cases.py
+```
+
+## 4. The printed editions
 
 Two volumes, because a dictionary and a catalogue are read differently — one is scanned
 A to Z, the other browsed shelf by shelf.
 
 | | | |
 |---|---|---|
-| **Volume I** | *The Cyber Dictionary* | 1,020 terms, A–Z in two justified columns · [PDF](book/dictionary/cyber-dictionary.pdf) |
+| **Volume I** | *The Cyber Dictionary* | 1,142 terms, A–Z in two justified columns · [PDF](book/dictionary/cyber-dictionary.pdf) |
 | **Volume II** | *The Database Library* | 105 sources, by shelf, with how to connect · [PDF](book/library/database-library.pdf) |
 
 Both are readable in the browser as page-turn books — the two buttons in the header —
@@ -87,6 +105,13 @@ python3 tools/build_book.py
 
 It prints each volume through headless Chrome, then renders the pages to WebP for the
 in-browser reader. Needs Google Chrome, PyMuPDF and Pillow. Re-run it after adding terms.
+
+## Methodology
+
+The site's fourth tab documents how all of this was assembled — how a definition is
+written and what that costs in precision, where the terms came from, how the library
+entries were checked, how case studies are chosen, what is verified mechanically, how the
+search scores a match, and what this reference is *not*. Worth reading before citing it.
 
 ## Editing
 

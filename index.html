@@ -249,6 +249,52 @@ mark{background:color-mix(in srgb,var(--accent) 32%,transparent);color:inherit;b
 .sheet .close{position:absolute;top:16px;right:18px;border:1px solid var(--border);background:transparent;
   color:var(--muted);border-radius:8px;width:30px;height:30px;cursor:pointer;font-size:1rem}
 
+/* ---- case studies ---- */
+.case-list{display:grid;gap:14px;margin-bottom:40px}
+.case{background:var(--card);border:1px solid var(--border);border-left:5px solid var(--sc,var(--accent));
+  border-radius:14px;overflow:hidden}
+.case>summary{cursor:pointer;list-style:none;padding:18px 20px;display:block}
+.case>summary::-webkit-details-marker{display:none}
+.case>summary:hover{background:color-mix(in srgb,var(--sc,var(--accent)) 7%,transparent)}
+.case .yr{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;color:var(--sc,var(--accent))}
+.case h3{margin:5px 0 0;font-size:1.22rem;letter-spacing:-.02em;display:flex;align-items:baseline;gap:10px}
+.case h3 .chev{margin-left:auto;font-size:.8rem;color:var(--muted);transition:transform .18s ease}
+.case[open] h3 .chev{transform:rotate(90deg)}
+.case .kind{margin:7px 0 0;font-size:.93rem;color:var(--muted)}
+.case .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px 22px;
+  padding:4px 20px 18px;border-bottom:1px solid var(--border)}
+.case .facts div{font-size:.88rem}
+.case .facts dt{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--sc,var(--accent));margin:0 0 3px}
+.case .facts dd{margin:0;color:color-mix(in srgb,var(--fg) 86%,transparent)}
+.case .body{padding:6px 20px 20px}
+.case .body h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--sc,var(--accent));margin:20px 0 7px}
+.case .body p{margin:0 0 10px;font-size:.96rem;line-height:1.62;max-width:74ch;
+  color:color-mix(in srgb,var(--fg) 92%,transparent)}
+.case .links{padding:0 20px 20px}
+.case .links h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin:16px 0 8px}
+.case .terms-in{display:flex;flex-wrap:wrap;gap:6px}
+.case .terms-in button{font:inherit;font-size:.76rem;border:1px solid var(--border);background:transparent;
+  color:var(--muted);padding:4px 11px;border-radius:999px;cursor:pointer}
+.case .terms-in button:hover{border-color:var(--sc,var(--accent));color:var(--fg)}
+.case .src{margin:0;padding-left:18px;font-size:.85rem;color:var(--muted);line-height:1.6}
+
+/* ---- methodology ---- */
+.method{max-width:74ch;padding-bottom:50px}
+.method h2{font-size:1.16rem;letter-spacing:-.01em;margin:34px 0 10px;padding-top:22px;
+  border-top:1px solid var(--border)}
+.method h2:first-child{border-top:0;padding-top:0;margin-top:0}
+.method p{margin:0 0 12px;font-size:.97rem;line-height:1.66;
+  color:color-mix(in srgb,var(--fg) 92%,transparent)}
+.method ul{margin:0 0 12px;padding-left:20px;font-size:.97rem;line-height:1.66;color:var(--muted)}
+.method li{margin-bottom:7px}
+.method li b{color:var(--fg);font-weight:600}
+.method code{font-family:var(--mono);font-size:.86em;background:var(--surface);
+  border:1px solid var(--border);border-radius:5px;padding:1px 6px}
+.method .lede{font-size:1.04rem;color:var(--fg)}
+
 .empty{color:var(--muted);padding:50px 0;text-align:center;font-size:.95rem}
 footer{border-top:1px solid var(--border);margin-top:60px;padding:26px 0 50px;color:var(--muted);font-size:.83rem}
 footer a{color:var(--accent)}
@@ -283,6 +329,8 @@ footer a{color:var(--accent)}
     <div class="tabs" role="tablist">
       <button role="tab" id="tab-dict" aria-selected="true" aria-controls="view-dict">Dictionary</button>
       <button role="tab" id="tab-lib" aria-selected="false" aria-controls="view-lib">Database Library</button>
+      <button role="tab" id="tab-cases" aria-selected="false" aria-controls="view-cases">Case Studies</button>
+      <button role="tab" id="tab-method" aria-selected="false" aria-controls="view-method">Methodology</button>
     </div>
     <button class="book-btn" data-book="dictionary" title="Read the whole dictionary as a printed book">Read vol. I 📖</button>
     <button class="book-btn" data-book="library" title="Read the whole database library as a printed book">Read vol. II 📗</button>
@@ -331,6 +379,26 @@ footer a{color:var(--accent)}
     <p class="meta" id="lib-meta"></p>
     <div id="lib-results"></div>
   </div>
+</section>
+
+<section id="view-cases" role="tabpanel" aria-labelledby="tab-cases" class="hidden">
+  <div class="wrap intro">
+    <p class="count" id="cases-count"></p>
+    <h1>What actually happened.</h1>
+    <p>Eleven incidents, written the way the definitions are: for someone who wants to understand what happened and why it mattered, not for someone who already does. Each one says what happened, how it worked, how it was found — usually the most interesting part — and what changed afterwards. Every term in bold is defined in the dictionary.</p>
+  </div>
+  <div class="wrap">
+    <div class="case-list" id="case-list"></div>
+  </div>
+</section>
+
+<section id="view-method" role="tabpanel" aria-labelledby="tab-method" class="hidden">
+  <div class="wrap intro">
+    <p class="count">How this was made</p>
+    <h1>Methodology.</h1>
+    <p>What is in here, where it came from, how it is checked, and what it is not. A reference work that will not say how it was assembled is asking to be taken on trust.</p>
+  </div>
+  <div class="wrap method" id="method"></div>
 </section>
 </main>
 
@@ -408,6 +476,7 @@ document.querySelectorAll("[data-book]").forEach((button) => {
 
 <script src="terms.js"></script>
 <script src="library.js"></script>
+<script src="cases.js"></script>
 <script>
 (function(){
   var $=function(s){return document.querySelector(s)};
@@ -494,16 +563,20 @@ document.querySelectorAll("[data-book]").forEach((button) => {
   };
 
   /* tabs */
+  var VIEWS=['dict','lib','cases','method'];
   function show(which){
-    var d=which==='dict';
-    $('#tab-dict').setAttribute('aria-selected',d);
-    $('#tab-lib').setAttribute('aria-selected',!d);
-    $('#view-dict').classList.toggle('hidden',!d);
-    $('#view-lib').classList.toggle('hidden',d);
+    if(VIEWS.indexOf(which)<0) which='dict';
+    VIEWS.forEach(function(v){
+      var on=(v===which);
+      $('#tab-'+({dict:'dict',lib:'lib',cases:'cases',method:'method'})[v])
+        .setAttribute('aria-selected',on);
+      $('#view-'+v).classList.toggle('hidden',!on);
+    });
     if(location.hash.slice(1)!==which) history.replaceState(null,'','#'+which);
   }
-  $('#tab-dict').onclick=function(){show('dict')};
-  $('#tab-lib').onclick=function(){show('lib')};
+  VIEWS.forEach(function(v){
+    $('#tab-'+v).onclick=function(){ show(v); window.scrollTo({top:0,behavior:'smooth'}); };
+  });
 
   /* ------- dictionary ------- */
   var TERMS=window.TERMS.slice().sort(function(a,b){return a.t.localeCompare(b.t,'en',{sensitivity:'base'})});
@@ -855,7 +928,97 @@ document.querySelectorAll("[data-book]").forEach((button) => {
     $(sel).addEventListener('focus',function(){document.body.classList.remove('nav-off')});
   });
 
-  show(location.hash.slice(1)==='lib'?'lib':'dict');
+  /* ------- case studies ------- */
+  var CASES=window.CASES||[];
+  $('#cases-count').textContent=CASES.length+' incidents · '+CASES[0].year+'–'+CASES[CASES.length-1].year.slice(0,4);
+  function caseColour(i){ return PALETTE[i%PALETTE.length]; }
+  $('#case-list').innerHTML=CASES.map(function(c,i){
+    var facts=[['Actor',c.actor],['Where',c.where],['Sector',c.sector],['Cost',c.cost]]
+      .filter(function(f){return f[1]})
+      .map(function(f){return '<div><dt>'+esc(f[0])+'</dt><dd>'+esc(f[1])+'</dd></div>'}).join('');
+    var body=c.sections.map(function(sec){
+      return '<h4>'+esc(sec.heading)+'</h4>'
+        +sec.paragraphs.map(function(p){return '<p>'+esc(p)+'</p>'}).join('');
+    }).join('');
+    var terms=c.terms.map(function(t){
+      return '<button data-term="'+esc(t)+'">'+esc(t)+'</button>';
+    }).join('');
+    var src=c.sources.map(function(x){
+      return '<li><a href="'+esc(x.url)+'" target="_blank" rel="noopener">'+esc(x.title)+' ↗</a></li>';
+    }).join('');
+    return '<details class="case" style="--sc:'+caseColour(i)+'">'
+      +'<summary><span class="yr">'+esc(c.year)+' · '+esc(c.kind)+'</span>'
+      +'<h3>'+esc(c.title)+'<span class="chev" aria-hidden="true">▸</span></h3></summary>'
+      +'<dl class="facts">'+facts+'</dl>'
+      +'<div class="body">'+body+'</div>'
+      +'<div class="links"><h4>Terms in this case</h4><div class="terms-in">'+terms+'</div>'
+      +(src?'<h4>Sources</h4><ul class="src">'+src+'</ul>':'')+'</div></details>';
+  }).join('');
+
+  /* A term named in a case study should take you to its definition. */
+  $('#case-list').addEventListener('click',function(e){
+    var b=e.target.closest('[data-term]'); if(!b) return;
+    dd=null; dq=b.dataset.term; $('#q').value=dq;
+    paintChips('#domains',null); renderDict(); show('dict');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  /* ------- methodology ------- */
+  (function(){
+    var domainList=window.DOMAINS.map(function(d){return esc(d)}).join(' · ');
+    $('#method').innerHTML=[
+      '<p class="lede">This is a working reference, compiled and maintained by hand at the Ethical Tech CoLab. It is not a standards document and it does not pretend to be one. What follows is how it was built, so you can judge what it is worth.</p>',
+
+      '<h2>What is in it</h2>',
+      '<p>Three collections, from three different kinds of source, kept in three plain data files with no build step between them and the page you are reading.</p>',
+      '<ul>',
+      '<li><b>The dictionary</b> — '+TERMS.length+' terms across '+window.DOMAINS.length+' domains: '+domainList+'.</li>',
+      '<li><b>The database library</b> — '+SOURCES.length+' open data sources and open-source technologies across '+window.SHELVES.length+' shelves.</li>',
+      '<li><b>The case studies</b> — '+CASES.length+' documented incidents, each cross-referenced to the terms it turns on.</li>',
+      '</ul>',
+
+      '<h2>How a definition is written</h2>',
+      '<p>One or two sentences, in plain English, answering the question you actually had when you looked the term up — mid-sentence in a meeting, mid-paragraph in a standard — rather than the question a specification was answering.</p>',
+      '<p>That is a deliberate trade and it costs precision. Where a term has a formal definition in a standard, the entry gives the working one instead, and says what the term is <i>for</i> rather than exactly what it denotes. Anyone who needs the normative wording should go to the standard. Anyone who needs to follow the conversation should start here.</p>',
+      '<p>Every entry carries the domain it belongs to, because the second question a reader usually has is which part of the field is talking. Where a term is normally met as an abbreviation the expansion follows the headword, and where it is normally met expanded the abbreviation does. Terms that go by more than one name carry those names as synonyms, which the search reads.</p>',
+
+      '<h2>Where the terms came from</h2>',
+      '<p>Three sources, in this order. First, the vocabulary that actually comes up in the CoLab\'s own work — investigations, humanitarian data engineering, AI systems, the delivery vocabulary of the repositories themselves. Second, the classical body of the field: coverage was checked against the SANS Institute\'s <i>Glossary of Security Terms</i>, so the older material that newer writing assumes is here rather than missing. Third, the terms the case studies needed, which is a useful discipline — a case study that cannot link its own mechanism to a definition is pointing at a gap.</p>',
+      '<p>Wording is our own throughout. Nothing here is copied from another glossary; where a term is standard, the definition was written from scratch and checked against the standard rather than adapted from it.</p>',
+
+      '<h2>Where the library entries came from</h2>',
+      '<p>Every source in the library was opened, and its API documentation read, before it was written up. Each entry records what the dataset or tool actually gives you, the specific route in — the API, the client library, the download — including whether a key is needed and what the awkward parts are, and what it costs at the tier described.</p>',
+      '<p><b>A note on currency.</b> Definitions age slowly; endpoints, licences and free tiers age fast. Treat a cost line as a description of what the source offered when it was compiled, not a promise about today, and check each project\'s licence before you ship.</p>',
+
+      '<h2>How the case studies are chosen</h2>',
+      '<p>Each one is a real, documented incident with public primary sources — an indictment, a regulator\'s report, a government advisory, a technical analysis published by the responders. Every case cites them, and the citations are the point: this is a teaching text, not reporting, and you should be able to go past it.</p>',
+      '<p>They are chosen for what they teach rather than for their size. Several are here because the interesting part is how the thing was found — an expired certificate, a forum post from years earlier, a helpdesk noticing an extra phone enrolment.</p>',
+
+      '<h2>How it is checked</h2>',
+      '<ul>',
+      '<li>Every term is unique, sits in a declared domain, and carries a definition — checked mechanically before each release.</li>',
+      '<li>Every cross-reference from a case study to a term must resolve. <code>tools/build_cases.py</code> refuses to build if one does not, which is how the four most recent terms came to be written.</li>',
+      '<li>The printed volumes are generated from these same data files by <code>tools/build_book.py</code>, so the book cannot drift from the site.</li>',
+      '<li>The publication page on the CoLab website is generated from this repository by a sync script, for the same reason.</li>',
+      '</ul>',
+
+      '<h2>How the search works</h2>',
+      '<p>Matches are scored rather than listed alphabetically: the term itself beats its alias, which beats its synonyms, which beats a mention in a definition; a whole word beats a fragment; and among equals the shorter title wins. Spacing and punctuation are ignored, so <code>MI 5</code>, <code>MI-5</code> and <code>MI5</code> are one query. When nothing matches, the query is compared by edit distance against every name a term answers to, and near misses are offered separately as <i>Did you mean</i>. Multi-word terms also answer to their own initials.</p>',
+
+      '<h2>What it is not</h2>',
+      '<ul>',
+      '<li><b>Not authoritative.</b> Where this and a standard disagree, the standard is right.</li>',
+      '<li><b>Not neutral about scope.</b> The domains reflect what this organisation works on. Cryptographic theory is thin; investigations, data sources and the humanitarian applications are thick.</li>',
+      '<li><b>Not complete, and not trying to be.</b> A term earns its place by coming up in real work, not by existing.</li>',
+      '<li><b>Not a substitute for the primary source.</b> Every case study cites its own; go and read them.</li>',
+      '</ul>',
+
+      '<h2>Corrections</h2>',
+      '<p>Definitions and source notes are written in-house and released under CC BY 4.0; the code is MIT. Corrections and additions are welcome by pull request against <a href="https://github.com/Ethical-Tech-CoLab/cyber-dictionary" target="_blank" rel="noopener">the repository</a> — a definition that misled you is a bug, and worth reporting as one.</p>'
+    ].join('');
+  })();
+
+  show(location.hash.slice(1));
   renderDict(); renderLib();
 })();
 </script>
