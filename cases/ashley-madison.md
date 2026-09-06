@@ -12,6 +12,10 @@ sources:
     url: https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2016/pipeda-2016-005/
   - title: "FTC — Ashley Madison settlement"
     url: https://www.ftc.gov/legal-library/browse/cases-proceedings/152-3284-ashley-madison
+  - title: "Troy Hunt, Have I Been Pwned — analysis of the dumped data and its consequences for users"
+    url: https://www.troyhunt.com/heres-what-ashley-madison-members-have/
+  - title: "Class action settlement, In re Ashley Madison Customer Data Security Breach Litigation"
+    url: https://www.ashleymadisonsettlement.com/
 ---
 
 ## What happened

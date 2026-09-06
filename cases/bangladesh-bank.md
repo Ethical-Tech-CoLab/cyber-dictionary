@@ -12,6 +12,10 @@ sources:
     url: https://www.justice.gov/opa/press-release/file/1092091/dl
   - title: "SWIFT — customer security programme, established after the 2016 attacks"
     url: https://www.swift.com/myswift/customer-security-programme-csp
+  - title: "BAE Systems Threat Research — two bytes to $951m, the technical analysis of the SWIFT malware"
+    url: https://baesystemsai.blogspot.com/2016/04/two-bytes-to-951m.html
+  - title: "Bangladesh Bank — the Federal Reserve Bank of New York litigation"
+    url: https://www.bb.org.bd/
 ---
 
 ## What happened

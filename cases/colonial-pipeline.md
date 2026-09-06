@@ -12,6 +12,10 @@ sources:
     url: https://www.justice.gov/opa/pr/department-justice-seizes-23-million-cryptocurrency-paid-ransomware-extortionists-darkside
   - title: "CISA and FBI joint advisory on DarkSide ransomware"
     url: https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-131a
+  - title: "US House Committee on Homeland Security — testimony of Colonial Pipeline's chief executive"
+    url: https://homeland.house.gov/
+  - title: "TSA — security directives for pipeline owners and operators issued after the attack"
+    url: https://www.tsa.gov/news/press/releases/2021/07/20/dhs-announces-new-cybersecurity-requirements-critical-pipeline
 ---
 
 ## What happened

@@ -12,6 +12,10 @@ sources:
     url: https://www.fbi.gov/news/press-releases/update-on-sony-investigation
   - title: "US Department of Justice — complaint against a North Korean programmer"
     url: https://www.justice.gov/opa/press-release/file/1092091/dl
+  - title: "US Department of the Treasury — sanctions on North Korea in response to the attack"
+    url: https://home.treasury.gov/news/press-releases/jl9733
+  - title: "Schneier on Security — contemporaneous critique of the attribution evidence"
+    url: https://www.schneier.com/blog/archives/2015/01/attributing_the.html
 ---
 
 ## What happened

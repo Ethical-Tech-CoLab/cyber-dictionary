@@ -12,6 +12,10 @@ sources:
     url: https://www.cisa.gov/news-events/news/apache-log4j-vulnerability-guidance
   - title: "Cyber Safety Review Board — review of the Log4j event"
     url: https://www.cisa.gov/sites/default/files/publications/CSRB-Report-on-Log4-July-11-2022_508.pdf
+  - title: "Apache Software Foundation — CVE-2021-44228 advisory and remediation guidance"
+    url: https://logging.apache.org/log4j/2.x/security.html
+  - title: "Google Open Source Insights — measurement of how deep in dependency trees the affected versions sat"
+    url: https://opensource.googleblog.com/2021/12/understanding-impact-of-apache-log4j.html
 ---
 
 ## What happened

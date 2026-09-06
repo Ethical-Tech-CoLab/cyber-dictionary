@@ -12,6 +12,10 @@ sources:
     url: https://www.ncsc.gov.uk/
   - title: "UK Government — support for Jaguar Land Rover's supply chain"
     url: https://www.gov.uk/government/organisations/department-for-business-and-trade
+  - title: "Jaguar Land Rover — company statements on the incident and the restart of production"
+    url: https://media.jaguarlandrover.com/
+  - title: "UK Parliament — Business and Trade Committee evidence on the attack and its supply chain effects"
+    url: https://committees.parliament.uk/
 ---
 
 ## What happened

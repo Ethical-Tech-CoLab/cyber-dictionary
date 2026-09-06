@@ -12,6 +12,10 @@ sources:
     url: https://ofac.treasury.gov/media/923126/download
   - title: "US Department of Justice — laptop farm prosecutions"
     url: https://www.justice.gov/opa/pr/justice-department-announces-arrest-facilitator-and-seizures-laptop-farms-nation-state-it
+  - title: "KnowBe4 — how a North Korean fake IT worker was hired and detected"
+    url: https://blog.knowbe4.com/how-a-north-korean-fake-it-worker-tried-to-infiltrate-us
+  - title: "UN Panel of Experts on North Korea — reports on sanctions evasion through IT work"
+    url: https://www.un.org/securitycouncil/sanctions/1718/panel_experts/reports
 ---
 
 ## What happened

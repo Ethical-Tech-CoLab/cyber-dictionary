@@ -12,6 +12,10 @@ sources:
     url: https://www.hse.ie/eng/services/publications/conti-cyber-attack-on-the-hse-full-report.pdf
   - title: "Ireland's National Cyber Security Centre"
     url: https://www.ncsc.gov.ie/
+  - title: "Ireland's Health Service Executive — statements and updates on the cyber attack and recovery"
+    url: https://www.hse.ie/eng/services/news/newsfeatures/cyber-attack/
+  - title: "Irish High Court — injunction restraining publication of the stolen patient data"
+    url: https://www.courts.ie/
 ---
 
 ## What happened

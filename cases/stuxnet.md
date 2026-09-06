@@ -12,6 +12,10 @@ sources:
     url: https://docs.broadcom.com/doc/security-response-w32-stuxnet-dossier-11-en
   - title: "IAEA safeguards reports on Iran, 2009–2011"
     url: https://www.iaea.org/newscenter/focus/iran/iaea-and-iran-iaea-reports
+  - title: "Ralph Langner — To kill a centrifuge: a technical analysis of what Stuxnet's creators tried to achieve"
+    url: https://www.langner.com/wp-content/uploads/2013/11/To-kill-a-centrifuge.pdf
+  - title: "Kim Zetter, Countdown to Zero Day (Crown, 2014) — book-length account of the operation and its discovery"
+    url: https://www.penguinrandomhouse.com/books/219931/countdown-to-zero-day-by-kim-zetter/
 ---
 
 ## What happened

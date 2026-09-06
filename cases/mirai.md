@@ -12,6 +12,10 @@ sources:
     url: https://www.justice.gov/opa/pr/justice-department-announces-charges-and-guilty-pleas-three-computer-crime-cases-involving
   - title: "Cloudflare — inside the infamous Mirai IoT botnet"
     url: https://blog.cloudflare.com/inside-mirai-the-infamous-iot-botnet-a-retrospective-analysis/
+  - title: "Antonakakis et al. — Understanding the Mirai Botnet, USENIX Security 2017"
+    url: https://www.usenix.org/conference/usenixsecurity17/technical-sessions/presentation/antonakakis
+  - title: "UK Product Security and Telecommunications Infrastructure Act 2022, banning universal default passwords"
+    url: https://www.legislation.gov.uk/ukpga/2022/46/contents
 ---
 
 ## What happened

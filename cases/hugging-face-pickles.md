@@ -1,10 +1,10 @@
 ---
-title: Hugging Face inference sandbox escape
+title: Hugging Face model pickles
 year: 2024
 where: Hugging Face's shared AI infrastructure
 actor: Wiz security researchers, in coordinated disclosure
 sector: AI platforms and model distribution
-kind: Sandbox escape and cross-tenant compromise, found by research
+kind: Platform vulnerability found by research, not exploited
 cost: No known malicious exploitation; the industry's model of model distribution had to change
 terms: [Sandbox escape, Pickle deserialisation, Safetensors, Model registry, Untrusted model, Multi-tenancy, Cross-tenant access, Container escape, Supply chain attack, Deserialisation vulnerability, Model weights, Malicious package]
 sources:
@@ -12,6 +12,10 @@ sources:
     url: https://www.wiz.io/blog/wiz-and-hugging-face-address-risks-to-ai-infrastructure
   - title: "Hugging Face — pickle scanning and model security documentation"
     url: https://huggingface.co/docs/hub/security-pickle
+  - title: "JFrog Security Research — malicious models found published on the Hugging Face hub"
+    url: https://jfrog.com/blog/data-scientists-targeted-by-malicious-hugging-face-ml-models-with-silent-backdoor/
+  - title: "Hugging Face — the safetensors format and its rationale"
+    url: https://huggingface.co/docs/safetensors/index
 ---
 
 ## What happened

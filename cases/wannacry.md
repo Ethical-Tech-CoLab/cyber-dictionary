@@ -12,6 +12,10 @@ sources:
     url: https://www.nao.org.uk/reports/investigation-wannacry-cyber-attack-and-the-nhs/
   - title: "US Department of Justice — charges against a Lazarus Group programmer"
     url: https://www.justice.gov/opa/press-release/file/1092091/dl
+  - title: "Microsoft Security Response Center — MS17-010, the patch released two months before the outbreak"
+    url: https://learn.microsoft.com/en-us/security-updates/securitybulletins/2017/ms17-010
+  - title: "UK Department of Health and Social Care — lessons learned review of WannaCry"
+    url: https://www.gov.uk/government/publications/securing-cyber-resilience-in-health-and-care-october-2018-update
 ---
 
 ## What happened

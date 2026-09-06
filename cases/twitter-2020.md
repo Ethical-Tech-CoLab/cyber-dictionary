@@ -12,6 +12,10 @@ sources:
     url: https://www.dfs.ny.gov/Twitter_Report
   - title: "US Department of Justice — charges in the Twitter hack"
     url: https://www.justice.gov/usao-ndca/pr/three-individuals-charged-alleged-roles-twitter-hack
+  - title: "Twitter — the company's own account of the incident and the controls that followed"
+    url: https://blog.x.com/en_us/topics/company/2020/an-update-on-our-security-incident
+  - title: "US Attorney, Northern District of California — the charging documents"
+    url: https://www.justice.gov/usao-ndca
 ---
 
 ## What happened

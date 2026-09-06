@@ -12,6 +12,10 @@ sources:
     url: https://www.justice.gov/opa/pr/six-russian-gru-officers-charged-connection-worldwide-deployment-destructive-malware-and
   - title: "UK National Cyber Security Centre attribution statement (2018)"
     url: https://www.ncsc.gov.uk/news/russian-military-almost-certainly-responsible-destructive-2017-cyber-attack
+  - title: "Andy Greenberg, Sandworm (Doubleday, 2019) — the book the unit is named for in common usage"
+    url: https://www.penguinrandomhouse.com/books/597684/sandworm-by-andy-greenberg/
+  - title: "Merck & Co. v. ACE American Insurance — the war exclusion litigation"
+    url: https://www.njcourts.gov/
 ---
 
 ## What happened

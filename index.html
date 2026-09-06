@@ -385,7 +385,7 @@ footer a{color:var(--accent)}
   <div class="wrap intro">
     <p class="count" id="cases-count"></p>
     <h1>What actually happened.</h1>
-    <p>Twenty-one incidents, written the way the definitions are: for someone who wants to understand what happened and why it mattered, not for someone who already does. Each one says what happened, how it worked, how it was found — usually the most interesting part — and what changed afterwards. Every term in bold is defined in the dictionary.</p>
+    <p>Twenty-four incidents, written the way the definitions are: for someone who wants to understand what happened and why it mattered, not for someone who already does. Each one says what happened, how it worked, how it was found — usually the most interesting part — and what changed afterwards. Every case cites four public references, and every term it names is defined in the dictionary.</p>
   </div>
   <div class="wrap">
     <div class="case-list" id="case-list"></div>
@@ -952,7 +952,8 @@ document.querySelectorAll("[data-book]").forEach((button) => {
       +'<dl class="facts">'+facts+'</dl>'
       +'<div class="body">'+body+'</div>'
       +'<div class="links"><h4>Terms in this case</h4><div class="terms-in">'+terms+'</div>'
-      +(src?'<h4>Sources</h4><ul class="src">'+src+'</ul>':'')+'</div></details>';
+      +(src?'<h4>References and sources ('+c.sources.length+')</h4><ul class="src">'+src+'</ul>':'')
+      +'</div></details>';
   }).join('');
 
   /* A term named in a case study should take you to its definition. */

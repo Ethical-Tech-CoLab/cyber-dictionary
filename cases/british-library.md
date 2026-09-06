@@ -12,6 +12,10 @@ sources:
     url: https://www.bl.uk/home/british-library-cyber-incident-review-8-march-2024.pdf
   - title: "UK National Cyber Security Centre — ransomware guidance"
     url: https://www.ncsc.gov.uk/ransomware/home
+  - title: "British Library — cyber incident updates and service restoration record"
+    url: https://www.bl.uk/cyber-incident/
+  - title: "UK Parliament, Culture Media and Sport Committee — evidence on the attack and its funding consequences"
+    url: https://committees.parliament.uk/
 ---
 
 ## What happened

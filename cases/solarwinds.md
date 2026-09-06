@@ -12,6 +12,10 @@ sources:
     url: https://www.cisa.gov/news-events/directives/ed-21-01-mitigate-solarwinds-orion-code-compromise
   - title: "Mandiant — Highly evasive attacker leverages SolarWinds supply chain"
     url: https://cloud.google.com/blog/topics/threat-intelligence/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor
+  - title: "US Securities and Exchange Commission — action against SolarWinds and its CISO"
+    url: https://www.sec.gov/newsroom/press-releases/2023-227
+  - title: "Microsoft — analysis of the Solorigate second-stage activation"
+    url: https://www.microsoft.com/en-us/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/
 ---
 
 ## What happened

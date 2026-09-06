@@ -12,6 +12,10 @@ sources:
     url: https://www.ncsc.gov.uk/news/incidents-impacting-retailers-recommendations-from-the-ncsc
   - title: "Marks & Spencer plc — regulatory announcements and results statements"
     url: https://corporate.marksandspencer.com/investors
+  - title: "Marks & Spencer plc — full year results statement quantifying the impact"
+    url: https://corporate.marksandspencer.com/investors/results-reports-and-presentations
+  - title: "UK Parliament, Business and Trade Committee — evidence session with M&S and Co-op on the 2025 attacks"
+    url: https://committees.parliament.uk/
 ---
 
 ## What happened

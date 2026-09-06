@@ -12,6 +12,10 @@ sources:
     url: https://oversight.house.gov/wp-content/uploads/2018/12/Equifax-Report.pdf
   - title: "FTC — Equifax settlement"
     url: https://www.ftc.gov/enforcement/refunds/equifax-data-breach-settlement
+  - title: "US Government Accountability Office — Data Protection: Actions Taken by Equifax and Federal Agencies"
+    url: https://www.gao.gov/products/gao-18-559
+  - title: "US Department of Justice — indictment of four members of the PLA"
+    url: https://www.justice.gov/opa/pr/chinese-military-personnel-charged-computer-fraud-economic-espionage-and-wire-fraud-hacking
 ---
 
 ## What happened
