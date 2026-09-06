@@ -483,6 +483,9 @@ document.querySelectorAll("[data-book]").forEach((button) => {
   var slug=function(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')};
   var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]})};
   var norm=function(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')};
+  /* Anything that becomes an href is checked here as well as at build time:
+     a javascript: or data: URL would execute on click rather than navigate. */
+  var safeUrl=function(u){ return /^https?:\/\//i.test(String(u))? String(u) : '#'; };
 
   /* One colour per category, so a domain or a shelf is recognisable at a glance
      before you have read its name. Chosen to stay legible on both themes. */
@@ -884,7 +887,7 @@ document.querySelectorAll("[data-book]").forEach((button) => {
     $('#sheet-what').textContent=x.w;
     $('#sheet-how').textContent=x.h;
     $('#sheet-cost').textContent=x.c;
-    $('#sheet-go').href=x.u;
+    $('#sheet-go').href=safeUrl(x.u);
     $('#sheet-go').textContent=x.u.replace(/^https?:\/\//,'').replace(/\/$/,'')+' ↗';
     sheet.classList.add('open');
     $('#sheet .close').focus();
@@ -944,7 +947,8 @@ document.querySelectorAll("[data-book]").forEach((button) => {
       return '<button data-term="'+esc(t)+'">'+esc(t)+'</button>';
     }).join('');
     var src=c.sources.map(function(x){
-      return '<li><a href="'+esc(x.url)+'" target="_blank" rel="noopener">'+esc(x.title)+' ↗</a></li>';
+      return '<li><a href="'+esc(safeUrl(x.url))+'" target="_blank" rel="noopener">'
+        +esc(x.title)+' ↗</a></li>';
     }).join('');
     return '<details class="case" style="--sc:'+caseColour(i)+'">'
       +'<summary><span class="yr">'+esc(c.year)+' · '+esc(c.kind)+'</span>'
