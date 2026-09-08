@@ -16,7 +16,7 @@ underneath it all — and out to the agencies that investigate when it goes wron
 classification and personal-data categories that decide who may see what. Built for quick lookups, not long reading, and divided by term and by
 domain.
 
-**1,213 terms across 15 domains:**
+**1,219 terms across 15 domains:**
 
 | Domain | Terms |
 |---|---|
@@ -31,7 +31,7 @@ domain.
 | Defense & Operations | 82 |
 | Governance, Risk & Compliance | 80 |
 | AI & Emerging Tech | 54 |
-| Dev & Delivery | 65 |
+| Dev & Delivery | 71 |
 | Compute & Hardware | 54 |
 | Intelligence & Investigations | 96 |
 | Classification & Personal Data | 31 |
@@ -93,7 +93,7 @@ A to Z, the other browsed shelf by shelf.
 
 | | | |
 |---|---|---|
-| **Volume I** | *The Cyber Dictionary* | 1,213 terms, A–Z in two justified columns · [PDF](book/dictionary/cyber-dictionary.pdf) |
+| **Volume I** | *The Cyber Dictionary* | 1,219 terms, A–Z in two justified columns · [PDF](book/dictionary/cyber-dictionary.pdf) |
 | **Volume II** | *The Database Library* | 106 sources, by shelf, with how to connect · [PDF](book/library/database-library.pdf) |
 
 Both are readable in the browser as page-turn books — the two buttons in the header —
