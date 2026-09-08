@@ -10,8 +10,8 @@ terms: [Silk Road, Dark web, Tor, Hidden service, Operational security failure, 
 sources:
   - title: "US Attorney, SDNY — Ross Ulbricht sentencing"
     url: https://www.justice.gov/usao-sdny/pr/ross-ulbricht-aka-dread-pirate-roberts-sentenced-manhattan-federal-court-life-prison
-  - title: "FBI complaint against Ross Ulbricht (2013)"
-    url: https://www.justice.gov/sites/default/files/usao-sdny/legacy/2015/03/25/Ulbricht%2C%20Ross%20Complaint.pdf
+  - title: "US Attorney, Southern District of New York — the Ulbricht complaint and case record"
+    url: https://www.justice.gov/usao-sdny
   - title: "United States v. Ulbricht — Second Circuit opinion (2017)"
     url: https://www.ca2.uscourts.gov/decisions.html
   - title: "Nick Bilton, American Kingpin (Portfolio, 2017) — narrative reconstruction of the investigation"

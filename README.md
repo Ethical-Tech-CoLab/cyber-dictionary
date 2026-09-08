@@ -16,7 +16,10 @@ underneath it all — and out to the agencies that investigate when it goes wron
 classification and personal-data categories that decide who may see what. Built for quick lookups, not long reading, and divided by term and by
 domain.
 
-**1,219 terms across 15 domains:**
+<!-- counts:start -->
+**1,219 terms across 15 domains, 119 sources across 12 shelves, and 24 case studies citing 96 references.**
+
+These figures are generated from the data by `tools/update_counts.py`, and they are correct as at the last commit rather than fixed. The collection grows: treat any number quoted elsewhere — in a paper, a slide, or an older copy of this file — as a snapshot of when it was written, and cite the dated release rather than the count.
 
 | Domain | Terms |
 |---|---|
@@ -36,6 +39,9 @@ domain.
 | Intelligence & Investigations | 96 |
 | Classification & Personal Data | 31 |
 
+**Shelves:** Satellite & Earth Observation (12) · Maps & Geospatial (15) · Climate & Weather (10) · Population & Development (9) · Cities & Municipal Data (14) · Conflict, Rights & Humanitarian (9) · Environment & Biodiversity (8) · Health (5) · Economy, Trade & Corporate (7) · Security & Threat Data (10) · Geospatial Tooling (10) · Communities & Programmes (10).
+<!-- counts:end -->
+
 Every definition is one or two sentences of plain English, written to answer the question
 you actually had when you looked the term up. Terms that go by more than one name carry
 their synonyms — *MitM*, *2FA*, *pentest*, *rDNS*, *K8s*, *laptop farm* — which are searched
@@ -53,7 +59,6 @@ sources, open-source technologies and the communities behind them**, ready to wi
 project. Browse the shelves, pull a spine, and you get what it is, how to reach the API,
 and what it costs.
 
-**119 sources across 12 shelves:** Satellite & Earth Observation (12) · Maps & Geospatial (15) · Climate & Weather (10) · Population & Development (9) · Cities & Municipal Data (14) · Conflict, Rights & Humanitarian (9) · Environment & Biodiversity (8) · Health (5) · Economy, Trade & Corporate (7) · Security & Threat Data (10) · Geospatial Tooling (10) · Communities & Programmes (10).
 
 Each entry records:
 

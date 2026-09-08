@@ -12,8 +12,8 @@ sources:
     url: https://rewardsforjustice.net/rewards/conti/
   - title: "CISA — Conti ransomware advisory"
     url: https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-265a
-  - title: "Chainalysis and researchers — analysis of the leaked Conti internal chats"
-    url: https://www.chainalysis.com/blog/conti-ransomware-leaks-2022/
+  - title: "Chainalysis — research on Conti's finances and the 2022 internal chat leaks"
+    url: https://www.chainalysis.com/blog/
   - title: "Costa Rican Government — the state of national emergency declaration"
     url: https://www.presidencia.go.cr/
 ---

@@ -10,8 +10,8 @@ terms: [DPRK IT worker scheme, Remote worker fraud, Laptop farm, Facilitator, In
 sources:
   - title: "US Department of State, Treasury and FBI advisory on DPRK IT workers"
     url: https://ofac.treasury.gov/media/923126/download
-  - title: "US Department of Justice — laptop farm prosecutions"
-    url: https://www.justice.gov/opa/pr/justice-department-announces-arrest-facilitator-and-seizures-laptop-farms-nation-state-it
+  - title: "US Department of Justice — press releases on laptop farm arrests and seizures in the DPRK IT worker cases"
+    url: https://www.justice.gov/opa/pr
   - title: "KnowBe4 — how a North Korean fake IT worker was hired and detected"
     url: https://blog.knowbe4.com/how-a-north-korean-fake-it-worker-tried-to-infiltrate-us
   - title: "UN Panel of Experts on North Korea — reports on sanctions evasion through IT work"

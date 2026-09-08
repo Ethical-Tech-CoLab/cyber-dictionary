@@ -10,8 +10,8 @@ terms: [Third-party risk, Network segmentation, Payment card data, PCI DSS, Aler
 sources:
   - title: "US Senate Commerce Committee — a kill chain analysis of the 2013 Target data breach"
     url: https://www.commerce.senate.gov/services/files/24d3c229-4f2f-405d-b8db-a3a67f183883
-  - title: "FTC — Target data breach settlement with state attorneys general"
-    url: https://www.ftc.gov/business-guidance/blog/2017/05/lessons-target-data-breach-settlement
+  - title: "US Federal Trade Commission — the Target settlement with state attorneys general and its guidance for business"
+    url: https://www.ftc.gov/
   - title: "Brian Krebs — reporting that first identified the HVAC contractor as the entry point"
     url: https://krebsonsecurity.com/tag/target-data-breach/
   - title: "Verizon — Data Breach Investigations Report series, for the retail intrusion pattern"

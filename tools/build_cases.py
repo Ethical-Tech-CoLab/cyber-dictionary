@@ -88,11 +88,24 @@ def js_safe(text):
     return text.replace("\u2028", "\\u2028").replace("\u2029", "\\u2029")
 
 
+def link_status():
+    """What the last link check found, keyed by URL.
+
+    Absent file means nothing has been checked, and every reference is
+    therefore unverified — which is the honest default rather than a failure.
+    """
+    path = os.path.join(ROOT, "link-status.json")
+    if not os.path.exists(path):
+        return {}
+    return json.load(open(path, encoding="utf-8")).get("links", {})
+
+
 def main():
     # The dictionary is the authority on what a term is called.
     terms_src = open(os.path.join(ROOT, "terms.js"), encoding="utf-8").read()
     known = set(re.findall(r'\{t:"((?:[^"\\]|\\.)*)"', terms_src))
 
+    status = link_status()
     cases, problems = [], []
     folder = os.path.join(ROOT, "cases")
     for name in sorted(os.listdir(folder)):
@@ -122,7 +135,10 @@ def main():
             "kind": meta.get("kind", ""),
             "cost": meta.get("cost", ""),
             "terms": meta.get("terms", []),
-            "sources": meta.get("sources", []),
+            "sources": [dict(src,
+                             state=status.get(src["url"], {}).get("state", "unverified"),
+                             checked=status.get(src["url"], {}).get("checked", ""))
+                        for src in meta.get("sources", [])],
             "sections": [{"heading": h, "paragraphs": sections[h]} for h in HEADINGS],
         })
 

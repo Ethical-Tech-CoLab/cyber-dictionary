@@ -1,0 +1,1671 @@
+{
+ "generated": "2026-09-08",
+ "links": {
+  "https://abuse.ch": {
+   "state": "ok",
+   "used_by": [
+    "library: abuse.ch"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://acleddata.com": {
+   "state": "ok",
+   "used_by": [
+    "library: ACLED"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://attack.mitre.org": {
+   "state": "ok",
+   "used_by": [
+    "library: MITRE ATT&CK"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://baesystemsai.blogspot.com/2016/04/two-bytes-to-951m.html": {
+   "state": "ok",
+   "used_by": [
+    "cases/bangladesh-bank.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://bellingcat.gitbook.io/toolkit": {
+   "state": "ok",
+   "used_by": [
+    "library: Bellingcat Online Investigation Toolkit"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://blog.cloudflare.com/inside-mirai-the-infamous-iot-botnet-a-retrospective-analysis/": {
+   "state": "ok",
+   "used_by": [
+    "cases/mirai.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://blog.knowbe4.com/how-a-north-korean-fake-it-worker-tried-to-infiltrate-us": {
+   "state": "ok",
+   "used_by": [
+    "cases/dprk-it-workers.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://blog.x.com/en_us/topics/company/2020/an-update-on-our-security-incident": {
+   "state": "unverified",
+   "used_by": [
+    "cases/twitter-2020.md"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://cds.climate.copernicus.eu": {
+   "state": "ok",
+   "used_by": [
+    "library: Copernicus Climate Data Store"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://cert.pl/en/": {
+   "state": "ok",
+   "used_by": [
+    "cases/poland-energy.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://cert.pl/en/posts/": {
+   "state": "unverified",
+   "used_by": [
+    "cases/poland-energy.md"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://ckan.org": {
+   "state": "ok",
+   "used_by": [
+    "library: CKAN"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://climateknowledgeportal.worldbank.org": {
+   "state": "unverified",
+   "used_by": [
+    "library: World Bank Climate Change Knowledge Portal"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://climatetrace.org": {
+   "state": "ok",
+   "used_by": [
+    "library: Climate TRACE"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://cloud.google.com/blog/topics/threat-intelligence/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor": {
+   "state": "ok",
+   "used_by": [
+    "cases/solarwinds.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://committees.parliament.uk/": {
+   "state": "unverified",
+   "used_by": [
+    "cases/british-library.md",
+    "cases/jaguar-land-rover.md",
+    "cases/marks-and-spencer.md"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://community.openstreetmap.org": {
+   "state": "ok",
+   "used_by": [
+    "library: OpenStreetMap Foundation community"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://comtrade.un.org": {
+   "state": "ok",
+   "used_by": [
+    "library: UN Comtrade"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://corporate.marksandspencer.com/investors": {
+   "state": "ok",
+   "used_by": [
+    "cases/marks-and-spencer.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://data-explorer.oecd.org": {
+   "state": "ok",
+   "used_by": [
+    "library: OECD Data Explorer"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://data.buenosaires.gob.ar": {
+   "state": "ok",
+   "used_by": [
+    "library: Buenos Aires Data"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://data.cityofchicago.org": {
+   "state": "ok",
+   "used_by": [
+    "library: Chicago Data Portal"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://data.europa.eu": {
+   "state": "ok",
+   "used_by": [
+    "library: data.gov / data.europa.eu"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://data.gov.sg": {
+   "state": "ok",
+   "used_by": [
+    "library: data.gov.sg"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://data.humdata.org": {
+   "state": "ok",
+   "used_by": [
+    "library: Humanitarian Data Exchange"
+   ],
+   "code": 202,
+   "checked": "2026-09-08"
+  },
+  "https://data.imf.org": {
+   "state": "unverified",
+   "used_by": [
+    "library: IMF Data"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://data.london.gov.uk": {
+   "state": "ok",
+   "used_by": [
+    "library: London Datastore"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://data.worldbank.org": {
+   "state": "ok",
+   "used_by": [
+    "library: World Bank Open Data"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://datasette.io": {
+   "state": "ok",
+   "used_by": [
+    "library: Datasette"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://dataspace.copernicus.eu": {
+   "state": "ok",
+   "used_by": [
+    "library: Copernicus Data Space Ecosystem"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://daten.berlin.de": {
+   "state": "ok",
+   "used_by": [
+    "library: Berlin Open Data"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://datos.cdmx.gob.mx": {
+   "state": "unverified",
+   "used_by": [
+    "library: Portal de Datos Abiertos CDMX"
+   ],
+   "error": "URLError"
+  },
+  "https://deck.gl": {
+   "state": "ok",
+   "used_by": [
+    "library: Kepler.gl / deck.gl"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://defcon.org/": {
+   "state": "ok",
+   "used_by": [
+    "cases/poland-energy.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://dev.socrata.com": {
+   "state": "ok",
+   "used_by": [
+    "library: Socrata Open Data API"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://developmentseed.org/community/": {
+   "state": "ok",
+   "used_by": [
+    "library: Development Seed Community"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://developmentseed.org/titiler/": {
+   "state": "ok",
+   "used_by": [
+    "library: Titiler"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://dhis2.org": {
+   "state": "ok",
+   "used_by": [
+    "library: DHIS2"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://dhsprogram.com": {
+   "state": "ok",
+   "used_by": [
+    "library: DHS Program"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://docs.broadcom.com/doc/security-response-w32-stuxnet-dossier-11-en": {
+   "state": "ok",
+   "used_by": [
+    "cases/stuxnet.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://download.geofabrik.de": {
+   "state": "ok",
+   "used_by": [
+    "library: Geofabrik Downloads"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://dtm.iom.int": {
+   "state": "unverified",
+   "used_by": [
+    "library: IOM Displacement Tracking Matrix"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://duckdb.org/docs/extensions/spatial": {
+   "state": "ok",
+   "used_by": [
+    "library: DuckDB Spatial"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://earthengine.google.com": {
+   "state": "ok",
+   "used_by": [
+    "library: Google Earth Engine"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://earthexplorer.usgs.gov": {
+   "state": "ok",
+   "used_by": [
+    "library: USGS EarthExplorer / Landsat"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://earthquake.usgs.gov": {
+   "state": "ok",
+   "used_by": [
+    "library: USGS Earthquake Hazards"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://ec.europa.eu/eurostat": {
+   "state": "ok",
+   "used_by": [
+    "library: Eurostat"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://firms.modaps.eosdis.nasa.gov": {
+   "state": "ok",
+   "used_by": [
+    "library: NASA FIRMS"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://forensic-architecture.org": {
+   "state": "ok",
+   "used_by": [
+    "library: Forensic Architecture"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://gadm.org": {
+   "state": "ok",
+   "used_by": [
+    "library: GADM"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://gdal.org": {
+   "state": "ok",
+   "used_by": [
+    "library: GDAL / OGR"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://geosampa.prefeitura.sp.gov.br": {
+   "state": "ok",
+   "used_by": [
+    "library: GeoSampa"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://ghdx.healthdata.org": {
+   "state": "ok",
+   "used_by": [
+    "library: IHME Global Health Data Exchange"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://global-flood.emergency.copernicus.eu": {
+   "state": "ok",
+   "used_by": [
+    "library: Global Flood Monitor / GloFAS"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://globalfishingwatch.org": {
+   "state": "ok",
+   "used_by": [
+    "library: Global Fishing Watch"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://haveibeenpwned.com": {
+   "state": "ok",
+   "used_by": [
+    "library: Have I Been Pwned"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://healthsites.io": {
+   "state": "ok",
+   "used_by": [
+    "library: HealthSites.io"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://home.treasury.gov/news/press-releases/jl9733": {
+   "state": "ok",
+   "used_by": [
+    "cases/sony-pictures.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://homeland.house.gov/": {
+   "state": "ok",
+   "used_by": [
+    "cases/colonial-pipeline.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://huggingface.co/blog": {
+   "state": "ok",
+   "used_by": [
+    "cases/openai-exploitgym.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://huggingface.co/docs/hub/security-pickle": {
+   "state": "ok",
+   "used_by": [
+    "cases/hugging-face-pickles.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://huggingface.co/docs/safetensors/index": {
+   "state": "ok",
+   "used_by": [
+    "cases/hugging-face-pickles.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://human-settlement.emergency.copernicus.eu": {
+   "state": "ok",
+   "used_by": [
+    "library: GHSL \u2014 Global Human Settlement Layer"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://industrialcyber.co/": {
+   "state": "ok",
+   "used_by": [
+    "cases/poland-energy.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://interactive-atlas.ipcc.ch": {
+   "state": "ok",
+   "used_by": [
+    "library: IPCC WGI Interactive Atlas"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://jfrog.com/blog/data-scientists-targeted-by-malicious-hugging-face-ml-models-with-silent-backdoor/": {
+   "state": "ok",
+   "used_by": [
+    "cases/hugging-face-pickles.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://krebsonsecurity.com/tag/target-data-breach/": {
+   "state": "ok",
+   "used_by": [
+    "cases/target.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://law-ai.org/": {
+   "state": "unverified",
+   "used_by": [
+    "cases/agent-swarm.md"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://leafletjs.com": {
+   "state": "ok",
+   "used_by": [
+    "library: Leaflet"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2017/ms17-010": {
+   "state": "ok",
+   "used_by": [
+    "cases/wannacry.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://logging.apache.org/log4j/2.x/security.html": {
+   "state": "ok",
+   "used_by": [
+    "cases/log4shell.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://maplibre.org": {
+   "state": "ok",
+   "used_by": [
+    "library: MapLibre GL"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://marine.copernicus.eu": {
+   "state": "ok",
+   "used_by": [
+    "library: Copernicus Marine Service"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://media.jaguarlandrover.com/": {
+   "state": "ok",
+   "used_by": [
+    "cases/jaguar-land-rover.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://metr.org/": {
+   "state": "ok",
+   "used_by": [
+    "cases/agent-swarm.md",
+    "cases/openai-exploitgym.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://nominatim.org": {
+   "state": "ok",
+   "used_by": [
+    "library: Nominatim"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://nvd.nist.gov": {
+   "state": "ok",
+   "used_by": [
+    "library: NVD"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://odp-cctegis.opendata.arcgis.com": {
+   "state": "ok",
+   "used_by": [
+    "library: City of Cape Town Open Data Portal"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://ofac.treasury.gov/media/923126/download": {
+   "state": "ok",
+   "used_by": [
+    "cases/dprk-it-workers.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://okfn.org": {
+   "state": "ok",
+   "used_by": [
+    "library: Open Knowledge Foundation"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://open-meteo.com": {
+   "state": "ok",
+   "used_by": [
+    "library: Open-Meteo"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://open.fda.gov": {
+   "state": "ok",
+   "used_by": [
+    "library: OpenFDA"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://open.toronto.ca": {
+   "state": "ok",
+   "used_by": [
+    "library: City of Toronto Open Data"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://openaerialmap.org": {
+   "state": "ok",
+   "used_by": [
+    "library: OpenAerialMap"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://openai.com/": {
+   "state": "unverified",
+   "used_by": [
+    "cases/agent-swarm.md",
+    "cases/openai-exploitgym.md"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://openaq.org": {
+   "state": "ok",
+   "used_by": [
+    "library: OpenAQ"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://opencorporates.com": {
+   "state": "ok",
+   "used_by": [
+    "library: OpenCorporates"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://opendata-ajuntament.barcelona.cat": {
+   "state": "ok",
+   "used_by": [
+    "library: Open Data BCN"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://opendata.cityofnewyork.us": {
+   "state": "ok",
+   "used_by": [
+    "library: NYC Open Data"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://opendata.paris.fr": {
+   "state": "ok",
+   "used_by": [
+    "library: Paris Data"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://openlayers.org": {
+   "state": "ok",
+   "used_by": [
+    "library: OpenLayers"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://opensource.googleblog.com/2021/12/understanding-impact-of-apache-log4j.html": {
+   "state": "ok",
+   "used_by": [
+    "cases/log4shell.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://openssf.org": {
+   "state": "ok",
+   "used_by": [
+    "library: OpenSSF"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://opentopography.org": {
+   "state": "ok",
+   "used_by": [
+    "library: OpenTopography"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://osv.dev": {
+   "state": "ok",
+   "used_by": [
+    "library: OSV"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://otx.alienvault.com": {
+   "state": "ok",
+   "used_by": [
+    "library: AlienVault OTX"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://ourworldindata.org": {
+   "state": "ok",
+   "used_by": [
+    "library: Our World in Data"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://overpass-turbo.eu": {
+   "state": "ok",
+   "used_by": [
+    "library: Overpass Turbo"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://oversight.house.gov/wp-content/uploads/2018/12/Equifax-Report.pdf": {
+   "state": "ok",
+   "used_by": [
+    "cases/equifax.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://overturemaps.org": {
+   "state": "ok",
+   "used_by": [
+    "library: Overture Maps Foundation"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://pelias.io": {
+   "state": "ok",
+   "used_by": [
+    "library: Pelias"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://planetarycomputer.microsoft.com": {
+   "state": "ok",
+   "used_by": [
+    "library: Microsoft Planetary Computer"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://postgis.net": {
+   "state": "ok",
+   "used_by": [
+    "library: PostGIS"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://protomaps.com": {
+   "state": "ok",
+   "used_by": [
+    "library: Protomaps"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://qgis.org": {
+   "state": "ok",
+   "used_by": [
+    "library: QGIS"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://rasterio.readthedocs.io": {
+   "state": "ok",
+   "used_by": [
+    "library: Rasterio & Shapely"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://registry.opendata.aws": {
+   "state": "ok",
+   "used_by": [
+    "library: AWS Open Data Registry"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://reliefweb.int": {
+   "state": "ok",
+   "used_by": [
+    "library: ReliefWeb"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://rewardsforjustice.net/rewards/conti/": {
+   "state": "ok",
+   "used_by": [
+    "cases/costa-rica.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://search.censys.io": {
+   "state": "unverified",
+   "used_by": [
+    "library: Censys Search"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://source.coop": {
+   "state": "ok",
+   "used_by": [
+    "library: Radiant Earth / Source Cooperative"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model": {
+   "state": "unverified",
+   "used_by": [
+    "library: Copernicus DEM / SRTM"
+   ],
+   "error": "URLError"
+  },
+  "https://stacspec.org": {
+   "state": "ok",
+   "used_by": [
+    "library: STAC"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://standard.open-contracting.org": {
+   "state": "ok",
+   "used_by": [
+    "library: Open Contracting Data Standard"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://transluce.org/": {
+   "state": "ok",
+   "used_by": [
+    "cases/agent-swarm.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://ucdp.uu.se": {
+   "state": "ok",
+   "used_by": [
+    "library: UCDP"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://unosat.org": {
+   "state": "ok",
+   "used_by": [
+    "library: UNOSAT"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://unstats.un.org/sdgs/dataportal": {
+   "state": "ok",
+   "used_by": [
+    "library: UN Data / SDG Indicators"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.aisi.gov.uk/": {
+   "state": "ok",
+   "used_by": [
+    "cases/openai-exploitgym.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.ashleymadisonsettlement.com/": {
+   "state": "unverified",
+   "used_by": [
+    "cases/ashley-madison.md"
+   ],
+   "error": "URLError"
+  },
+  "https://www.bb.org.bd/": {
+   "state": "ok",
+   "used_by": [
+    "cases/bangladesh-bank.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.bl.uk/cyber-incident/": {
+   "state": "ok",
+   "used_by": [
+    "cases/british-library.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.bl.uk/home/british-library-cyber-incident-review-8-march-2024.pdf": {
+   "state": "ok",
+   "used_by": [
+    "cases/british-library.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.ca2.uscourts.gov/decisions.html": {
+   "state": "ok",
+   "used_by": [
+    "cases/silk-road.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.chainalysis.com/blog/": {
+   "state": "ok",
+   "used_by": [
+    "cases/costa-rica.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.cisa.gov/known-exploited-vulnerabilities-catalog": {
+   "state": "unverified",
+   "used_by": [
+    "library: CISA KEV Catalog"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-131a": {
+   "state": "unverified",
+   "used_by": [
+    "cases/colonial-pipeline.md"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-265a": {
+   "state": "unverified",
+   "used_by": [
+    "cases/costa-rica.md"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://www.cisa.gov/news-events/directives/ed-21-01-mitigate-solarwinds-orion-code-compromise": {
+   "state": "unverified",
+   "used_by": [
+    "cases/solarwinds.md"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://www.cisa.gov/news-events/news/apache-log4j-vulnerability-guidance": {
+   "state": "unverified",
+   "used_by": [
+    "cases/log4shell.md"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://www.cisa.gov/sites/default/files/publications/CSRB-Report-on-Log4-July-11-2022_508.pdf": {
+   "state": "unverified",
+   "used_by": [
+    "cases/log4shell.md"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://www.cisecurity.org/cis-benchmarks": {
+   "state": "ok",
+   "used_by": [
+    "library: CIS Benchmarks"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.cogeo.org": {
+   "state": "ok",
+   "used_by": [
+    "library: Cloud-Optimised GeoTIFF"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.commerce.senate.gov/services/files/24d3c229-4f2f-405d-b8db-a3a67f183883": {
+   "state": "ok",
+   "used_by": [
+    "cases/target.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.courts.ie/": {
+   "state": "ok",
+   "used_by": [
+    "cases/hse-ireland.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.dfs.ny.gov/Twitter_Report": {
+   "state": "unverified",
+   "used_by": [
+    "cases/twitter-2020.md"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://www.earthdata.nasa.gov": {
+   "state": "ok",
+   "used_by": [
+    "library: NASA Earthdata"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.electricitymaps.com": {
+   "state": "ok",
+   "used_by": [
+    "library: Electricity Maps"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.fbi.gov/news/press-releases/update-on-sony-investigation": {
+   "state": "unverified",
+   "used_by": [
+    "cases/sony-pictures.md"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://www.ftc.gov/": {
+   "state": "ok",
+   "used_by": [
+    "cases/target.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.ftc.gov/enforcement/refunds/equifax-data-breach-settlement": {
+   "state": "ok",
+   "used_by": [
+    "cases/equifax.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.ftc.gov/legal-library/browse/cases-proceedings/152-3284-ashley-madison": {
+   "state": "ok",
+   "used_by": [
+    "cases/ashley-madison.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.gao.gov/products/gao-18-559": {
+   "state": "unverified",
+   "used_by": [
+    "cases/equifax.md"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://www.gbif.org": {
+   "state": "unverified",
+   "used_by": [
+    "library: GBIF"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://www.geoboundaries.org": {
+   "state": "ok",
+   "used_by": [
+    "library: geoBoundaries"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.geonames.org": {
+   "state": "ok",
+   "used_by": [
+    "library: GeoNames"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.gleif.org": {
+   "state": "ok",
+   "used_by": [
+    "library: GLEIF"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.globalforestwatch.org": {
+   "state": "ok",
+   "used_by": [
+    "library: Global Forest Watch"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.gov.uk/government/organisations/department-for-business-and-trade": {
+   "state": "ok",
+   "used_by": [
+    "cases/jaguar-land-rover.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.gov.uk/government/publications/securing-cyber-resilience-in-health-and-care-october-2018-update": {
+   "state": "ok",
+   "used_by": [
+    "cases/wannacry.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.hotosm.org": {
+   "state": "ok",
+   "used_by": [
+    "library: Humanitarian OpenStreetMap Team"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.hse.ie/eng/": {
+   "state": "ok",
+   "used_by": [
+    "cases/hse-ireland.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.hse.ie/eng/services/publications/": {
+   "state": "ok",
+   "used_by": [
+    "cases/hse-ireland.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.iaea.org/newscenter/focus/iran/iaea-and-iran-iaea-reports": {
+   "state": "unverified",
+   "used_by": [
+    "cases/stuxnet.md"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://www.internal-displacement.org": {
+   "state": "ok",
+   "used_by": [
+    "library: IDMC"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.ipums.org": {
+   "state": "ok",
+   "used_by": [
+    "library: IPUMS"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.iucnredlist.org": {
+   "state": "unverified",
+   "used_by": [
+    "library: IUCN Red List"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://www.justice.gov/opa/pr": {
+   "state": "ok",
+   "used_by": [
+    "cases/dprk-it-workers.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.justice.gov/opa/pr/chinese-military-personnel-charged-computer-fraud-economic-espionage-and-wire-fraud-hacking": {
+   "state": "ok",
+   "used_by": [
+    "cases/equifax.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.justice.gov/opa/pr/department-justice-seizes-23-million-cryptocurrency-paid-ransomware-extortionists-darkside": {
+   "state": "ok",
+   "used_by": [
+    "cases/colonial-pipeline.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.justice.gov/opa/pr/justice-department-announces-charges-and-guilty-pleas-three-computer-crime-cases-involving": {
+   "state": "ok",
+   "used_by": [
+    "cases/mirai.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.justice.gov/opa/pr/six-russian-gru-officers-charged-connection-worldwide-deployment-destructive-malware-and": {
+   "state": "ok",
+   "used_by": [
+    "cases/notpetya.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.justice.gov/opa/press-release/file/1092091/dl": {
+   "state": "ok",
+   "used_by": [
+    "cases/bangladesh-bank.md",
+    "cases/sony-pictures.md",
+    "cases/wannacry.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.justice.gov/usao-ndca": {
+   "state": "ok",
+   "used_by": [
+    "cases/twitter-2020.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.justice.gov/usao-ndca/pr/three-individuals-charged-alleged-roles-twitter-hack": {
+   "state": "ok",
+   "used_by": [
+    "cases/twitter-2020.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.justice.gov/usao-sdny": {
+   "state": "ok",
+   "used_by": [
+    "cases/silk-road.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.justice.gov/usao-sdny/pr/ross-ulbricht-aka-dread-pirate-roberts-sentenced-manhattan-federal-court-life-prison": {
+   "state": "ok",
+   "used_by": [
+    "cases/silk-road.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.kobotoolbox.org": {
+   "state": "ok",
+   "used_by": [
+    "library: Open Data Kit / KoboToolbox"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.langner.com/wp-content/uploads/2013/11/To-kill-a-centrifuge.pdf": {
+   "state": "ok",
+   "used_by": [
+    "cases/stuxnet.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.legislation.gov.uk/ukpga/2022/46/contents": {
+   "state": "ok",
+   "used_by": [
+    "cases/mirai.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.maxar.com/open-data": {
+   "state": "ok",
+   "used_by": [
+    "library: Maxar Open Data Program"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.microsoft.com/en-us/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/": {
+   "state": "ok",
+   "used_by": [
+    "cases/solarwinds.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.nao.org.uk/reports/investigation-wannacry-cyber-attack-and-the-nhs/": {
+   "state": "ok",
+   "used_by": [
+    "cases/wannacry.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.naturalearthdata.com": {
+   "state": "ok",
+   "used_by": [
+    "library: Natural Earth"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.ncei.noaa.gov/cdo-web/": {
+   "state": "ok",
+   "used_by": [
+    "library: NOAA Climate Data Online"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.ncsc.gov.ie/": {
+   "state": "ok",
+   "used_by": [
+    "cases/hse-ireland.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.ncsc.gov.uk/": {
+   "state": "ok",
+   "used_by": [
+    "cases/jaguar-land-rover.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.ncsc.gov.uk/news": {
+   "state": "ok",
+   "used_by": [
+    "cases/marks-and-spencer.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.ncsc.gov.uk/news/russian-military-almost-certainly-responsible-destructive-2017-cyber-attack": {
+   "state": "ok",
+   "used_by": [
+    "cases/notpetya.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.ncsc.gov.uk/ransomware/home": {
+   "state": "ok",
+   "used_by": [
+    "cases/british-library.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.njcourts.gov/": {
+   "state": "ok",
+   "used_by": [
+    "cases/notpetya.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.openownership.org": {
+   "state": "ok",
+   "used_by": [
+    "library: Open Ownership"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.opensanctions.org": {
+   "state": "ok",
+   "used_by": [
+    "library: OpenSanctions"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.openstreetmap.org": {
+   "state": "ok",
+   "used_by": [
+    "library: OpenStreetMap"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.osgeo.org": {
+   "state": "ok",
+   "used_by": [
+    "library: OSGeo"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.penguinrandomhouse.com/books/219931/countdown-to-zero-day-by-kim-zetter/": {
+   "state": "ok",
+   "used_by": [
+    "cases/stuxnet.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.penguinrandomhouse.com/books/545473/american-kingpin-by-nick-bilton/": {
+   "state": "ok",
+   "used_by": [
+    "cases/silk-road.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.penguinrandomhouse.com/books/597684/sandworm-by-andy-greenberg/": {
+   "state": "ok",
+   "used_by": [
+    "cases/notpetya.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.planet.com/nicfi/": {
+   "state": "ok",
+   "used_by": [
+    "library: Planet"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.presidencia.go.cr/": {
+   "state": "ok",
+   "used_by": [
+    "cases/costa-rica.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2016/pipeda-2016-005/": {
+   "state": "ok",
+   "used_by": [
+    "cases/ashley-madison.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.protectedplanet.net": {
+   "state": "ok",
+   "used_by": [
+    "library: Protected Planet / WDPA"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.schneier.com/blog/archives/2015/01/attributing_the.html": {
+   "state": "ok",
+   "used_by": [
+    "cases/sony-pictures.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.sec.gov/newsroom/press-releases/2023-227": {
+   "state": "unverified",
+   "used_by": [
+    "cases/solarwinds.md"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://www.sentinel-hub.com": {
+   "state": "ok",
+   "used_by": [
+    "library: Sentinel Hub"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.shodan.io": {
+   "state": "ok",
+   "used_by": [
+    "library: Shodan"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.swift.com/myswift/customer-security-programme-csp": {
+   "state": "unverified",
+   "used_by": [
+    "cases/bangladesh-bank.md"
+   ],
+   "error": "TimeoutError"
+  },
+  "https://www.troyhunt.com/heres-what-ashley-madison-members-have/": {
+   "state": "ok",
+   "used_by": [
+    "cases/ashley-madison.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.tsa.gov/news/press/releases/2021/07/20/dhs-announces-new-cybersecurity-requirements-critical-pipeline": {
+   "state": "unverified",
+   "used_by": [
+    "cases/colonial-pipeline.md"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://www.un.org/securitycouncil/sanctions/1718/panel_experts/reports": {
+   "state": "ok",
+   "used_by": [
+    "cases/dprk-it-workers.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.unhcr.org/refugee-statistics/": {
+   "state": "unverified",
+   "used_by": [
+    "library: UNHCR Refugee Data Finder"
+   ],
+   "code": 403,
+   "error": "blocked"
+  },
+  "https://www.usenix.org/conference/usenixsecurity17/technical-sessions/presentation/antonakakis": {
+   "state": "ok",
+   "used_by": [
+    "cases/mirai.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.verizon.com/business/resources/reports/dbir/": {
+   "state": "ok",
+   "used_by": [
+    "cases/target.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.weather.gov/documentation/services-web-api": {
+   "state": "ok",
+   "used_by": [
+    "library: NOAA / NWS API"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.who.int/data/gho": {
+   "state": "ok",
+   "used_by": [
+    "library: WHO Global Health Observatory"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.wiz.io/blog/wiz-and-hugging-face-address-risks-to-ai-infrastructure": {
+   "state": "ok",
+   "used_by": [
+    "cases/hugging-face-pickles.md"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://www.worldpop.org": {
+   "state": "ok",
+   "used_by": [
+    "library: WorldPop"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  },
+  "https://zenodo.org": {
+   "state": "ok",
+   "used_by": [
+    "library: Zenodo"
+   ],
+   "code": 200,
+   "checked": "2026-09-08"
+  }
+ }
+}

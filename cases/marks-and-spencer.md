@@ -8,12 +8,12 @@ kind: Social engineering into ransomware
 cost: Around £300m of operating profit; online ordering suspended for roughly six weeks
 terms: [Social engineering, Vishing, Help desk fraud, Third-party risk, Multi-factor authentication, Ransomware, Account takeover, Privileged access management, Business continuity, Identity lifecycle]
 sources:
-  - title: "UK National Cyber Security Centre — advice following the 2025 retail attacks"
-    url: https://www.ncsc.gov.uk/news/incidents-impacting-retailers-recommendations-from-the-ncsc
+  - title: "UK National Cyber Security Centre — news and advice following the 2025 UK retail attacks"
+    url: https://www.ncsc.gov.uk/news
   - title: "Marks & Spencer plc — regulatory announcements and results statements"
     url: https://corporate.marksandspencer.com/investors
-  - title: "Marks & Spencer plc — full year results statement quantifying the impact"
-    url: https://corporate.marksandspencer.com/investors/results-reports-and-presentations
+  - title: "Marks & Spencer plc — results statements quantifying the impact of the incident"
+    url: https://corporate.marksandspencer.com/investors
   - title: "UK Parliament, Business and Trade Committee — evidence session with M&S and Co-op on the 2025 attacks"
     url: https://committees.parliament.uk/
 ---

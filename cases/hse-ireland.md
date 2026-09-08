@@ -8,12 +8,12 @@ kind: Ransomware
 cost: Over €100m in response and recovery; months of disruption to cancer and diagnostic services
 terms: [Ransomware, Phishing, Lateral movement, Dwell time, Business continuity, Disaster recovery, Endpoint, Legacy system, Critical infrastructure, Double extortion]
 sources:
-  - title: "PwC — independent post-incident review for the Irish Health Service Executive"
-    url: https://www.hse.ie/eng/services/publications/conti-cyber-attack-on-the-hse-full-report.pdf
+  - title: "PwC — Conti cyber attack on the HSE: independent post-incident review (published in HSE publications)"
+    url: https://www.hse.ie/eng/services/publications/
   - title: "Ireland's National Cyber Security Centre"
     url: https://www.ncsc.gov.ie/
-  - title: "Ireland's Health Service Executive — statements and updates on the cyber attack and recovery"
-    url: https://www.hse.ie/eng/services/news/newsfeatures/cyber-attack/
+  - title: "Health Service Executive — statements and updates on the cyber attack and recovery"
+    url: https://www.hse.ie/eng/
   - title: "Irish High Court — injunction restraining publication of the stolen patient data"
     url: https://www.courts.ie/
 ---
