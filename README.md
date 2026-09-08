@@ -171,3 +171,21 @@ Prose — definitions and source notes — is released under
 Code is released under the MIT licence (see `LICENSE`).
 
 Every project in the library carries its own licence. Check it before you ship.
+
+## Checks
+
+Nothing here relies on remembering to run a script.
+
+| Check | What it enforces | When |
+|---|---|---|
+| `node tools/validate.mjs` | No duplicate headwords, every term in a declared domain, no HTML in definitions, every case cross-reference resolves, every reference has an `https?://` URL | Every push and pull request |
+| `python3 tools/build_cases.py` | `cases.js` matches `cases/*.md`, and refuses to build on a dangling term reference | Every push and pull request |
+| `python3 tools/update_counts.py --check` | The README's counts match the data | Every push and pull request |
+| `python3 tools/check_links.py` | All 208 external URLs still resolve; records `checked` / `not verified` / `dead` against each | Weekly, and on any change to a reference |
+
+Each rule exists because that mistake was actually made here. They were verified
+by breaking each one in turn and watching it fail.
+
+The link checker never calls a link dead on one failure: a 4xx has to repeat on
+a separate run, and anything refused by bot protection — most government sites —
+is recorded as *not verified*, which is not a claim that the page is gone.
