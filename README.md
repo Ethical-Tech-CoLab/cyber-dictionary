@@ -53,10 +53,7 @@ sources, open-source technologies and the communities behind them**, ready to wi
 project. Browse the shelves, pull a spine, and you get what it is, how to reach the API,
 and what it costs.
 
-**106 sources across 11 shelves:** Satellite & Earth Observation · Maps & Geospatial ·
-Climate & Weather · Population & Development · Conflict, Rights & Humanitarian ·
-Environment & Biodiversity · Health · Economy, Trade & Corporate · Security & Threat Data ·
-Geospatial Tooling · Communities & Programmes.
+**119 sources across 12 shelves:** Satellite & Earth Observation (12) · Maps & Geospatial (15) · Climate & Weather (10) · Population & Development (9) · Cities & Municipal Data (14) · Conflict, Rights & Humanitarian (9) · Environment & Biodiversity (8) · Health (5) · Economy, Trade & Corporate (7) · Security & Threat Data (10) · Geospatial Tooling (10) · Communities & Programmes (10).
 
 Each entry records:
 
@@ -94,7 +91,7 @@ A to Z, the other browsed shelf by shelf.
 | | | |
 |---|---|---|
 | **Volume I** | *The Cyber Dictionary* | 1,219 terms, A–Z in two justified columns · [PDF](book/dictionary/cyber-dictionary.pdf) |
-| **Volume II** | *The Database Library* | 106 sources, by shelf, with how to connect · [PDF](book/library/database-library.pdf) |
+| **Volume II** | *The Database Library* | 119 sources, by shelf, with how to connect · [PDF](book/library/database-library.pdf) |
 
 Both are readable in the browser as page-turn books — the two buttons in the header —
 and downloadable as A5 PDFs.
