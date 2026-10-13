@@ -24,7 +24,7 @@ rather than being called dead: a network fault here is not evidence about
 the far end.
 """
 import argparse, concurrent.futures, datetime, json, os, re, ssl, sys
-import urllib.error, urllib.request
+import urllib.error, urllib.parse, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATUS_FILE = os.path.join(ROOT, "link-status.json")
@@ -109,21 +109,39 @@ def main():
     if os.path.exists(STATUS_FILE):
         previous = json.load(open(STATUS_FILE, encoding="utf-8")).get("links", {})
 
-    results = {}
     with concurrent.futures.ThreadPoolExecutor(args.workers) as pool:
-        for url, (code, err) in zip(urls, pool.map(fetch, urls)):
-            was = previous.get(url, {}).get("state")
-            state = classify(code, err, was)
-            entry = {"state": state, "used_by": urls[url]}
-            if code:
-                entry["code"] = code
-            if err:
-                entry["error"] = err
-            if state == "ok":
-                entry["checked"] = TODAY
-            elif was and previous[url].get("checked"):
-                entry["checked"] = previous[url]["checked"]   # last known good
-            results[url] = entry
+        fetched = dict(zip(urls, pool.map(fetch, urls)))
+
+    # A 4xx on a deep link only means something when the site itself answers.
+    # Some edges (Akamai in front of ftc.gov, for one) 404 every request they
+    # do not like, front page included. That is a refusal, not a missing page.
+    suspect_hosts = {urllib.parse.urlsplit(u).netloc
+                     for u, (code, err) in fetched.items()
+                     if code and 400 <= code < 500 and err != "blocked"}
+    origins = {h: "https://%s/" % h for h in suspect_hosts}
+    with concurrent.futures.ThreadPoolExecutor(args.workers) as pool:
+        origin_ok = dict(zip(origins, (
+            bool(c) and 200 <= c < 400
+            for c, _ in pool.map(fetch, origins.values()))))
+
+    results = {}
+    for url, (code, err) in fetched.items():
+        host = urllib.parse.urlsplit(url).netloc
+        if (code and 400 <= code < 500 and err != "blocked"
+                and not origin_ok.get(host, True)):
+            err = "blocked"               # the whole site refused us
+        was = previous.get(url, {}).get("state")
+        state = classify(code, err, was)
+        entry = {"state": state, "used_by": urls[url]}
+        if code:
+            entry["code"] = code
+        if err:
+            entry["error"] = err
+        if state == "ok":
+            entry["checked"] = TODAY
+        elif was and previous[url].get("checked"):
+            entry["checked"] = previous[url]["checked"]   # last known good
+        results[url] = entry
 
     json.dump({"generated": TODAY, "links": dict(sorted(results.items()))},
               open(STATUS_FILE, "w", encoding="utf-8"), indent=1)
