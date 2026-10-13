@@ -27,7 +27,7 @@ window.CASES = [
     "title": "Symantec — W32.Stuxnet Dossier",
     "url": "https://docs.broadcom.com/doc/security-response-w32-stuxnet-dossier-11-en",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "IAEA safeguards reports on Iran, 2009–2011",
@@ -39,13 +39,13 @@ window.CASES = [
     "title": "Ralph Langner — To kill a centrifuge: a technical analysis of what Stuxnet's creators tried to achieve",
     "url": "https://www.langner.com/wp-content/uploads/2013/11/To-kill-a-centrifuge.pdf",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Kim Zetter, Countdown to Zero Day (Crown, 2014) — book-length account of the operation and its discovery",
     "url": "https://www.penguinrandomhouse.com/books/219931/countdown-to-zero-day-by-kim-zetter/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    }
   ],
   "sections": [
@@ -101,25 +101,25 @@ window.CASES = [
     "title": "US Attorney, SDNY — Ross Ulbricht sentencing",
     "url": "https://www.justice.gov/usao-sdny/pr/ross-ulbricht-aka-dread-pirate-roberts-sentenced-manhattan-federal-court-life-prison",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "US Attorney, Southern District of New York — the Ulbricht complaint and case record",
     "url": "https://www.justice.gov/usao-sdny",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "United States v. Ulbricht — Second Circuit opinion (2017)",
     "url": "https://www.ca2.uscourts.gov/decisions.html",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Nick Bilton, American Kingpin (Portfolio, 2017) — narrative reconstruction of the investigation",
     "url": "https://www.penguinrandomhouse.com/books/545473/american-kingpin-by-nick-bilton/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    }
   ],
   "sections": [
@@ -176,25 +176,25 @@ window.CASES = [
     "title": "US Senate Commerce Committee — a kill chain analysis of the 2013 Target data breach",
     "url": "https://www.commerce.senate.gov/services/files/24d3c229-4f2f-405d-b8db-a3a67f183883",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "US Federal Trade Commission — the Target settlement with state attorneys general and its guidance for business",
     "url": "https://www.ftc.gov/",
-    "state": "ok",
+    "state": "unverified",
     "checked": "2026-09-08"
    },
    {
     "title": "Brian Krebs — reporting that first identified the HVAC contractor as the entry point",
     "url": "https://krebsonsecurity.com/tag/target-data-breach/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Verizon — Data Breach Investigations Report series, for the retail intrusion pattern",
     "url": "https://www.verizon.com/business/resources/reports/dbir/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    }
   ],
   "sections": [
@@ -257,18 +257,18 @@ window.CASES = [
     "title": "US Department of Justice — complaint against a North Korean programmer",
     "url": "https://www.justice.gov/opa/press-release/file/1092091/dl",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "US Department of the Treasury — sanctions on North Korea in response to the attack",
     "url": "https://home.treasury.gov/news/press-releases/jl9733",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Schneier on Security — contemporaneous critique of the attribution evidence",
     "url": "https://www.schneier.com/blog/archives/2015/01/attributing_the.html",
-    "state": "ok",
+    "state": "unverified",
     "checked": "2026-09-08"
    }
   ],
@@ -327,19 +327,19 @@ window.CASES = [
     "title": "Office of the Privacy Commissioner of Canada and Australian Privacy Commissioner — joint investigation report",
     "url": "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2016/pipeda-2016-005/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "FTC — Ashley Madison settlement",
     "url": "https://www.ftc.gov/legal-library/browse/cases-proceedings/152-3284-ashley-madison",
-    "state": "ok",
+    "state": "unverified",
     "checked": "2026-09-08"
    },
    {
     "title": "Troy Hunt, Have I Been Pwned — analysis of the dumped data and its consequences for users",
     "url": "https://www.troyhunt.com/heres-what-ashley-madison-members-have/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Class action settlement, In re Ashley Madison Customer Data Security Breach Litigation",
@@ -402,25 +402,25 @@ window.CASES = [
     "title": "US Department of Justice — Mirai botnet guilty pleas",
     "url": "https://www.justice.gov/opa/pr/justice-department-announces-charges-and-guilty-pleas-three-computer-crime-cases-involving",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Cloudflare — inside the infamous Mirai IoT botnet",
     "url": "https://blog.cloudflare.com/inside-mirai-the-infamous-iot-botnet-a-retrospective-analysis/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Antonakakis et al. — Understanding the Mirai Botnet, USENIX Security 2017",
     "url": "https://www.usenix.org/conference/usenixsecurity17/technical-sessions/presentation/antonakakis",
-    "state": "ok",
+    "state": "unverified",
     "checked": "2026-09-08"
    },
    {
     "title": "UK Product Security and Telecommunications Infrastructure Act 2022, banning universal default passwords",
     "url": "https://www.legislation.gov.uk/ukpga/2022/46/contents",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    }
   ],
   "sections": [
@@ -477,7 +477,7 @@ window.CASES = [
     "title": "US Department of Justice — complaint against Park Jin Hyok",
     "url": "https://www.justice.gov/opa/press-release/file/1092091/dl",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "SWIFT — customer security programme, established after the 2016 attacks",
@@ -489,13 +489,13 @@ window.CASES = [
     "title": "BAE Systems Threat Research — two bytes to $951m, the technical analysis of the SWIFT malware",
     "url": "https://baesystemsai.blogspot.com/2016/04/two-bytes-to-951m.html",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Bangladesh Bank — the Federal Reserve Bank of New York litigation",
     "url": "https://www.bb.org.bd/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    }
   ],
   "sections": [
@@ -554,12 +554,12 @@ window.CASES = [
     "title": "US House Oversight Committee — report on the Equifax data breach",
     "url": "https://oversight.house.gov/wp-content/uploads/2018/12/Equifax-Report.pdf",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "FTC — Equifax settlement",
     "url": "https://www.ftc.gov/enforcement/refunds/equifax-data-breach-settlement",
-    "state": "ok",
+    "state": "unverified",
     "checked": "2026-09-08"
    },
    {
@@ -572,7 +572,7 @@ window.CASES = [
     "title": "US Department of Justice — indictment of four members of the PLA",
     "url": "https://www.justice.gov/opa/pr/chinese-military-personnel-charged-computer-fraud-economic-espionage-and-wire-fraud-hacking",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    }
   ],
   "sections": [
@@ -627,25 +627,25 @@ window.CASES = [
     "title": "US Department of Justice indictment of six GRU officers (2020)",
     "url": "https://www.justice.gov/opa/pr/six-russian-gru-officers-charged-connection-worldwide-deployment-destructive-malware-and",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "UK National Cyber Security Centre attribution statement (2018)",
     "url": "https://www.ncsc.gov.uk/news/russian-military-almost-certainly-responsible-destructive-2017-cyber-attack",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Andy Greenberg, Sandworm (Doubleday, 2019) — the book the unit is named for in common usage",
     "url": "https://www.penguinrandomhouse.com/books/597684/sandworm-by-andy-greenberg/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Merck & Co. v. ACE American Insurance — the war exclusion litigation",
     "url": "https://www.njcourts.gov/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    }
   ],
   "sections": [
@@ -702,25 +702,25 @@ window.CASES = [
     "title": "UK National Audit Office — investigation into WannaCry and the NHS",
     "url": "https://www.nao.org.uk/reports/investigation-wannacry-cyber-attack-and-the-nhs/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "US Department of Justice — charges against a Lazarus Group programmer",
     "url": "https://www.justice.gov/opa/press-release/file/1092091/dl",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Microsoft Security Response Center — MS17-010, the patch released two months before the outbreak",
     "url": "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2017/ms17-010",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "UK Department of Health and Social Care — lessons learned review of WannaCry",
     "url": "https://www.gov.uk/government/publications/securing-cyber-resilience-in-health-and-care-october-2018-update",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    }
   ],
   "sections": [
@@ -779,25 +779,25 @@ window.CASES = [
     "title": "US Department of State, Treasury and FBI advisory on DPRK IT workers",
     "url": "https://ofac.treasury.gov/media/923126/download",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "US Department of Justice — press releases on laptop farm arrests and seizures in the DPRK IT worker cases",
     "url": "https://www.justice.gov/opa/pr",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "KnowBe4 — how a North Korean fake IT worker was hired and detected",
     "url": "https://blog.knowbe4.com/how-a-north-korean-fake-it-worker-tried-to-infiltrate-us",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "UN Panel of Experts on North Korea — reports on sanctions evasion through IT work",
     "url": "https://www.un.org/securitycouncil/sanctions/1718/panel_experts/reports",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    }
   ],
   "sections": [
@@ -861,7 +861,7 @@ window.CASES = [
     "title": "Mandiant — Highly evasive attacker leverages SolarWinds supply chain",
     "url": "https://cloud.google.com/blog/topics/threat-intelligence/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "US Securities and Exchange Commission — action against SolarWinds and its CISO",
@@ -873,7 +873,7 @@ window.CASES = [
     "title": "Microsoft — analysis of the Solorigate second-stage activation",
     "url": "https://www.microsoft.com/en-us/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    }
   ],
   "sections": [
@@ -936,7 +936,7 @@ window.CASES = [
     "title": "US Department of Justice — charges in the Twitter hack",
     "url": "https://www.justice.gov/usao-ndca/pr/three-individuals-charged-alleged-roles-twitter-hack",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Twitter — the company's own account of the incident and the controls that followed",
@@ -948,7 +948,7 @@ window.CASES = [
     "title": "US Attorney, Northern District of California — the charging documents",
     "url": "https://www.justice.gov/usao-ndca",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    }
   ],
   "sections": [
@@ -1004,7 +1004,7 @@ window.CASES = [
     "title": "US Department of Justice — recovery of the ransom payment",
     "url": "https://www.justice.gov/opa/pr/department-justice-seizes-23-million-cryptocurrency-paid-ransomware-extortionists-darkside",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "CISA and FBI joint advisory on DarkSide ransomware",
@@ -1016,7 +1016,7 @@ window.CASES = [
     "title": "US House Committee on Homeland Security — testimony of Colonial Pipeline's chief executive",
     "url": "https://homeland.house.gov/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "TSA — security directives for pipeline owners and operators issued after the attack",
@@ -1091,13 +1091,13 @@ window.CASES = [
     "title": "Apache Software Foundation — CVE-2021-44228 advisory and remediation guidance",
     "url": "https://logging.apache.org/log4j/2.x/security.html",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Google Open Source Insights — measurement of how deep in dependency trees the affected versions sat",
     "url": "https://opensource.googleblog.com/2021/12/understanding-impact-of-apache-log4j.html",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    }
   ],
   "sections": [
@@ -1155,25 +1155,25 @@ window.CASES = [
     "title": "PwC — Conti cyber attack on the HSE: independent post-incident review (published in HSE publications)",
     "url": "https://www.hse.ie/eng/services/publications/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Ireland's National Cyber Security Centre",
     "url": "https://www.ncsc.gov.ie/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Health Service Executive — statements and updates on the cyber attack and recovery",
     "url": "https://www.hse.ie/eng/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Irish High Court — injunction restraining publication of the stolen patient data",
     "url": "https://www.courts.ie/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    }
   ],
   "sections": [
@@ -1230,7 +1230,7 @@ window.CASES = [
     "title": "US Department of State — Rewards for Justice offer on Conti",
     "url": "https://rewardsforjustice.net/rewards/conti/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "CISA — Conti ransomware advisory",
@@ -1242,13 +1242,13 @@ window.CASES = [
     "title": "Chainalysis — research on Conti's finances and the 2022 internal chat leaks",
     "url": "https://www.chainalysis.com/blog/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Costa Rican Government — the state of national emergency declaration",
     "url": "https://www.presidencia.go.cr/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    }
   ],
   "sections": [
@@ -1306,19 +1306,19 @@ window.CASES = [
     "title": "British Library — Learning Lessons from the Cyber-Attack (2024)",
     "url": "https://www.bl.uk/home/british-library-cyber-incident-review-8-march-2024.pdf",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "UK National Cyber Security Centre — ransomware guidance",
     "url": "https://www.ncsc.gov.uk/ransomware/home",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "British Library — cyber incident updates and service restoration record",
     "url": "https://www.bl.uk/cyber-incident/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "UK Parliament, Culture Media and Sport Committee — evidence on the attack and its funding consequences",
@@ -1383,25 +1383,25 @@ window.CASES = [
     "title": "Wiz Research — Wiz and Hugging Face address risks to AI infrastructure",
     "url": "https://www.wiz.io/blog/wiz-and-hugging-face-address-risks-to-ai-infrastructure",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Hugging Face — pickle scanning and model security documentation",
     "url": "https://huggingface.co/docs/hub/security-pickle",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "JFrog Security Research — malicious models found published on the Hugging Face hub",
     "url": "https://jfrog.com/blog/data-scientists-targeted-by-malicious-hugging-face-ml-models-with-silent-backdoor/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Hugging Face — the safetensors format and its rationale",
     "url": "https://huggingface.co/docs/safetensors/index",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    }
   ],
   "sections": [
@@ -1460,19 +1460,19 @@ window.CASES = [
     "title": "UK National Cyber Security Centre",
     "url": "https://www.ncsc.gov.uk/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "UK Government — support for Jaguar Land Rover's supply chain",
     "url": "https://www.gov.uk/government/organisations/department-for-business-and-trade",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Jaguar Land Rover — company statements on the incident and the restart of production",
     "url": "https://media.jaguarlandrover.com/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "UK Parliament — Business and Trade Committee evidence on the attack and its supply chain effects",
@@ -1536,19 +1536,19 @@ window.CASES = [
     "title": "UK National Cyber Security Centre — news and advice following the 2025 UK retail attacks",
     "url": "https://www.ncsc.gov.uk/news",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Marks & Spencer plc — regulatory announcements and results statements",
     "url": "https://corporate.marksandspencer.com/investors",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Marks & Spencer plc — results statements quantifying the impact of the incident",
     "url": "https://corporate.marksandspencer.com/investors",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "UK Parliament, Business and Trade Committee — evidence session with M&S and Co-op on the 2025 attacks",
@@ -1623,7 +1623,7 @@ window.CASES = [
     "title": "CERT Polska — report on the December 2025 attacks against the Polish energy sector (30 January 2026)",
     "url": "https://cert.pl/en/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "CERT Polska — supplementary report on the combined heat and power plant incident (August 2026)",
@@ -1634,13 +1634,13 @@ window.CASES = [
    {
     "title": "Marcin Dudek, CERT Polska — presentation of the findings at DEF CON, Las Vegas (August 2026)",
     "url": "https://defcon.org/",
-    "state": "ok",
+    "state": "unverified",
     "checked": "2026-09-08"
    },
    {
     "title": "Industrial Cyber — CERT Polska exposes multi-stage cyberattack on energy infrastructure",
     "url": "https://industrialcyber.co/",
-    "state": "ok",
+    "state": "unverified",
     "checked": "2026-09-08"
    }
   ],
@@ -1720,19 +1720,19 @@ window.CASES = [
     "title": "Hugging Face — disclosure of the incident and post-mortem",
     "url": "https://huggingface.co/blog",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "METR and Redwood Research — joint third-party assessment of the model behaviour observed",
     "url": "https://metr.org/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "UK AI Security Institute — evaluations of long-horizon cyber capability in frontier and open-weight models",
     "url": "https://www.aisi.gov.uk/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    }
   ],
   "sections": [
@@ -1807,13 +1807,13 @@ window.CASES = [
     "title": "METR and Redwood Research — joint account of the July 2026 breach",
     "url": "https://metr.org/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "Transluce — remarks on independent behavioural investigation of AI incidents",
     "url": "https://transluce.org/",
     "state": "ok",
-    "checked": "2026-09-08"
+    "checked": "2026-10-12"
    },
    {
     "title": "LawAI — analysis of frontier AI incident reporting requirements in US state law",

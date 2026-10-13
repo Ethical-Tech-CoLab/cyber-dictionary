@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-08",
+ "generated": "2026-10-12",
  "links": {
   "https://abuse.ch": {
    "state": "ok",
@@ -7,7 +7,7 @@
     "library: abuse.ch"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://acleddata.com": {
    "state": "ok",
@@ -15,7 +15,7 @@
     "library: ACLED"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://attack.mitre.org": {
    "state": "ok",
@@ -23,7 +23,7 @@
     "library: MITRE ATT&CK"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://baesystemsai.blogspot.com/2016/04/two-bytes-to-951m.html": {
    "state": "ok",
@@ -31,7 +31,7 @@
     "cases/bangladesh-bank.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://bellingcat.gitbook.io/toolkit": {
    "state": "ok",
@@ -39,7 +39,7 @@
     "library: Bellingcat Online Investigation Toolkit"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://blog.cloudflare.com/inside-mirai-the-infamous-iot-botnet-a-retrospective-analysis/": {
    "state": "ok",
@@ -47,7 +47,7 @@
     "cases/mirai.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://blog.knowbe4.com/how-a-north-korean-fake-it-worker-tried-to-infiltrate-us": {
    "state": "ok",
@@ -55,7 +55,7 @@
     "cases/dprk-it-workers.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://blog.x.com/en_us/topics/company/2020/an-update-on-our-security-incident": {
    "state": "unverified",
@@ -71,7 +71,7 @@
     "library: Copernicus Climate Data Store"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://cert.pl/en/": {
    "state": "ok",
@@ -79,7 +79,7 @@
     "cases/poland-energy.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://cert.pl/en/posts/": {
    "state": "unverified",
@@ -95,7 +95,7 @@
     "library: CKAN"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://climateknowledgeportal.worldbank.org": {
    "state": "unverified",
@@ -111,7 +111,7 @@
     "library: Climate TRACE"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://cloud.google.com/blog/topics/threat-intelligence/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor": {
    "state": "ok",
@@ -119,7 +119,7 @@
     "cases/solarwinds.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://committees.parliament.uk/": {
    "state": "unverified",
@@ -137,7 +137,7 @@
     "library: OpenStreetMap Foundation community"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://comtrade.un.org": {
    "state": "ok",
@@ -145,7 +145,7 @@
     "library: UN Comtrade"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://corporate.marksandspencer.com/investors": {
    "state": "ok",
@@ -153,7 +153,7 @@
     "cases/marks-and-spencer.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://data-explorer.oecd.org": {
    "state": "ok",
@@ -161,14 +161,14 @@
     "library: OECD Data Explorer"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://data.buenosaires.gob.ar": {
-   "state": "ok",
+   "state": "unverified",
    "used_by": [
     "library: Buenos Aires Data"
    ],
-   "code": 200,
+   "code": 502,
    "checked": "2026-09-08"
   },
   "https://data.cityofchicago.org": {
@@ -177,7 +177,7 @@
     "library: Chicago Data Portal"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://data.europa.eu": {
    "state": "ok",
@@ -185,7 +185,7 @@
     "library: data.gov / data.europa.eu"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://data.gov.sg": {
    "state": "ok",
@@ -193,7 +193,7 @@
     "library: data.gov.sg"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://data.humdata.org": {
    "state": "ok",
@@ -201,7 +201,7 @@
     "library: Humanitarian Data Exchange"
    ],
    "code": 202,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://data.imf.org": {
    "state": "unverified",
@@ -217,7 +217,7 @@
     "library: London Datastore"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://data.worldbank.org": {
    "state": "ok",
@@ -225,7 +225,7 @@
     "library: World Bank Open Data"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://datasette.io": {
    "state": "ok",
@@ -233,7 +233,7 @@
     "library: Datasette"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://dataspace.copernicus.eu": {
    "state": "ok",
@@ -241,14 +241,15 @@
     "library: Copernicus Data Space Ecosystem"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://daten.berlin.de": {
-   "state": "ok",
+   "state": "unverified",
    "used_by": [
     "library: Berlin Open Data"
    ],
-   "code": 200,
+   "code": 403,
+   "error": "blocked",
    "checked": "2026-09-08"
   },
   "https://datos.cdmx.gob.mx": {
@@ -264,14 +265,14 @@
     "library: Kepler.gl / deck.gl"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://defcon.org/": {
-   "state": "ok",
+   "state": "unverified",
    "used_by": [
     "cases/poland-energy.md"
    ],
-   "code": 200,
+   "error": "ConnectionResetError",
    "checked": "2026-09-08"
   },
   "https://dev.socrata.com": {
@@ -280,7 +281,7 @@
     "library: Socrata Open Data API"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://developmentseed.org/community/": {
    "state": "ok",
@@ -288,7 +289,7 @@
     "library: Development Seed Community"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://developmentseed.org/titiler/": {
    "state": "ok",
@@ -296,7 +297,7 @@
     "library: Titiler"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://dhis2.org": {
    "state": "ok",
@@ -304,7 +305,7 @@
     "library: DHIS2"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://dhsprogram.com": {
    "state": "ok",
@@ -312,7 +313,7 @@
     "library: DHS Program"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://docs.broadcom.com/doc/security-response-w32-stuxnet-dossier-11-en": {
    "state": "ok",
@@ -320,7 +321,7 @@
     "cases/stuxnet.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://download.geofabrik.de": {
    "state": "ok",
@@ -328,7 +329,7 @@
     "library: Geofabrik Downloads"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://dtm.iom.int": {
    "state": "unverified",
@@ -344,7 +345,7 @@
     "library: DuckDB Spatial"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://earthengine.google.com": {
    "state": "ok",
@@ -352,7 +353,7 @@
     "library: Google Earth Engine"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://earthexplorer.usgs.gov": {
    "state": "ok",
@@ -360,7 +361,7 @@
     "library: USGS EarthExplorer / Landsat"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://earthquake.usgs.gov": {
    "state": "ok",
@@ -368,7 +369,7 @@
     "library: USGS Earthquake Hazards"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://ec.europa.eu/eurostat": {
    "state": "ok",
@@ -376,7 +377,7 @@
     "library: Eurostat"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://firms.modaps.eosdis.nasa.gov": {
    "state": "ok",
@@ -384,7 +385,7 @@
     "library: NASA FIRMS"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://forensic-architecture.org": {
    "state": "ok",
@@ -392,7 +393,7 @@
     "library: Forensic Architecture"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://gadm.org": {
    "state": "ok",
@@ -400,7 +401,7 @@
     "library: GADM"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://gdal.org": {
    "state": "ok",
@@ -408,7 +409,7 @@
     "library: GDAL / OGR"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://geosampa.prefeitura.sp.gov.br": {
    "state": "ok",
@@ -416,7 +417,7 @@
     "library: GeoSampa"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://ghdx.healthdata.org": {
    "state": "ok",
@@ -424,7 +425,7 @@
     "library: IHME Global Health Data Exchange"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://global-flood.emergency.copernicus.eu": {
    "state": "ok",
@@ -432,7 +433,7 @@
     "library: Global Flood Monitor / GloFAS"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://globalfishingwatch.org": {
    "state": "ok",
@@ -440,7 +441,7 @@
     "library: Global Fishing Watch"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://haveibeenpwned.com": {
    "state": "ok",
@@ -448,7 +449,7 @@
     "library: Have I Been Pwned"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://healthsites.io": {
    "state": "ok",
@@ -456,7 +457,7 @@
     "library: HealthSites.io"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://home.treasury.gov/news/press-releases/jl9733": {
    "state": "ok",
@@ -464,7 +465,7 @@
     "cases/sony-pictures.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://homeland.house.gov/": {
    "state": "ok",
@@ -472,7 +473,7 @@
     "cases/colonial-pipeline.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://huggingface.co/blog": {
    "state": "ok",
@@ -480,7 +481,7 @@
     "cases/openai-exploitgym.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://huggingface.co/docs/hub/security-pickle": {
    "state": "ok",
@@ -488,7 +489,7 @@
     "cases/hugging-face-pickles.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://huggingface.co/docs/safetensors/index": {
    "state": "ok",
@@ -496,7 +497,7 @@
     "cases/hugging-face-pickles.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://human-settlement.emergency.copernicus.eu": {
    "state": "ok",
@@ -504,14 +505,15 @@
     "library: GHSL \u2014 Global Human Settlement Layer"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://industrialcyber.co/": {
-   "state": "ok",
+   "state": "unverified",
    "used_by": [
     "cases/poland-energy.md"
    ],
-   "code": 200,
+   "code": 403,
+   "error": "blocked",
    "checked": "2026-09-08"
   },
   "https://interactive-atlas.ipcc.ch": {
@@ -520,7 +522,7 @@
     "library: IPCC WGI Interactive Atlas"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://jfrog.com/blog/data-scientists-targeted-by-malicious-hugging-face-ml-models-with-silent-backdoor/": {
    "state": "ok",
@@ -528,7 +530,7 @@
     "cases/hugging-face-pickles.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://krebsonsecurity.com/tag/target-data-breach/": {
    "state": "ok",
@@ -536,7 +538,7 @@
     "cases/target.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://law-ai.org/": {
    "state": "unverified",
@@ -552,7 +554,7 @@
     "library: Leaflet"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2017/ms17-010": {
    "state": "ok",
@@ -560,7 +562,7 @@
     "cases/wannacry.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://logging.apache.org/log4j/2.x/security.html": {
    "state": "ok",
@@ -568,7 +570,7 @@
     "cases/log4shell.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://maplibre.org": {
    "state": "ok",
@@ -576,7 +578,7 @@
     "library: MapLibre GL"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://marine.copernicus.eu": {
    "state": "ok",
@@ -584,7 +586,7 @@
     "library: Copernicus Marine Service"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://media.jaguarlandrover.com/": {
    "state": "ok",
@@ -592,7 +594,7 @@
     "cases/jaguar-land-rover.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://metr.org/": {
    "state": "ok",
@@ -601,7 +603,7 @@
     "cases/openai-exploitgym.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://nominatim.org": {
    "state": "ok",
@@ -609,7 +611,7 @@
     "library: Nominatim"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://nvd.nist.gov": {
    "state": "ok",
@@ -617,7 +619,7 @@
     "library: NVD"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://odp-cctegis.opendata.arcgis.com": {
    "state": "ok",
@@ -625,7 +627,7 @@
     "library: City of Cape Town Open Data Portal"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://ofac.treasury.gov/media/923126/download": {
    "state": "ok",
@@ -633,7 +635,7 @@
     "cases/dprk-it-workers.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://okfn.org": {
    "state": "ok",
@@ -641,7 +643,7 @@
     "library: Open Knowledge Foundation"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://open-meteo.com": {
    "state": "ok",
@@ -649,7 +651,7 @@
     "library: Open-Meteo"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://open.fda.gov": {
    "state": "ok",
@@ -657,7 +659,7 @@
     "library: OpenFDA"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://open.toronto.ca": {
    "state": "ok",
@@ -665,7 +667,7 @@
     "library: City of Toronto Open Data"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://openaerialmap.org": {
    "state": "ok",
@@ -673,7 +675,7 @@
     "library: OpenAerialMap"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://openai.com/": {
    "state": "unverified",
@@ -690,7 +692,7 @@
     "library: OpenAQ"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://opencorporates.com": {
    "state": "ok",
@@ -698,7 +700,7 @@
     "library: OpenCorporates"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://opendata-ajuntament.barcelona.cat": {
    "state": "ok",
@@ -706,7 +708,7 @@
     "library: Open Data BCN"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://opendata.cityofnewyork.us": {
    "state": "ok",
@@ -714,7 +716,7 @@
     "library: NYC Open Data"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://opendata.paris.fr": {
    "state": "ok",
@@ -722,7 +724,7 @@
     "library: Paris Data"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://openlayers.org": {
    "state": "ok",
@@ -730,7 +732,7 @@
     "library: OpenLayers"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://opensource.googleblog.com/2021/12/understanding-impact-of-apache-log4j.html": {
    "state": "ok",
@@ -738,7 +740,7 @@
     "cases/log4shell.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://openssf.org": {
    "state": "ok",
@@ -746,7 +748,7 @@
     "library: OpenSSF"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://opentopography.org": {
    "state": "ok",
@@ -754,7 +756,7 @@
     "library: OpenTopography"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://osv.dev": {
    "state": "ok",
@@ -762,7 +764,7 @@
     "library: OSV"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://otx.alienvault.com": {
    "state": "ok",
@@ -770,7 +772,7 @@
     "library: AlienVault OTX"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://ourworldindata.org": {
    "state": "ok",
@@ -778,7 +780,7 @@
     "library: Our World in Data"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://overpass-turbo.eu": {
    "state": "ok",
@@ -786,7 +788,7 @@
     "library: Overpass Turbo"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://oversight.house.gov/wp-content/uploads/2018/12/Equifax-Report.pdf": {
    "state": "ok",
@@ -794,7 +796,7 @@
     "cases/equifax.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://overturemaps.org": {
    "state": "ok",
@@ -802,7 +804,7 @@
     "library: Overture Maps Foundation"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://pelias.io": {
    "state": "ok",
@@ -810,7 +812,7 @@
     "library: Pelias"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://planetarycomputer.microsoft.com": {
    "state": "ok",
@@ -818,7 +820,7 @@
     "library: Microsoft Planetary Computer"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://postgis.net": {
    "state": "ok",
@@ -826,7 +828,7 @@
     "library: PostGIS"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://protomaps.com": {
    "state": "ok",
@@ -834,7 +836,7 @@
     "library: Protomaps"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://qgis.org": {
    "state": "ok",
@@ -842,7 +844,7 @@
     "library: QGIS"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://rasterio.readthedocs.io": {
    "state": "ok",
@@ -850,7 +852,7 @@
     "library: Rasterio & Shapely"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://registry.opendata.aws": {
    "state": "ok",
@@ -858,15 +860,15 @@
     "library: AWS Open Data Registry"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://reliefweb.int": {
    "state": "ok",
    "used_by": [
     "library: ReliefWeb"
    ],
-   "code": 200,
-   "checked": "2026-09-08"
+   "code": 202,
+   "checked": "2026-10-12"
   },
   "https://rewardsforjustice.net/rewards/conti/": {
    "state": "ok",
@@ -874,7 +876,7 @@
     "cases/costa-rica.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://search.censys.io": {
    "state": "unverified",
@@ -890,7 +892,7 @@
     "library: Radiant Earth / Source Cooperative"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model": {
    "state": "unverified",
@@ -905,7 +907,7 @@
     "library: STAC"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://standard.open-contracting.org": {
    "state": "ok",
@@ -913,7 +915,7 @@
     "library: Open Contracting Data Standard"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://transluce.org/": {
    "state": "ok",
@@ -921,7 +923,7 @@
     "cases/agent-swarm.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://ucdp.uu.se": {
    "state": "ok",
@@ -929,7 +931,7 @@
     "library: UCDP"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://unosat.org": {
    "state": "ok",
@@ -937,7 +939,7 @@
     "library: UNOSAT"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://unstats.un.org/sdgs/dataportal": {
    "state": "ok",
@@ -945,7 +947,7 @@
     "library: UN Data / SDG Indicators"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.aisi.gov.uk/": {
    "state": "ok",
@@ -953,7 +955,7 @@
     "cases/openai-exploitgym.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.ashleymadisonsettlement.com/": {
    "state": "unverified",
@@ -968,7 +970,7 @@
     "cases/bangladesh-bank.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.bl.uk/cyber-incident/": {
    "state": "ok",
@@ -976,7 +978,7 @@
     "cases/british-library.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.bl.uk/home/british-library-cyber-incident-review-8-march-2024.pdf": {
    "state": "ok",
@@ -984,7 +986,7 @@
     "cases/british-library.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.ca2.uscourts.gov/decisions.html": {
    "state": "ok",
@@ -992,7 +994,7 @@
     "cases/silk-road.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.chainalysis.com/blog/": {
    "state": "ok",
@@ -1000,7 +1002,7 @@
     "cases/costa-rica.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.cisa.gov/known-exploited-vulnerabilities-catalog": {
    "state": "unverified",
@@ -1056,7 +1058,7 @@
     "library: CIS Benchmarks"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.cogeo.org": {
    "state": "ok",
@@ -1064,7 +1066,7 @@
     "library: Cloud-Optimised GeoTIFF"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.commerce.senate.gov/services/files/24d3c229-4f2f-405d-b8db-a3a67f183883": {
    "state": "ok",
@@ -1072,7 +1074,7 @@
     "cases/target.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.courts.ie/": {
    "state": "ok",
@@ -1080,7 +1082,7 @@
     "cases/hse-ireland.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.dfs.ny.gov/Twitter_Report": {
    "state": "unverified",
@@ -1096,7 +1098,7 @@
     "library: NASA Earthdata"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.electricitymaps.com": {
    "state": "ok",
@@ -1104,7 +1106,7 @@
     "library: Electricity Maps"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.fbi.gov/news/press-releases/update-on-sony-investigation": {
    "state": "unverified",
@@ -1115,27 +1117,30 @@
    "error": "blocked"
   },
   "https://www.ftc.gov/": {
-   "state": "ok",
+   "state": "unverified",
    "used_by": [
     "cases/target.md"
    ],
-   "code": 200,
+   "code": 404,
+   "error": "blocked",
    "checked": "2026-09-08"
   },
   "https://www.ftc.gov/enforcement/refunds/equifax-data-breach-settlement": {
-   "state": "ok",
+   "state": "unverified",
    "used_by": [
     "cases/equifax.md"
    ],
-   "code": 200,
+   "code": 404,
+   "error": "blocked",
    "checked": "2026-09-08"
   },
   "https://www.ftc.gov/legal-library/browse/cases-proceedings/152-3284-ashley-madison": {
-   "state": "ok",
+   "state": "unverified",
    "used_by": [
     "cases/ashley-madison.md"
    ],
-   "code": 200,
+   "code": 404,
+   "error": "blocked",
    "checked": "2026-09-08"
   },
   "https://www.gao.gov/products/gao-18-559": {
@@ -1160,7 +1165,7 @@
     "library: geoBoundaries"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.geonames.org": {
    "state": "ok",
@@ -1168,7 +1173,7 @@
     "library: GeoNames"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.gleif.org": {
    "state": "ok",
@@ -1176,7 +1181,7 @@
     "library: GLEIF"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.globalforestwatch.org": {
    "state": "ok",
@@ -1184,7 +1189,7 @@
     "library: Global Forest Watch"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.gov.uk/government/organisations/department-for-business-and-trade": {
    "state": "ok",
@@ -1192,7 +1197,7 @@
     "cases/jaguar-land-rover.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.gov.uk/government/publications/securing-cyber-resilience-in-health-and-care-october-2018-update": {
    "state": "ok",
@@ -1200,7 +1205,7 @@
     "cases/wannacry.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.hotosm.org": {
    "state": "ok",
@@ -1208,7 +1213,7 @@
     "library: Humanitarian OpenStreetMap Team"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.hse.ie/eng/": {
    "state": "ok",
@@ -1216,7 +1221,7 @@
     "cases/hse-ireland.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.hse.ie/eng/services/publications/": {
    "state": "ok",
@@ -1224,7 +1229,7 @@
     "cases/hse-ireland.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.iaea.org/newscenter/focus/iran/iaea-and-iran-iaea-reports": {
    "state": "unverified",
@@ -1240,7 +1245,7 @@
     "library: IDMC"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.ipums.org": {
    "state": "ok",
@@ -1248,7 +1253,7 @@
     "library: IPUMS"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.iucnredlist.org": {
    "state": "unverified",
@@ -1264,7 +1269,7 @@
     "cases/dprk-it-workers.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.justice.gov/opa/pr/chinese-military-personnel-charged-computer-fraud-economic-espionage-and-wire-fraud-hacking": {
    "state": "ok",
@@ -1272,7 +1277,7 @@
     "cases/equifax.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.justice.gov/opa/pr/department-justice-seizes-23-million-cryptocurrency-paid-ransomware-extortionists-darkside": {
    "state": "ok",
@@ -1280,7 +1285,7 @@
     "cases/colonial-pipeline.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.justice.gov/opa/pr/justice-department-announces-charges-and-guilty-pleas-three-computer-crime-cases-involving": {
    "state": "ok",
@@ -1288,7 +1293,7 @@
     "cases/mirai.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.justice.gov/opa/pr/six-russian-gru-officers-charged-connection-worldwide-deployment-destructive-malware-and": {
    "state": "ok",
@@ -1296,7 +1301,7 @@
     "cases/notpetya.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.justice.gov/opa/press-release/file/1092091/dl": {
    "state": "ok",
@@ -1306,7 +1311,7 @@
     "cases/wannacry.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.justice.gov/usao-ndca": {
    "state": "ok",
@@ -1314,7 +1319,7 @@
     "cases/twitter-2020.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.justice.gov/usao-ndca/pr/three-individuals-charged-alleged-roles-twitter-hack": {
    "state": "ok",
@@ -1322,7 +1327,7 @@
     "cases/twitter-2020.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.justice.gov/usao-sdny": {
    "state": "ok",
@@ -1330,7 +1335,7 @@
     "cases/silk-road.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.justice.gov/usao-sdny/pr/ross-ulbricht-aka-dread-pirate-roberts-sentenced-manhattan-federal-court-life-prison": {
    "state": "ok",
@@ -1338,7 +1343,7 @@
     "cases/silk-road.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.kobotoolbox.org": {
    "state": "ok",
@@ -1346,7 +1351,7 @@
     "library: Open Data Kit / KoboToolbox"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.langner.com/wp-content/uploads/2013/11/To-kill-a-centrifuge.pdf": {
    "state": "ok",
@@ -1354,7 +1359,7 @@
     "cases/stuxnet.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.legislation.gov.uk/ukpga/2022/46/contents": {
    "state": "ok",
@@ -1362,14 +1367,14 @@
     "cases/mirai.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.maxar.com/open-data": {
-   "state": "ok",
+   "state": "unverified",
    "used_by": [
     "library: Maxar Open Data Program"
    ],
-   "code": 200,
+   "error": "URLError",
    "checked": "2026-09-08"
   },
   "https://www.microsoft.com/en-us/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/": {
@@ -1378,7 +1383,7 @@
     "cases/solarwinds.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.nao.org.uk/reports/investigation-wannacry-cyber-attack-and-the-nhs/": {
    "state": "ok",
@@ -1386,7 +1391,7 @@
     "cases/wannacry.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.naturalearthdata.com": {
    "state": "ok",
@@ -1394,7 +1399,7 @@
     "library: Natural Earth"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.ncei.noaa.gov/cdo-web/": {
    "state": "ok",
@@ -1402,7 +1407,7 @@
     "library: NOAA Climate Data Online"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.ncsc.gov.ie/": {
    "state": "ok",
@@ -1410,7 +1415,7 @@
     "cases/hse-ireland.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.ncsc.gov.uk/": {
    "state": "ok",
@@ -1418,7 +1423,7 @@
     "cases/jaguar-land-rover.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.ncsc.gov.uk/news": {
    "state": "ok",
@@ -1426,7 +1431,7 @@
     "cases/marks-and-spencer.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.ncsc.gov.uk/news/russian-military-almost-certainly-responsible-destructive-2017-cyber-attack": {
    "state": "ok",
@@ -1434,7 +1439,7 @@
     "cases/notpetya.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.ncsc.gov.uk/ransomware/home": {
    "state": "ok",
@@ -1442,7 +1447,7 @@
     "cases/british-library.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.njcourts.gov/": {
    "state": "ok",
@@ -1450,14 +1455,15 @@
     "cases/notpetya.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.openownership.org": {
-   "state": "ok",
+   "state": "unverified",
    "used_by": [
     "library: Open Ownership"
    ],
-   "code": 200,
+   "code": 403,
+   "error": "blocked",
    "checked": "2026-09-08"
   },
   "https://www.opensanctions.org": {
@@ -1466,7 +1472,7 @@
     "library: OpenSanctions"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.openstreetmap.org": {
    "state": "ok",
@@ -1474,7 +1480,7 @@
     "library: OpenStreetMap"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.osgeo.org": {
    "state": "ok",
@@ -1482,7 +1488,7 @@
     "library: OSGeo"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.penguinrandomhouse.com/books/219931/countdown-to-zero-day-by-kim-zetter/": {
    "state": "ok",
@@ -1490,7 +1496,7 @@
     "cases/stuxnet.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.penguinrandomhouse.com/books/545473/american-kingpin-by-nick-bilton/": {
    "state": "ok",
@@ -1498,7 +1504,7 @@
     "cases/silk-road.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.penguinrandomhouse.com/books/597684/sandworm-by-andy-greenberg/": {
    "state": "ok",
@@ -1506,7 +1512,7 @@
     "cases/notpetya.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.planet.com/nicfi/": {
    "state": "ok",
@@ -1514,7 +1520,7 @@
     "library: Planet"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.presidencia.go.cr/": {
    "state": "ok",
@@ -1522,7 +1528,7 @@
     "cases/costa-rica.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2016/pipeda-2016-005/": {
    "state": "ok",
@@ -1530,7 +1536,7 @@
     "cases/ashley-madison.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.protectedplanet.net": {
    "state": "ok",
@@ -1538,14 +1544,15 @@
     "library: Protected Planet / WDPA"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.schneier.com/blog/archives/2015/01/attributing_the.html": {
-   "state": "ok",
+   "state": "unverified",
    "used_by": [
     "cases/sony-pictures.md"
    ],
-   "code": 200,
+   "code": 403,
+   "error": "blocked",
    "checked": "2026-09-08"
   },
   "https://www.sec.gov/newsroom/press-releases/2023-227": {
@@ -1562,7 +1569,7 @@
     "library: Sentinel Hub"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.shodan.io": {
    "state": "ok",
@@ -1570,14 +1577,15 @@
     "library: Shodan"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.swift.com/myswift/customer-security-programme-csp": {
    "state": "unverified",
    "used_by": [
     "cases/bangladesh-bank.md"
    ],
-   "error": "TimeoutError"
+   "code": 403,
+   "error": "blocked"
   },
   "https://www.troyhunt.com/heres-what-ashley-madison-members-have/": {
    "state": "ok",
@@ -1585,7 +1593,7 @@
     "cases/ashley-madison.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.tsa.gov/news/press/releases/2021/07/20/dhs-announces-new-cybersecurity-requirements-critical-pipeline": {
    "state": "unverified",
@@ -1601,7 +1609,7 @@
     "cases/dprk-it-workers.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.unhcr.org/refugee-statistics/": {
    "state": "unverified",
@@ -1612,11 +1620,12 @@
    "error": "blocked"
   },
   "https://www.usenix.org/conference/usenixsecurity17/technical-sessions/presentation/antonakakis": {
-   "state": "ok",
+   "state": "unverified",
    "used_by": [
     "cases/mirai.md"
    ],
-   "code": 200,
+   "code": 403,
+   "error": "blocked",
    "checked": "2026-09-08"
   },
   "https://www.verizon.com/business/resources/reports/dbir/": {
@@ -1625,7 +1634,7 @@
     "cases/target.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.weather.gov/documentation/services-web-api": {
    "state": "ok",
@@ -1633,7 +1642,7 @@
     "library: NOAA / NWS API"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.who.int/data/gho": {
    "state": "ok",
@@ -1641,7 +1650,7 @@
     "library: WHO Global Health Observatory"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.wiz.io/blog/wiz-and-hugging-face-address-risks-to-ai-infrastructure": {
    "state": "ok",
@@ -1649,7 +1658,7 @@
     "cases/hugging-face-pickles.md"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://www.worldpop.org": {
    "state": "ok",
@@ -1657,7 +1666,7 @@
     "library: WorldPop"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   },
   "https://zenodo.org": {
    "state": "ok",
@@ -1665,7 +1674,7 @@
     "library: Zenodo"
    ],
    "code": 200,
-   "checked": "2026-09-08"
+   "checked": "2026-10-12"
   }
  }
 }
